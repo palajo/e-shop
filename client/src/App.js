@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import MainPage from './routes/MainPage'
+import ProductPage from './routes/api/Product'
 
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
         <BrowserRouter>
             <Switch>
                 <Route component={MainPage} path="/" exact />
+                <Route component={ProductPage} path="/product" exact />
             </Switch>
         </BrowserRouter>
     )
