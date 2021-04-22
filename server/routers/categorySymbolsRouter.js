@@ -6,7 +6,7 @@ import crypto from 'crypto';
 import httpBuildQuery from 'http-build-query';
 import sortKeys from 'sort-keys';
 
-const productsRouter = express.Router();
+const categorySymbolsRouter = express.Router();
 
     // making request to api.tme.eu
     const apiData = []
@@ -15,15 +15,14 @@ const productsRouter = express.Router();
     const secret = "9afc3d89fa3ace87c52f"
 
     const domain = "https://api.tme.eu/"
-    const path = "Products/GetPrices"
+    const path = "Products/GetSymbols"
     const format = ".json"
     const url = domain + path + format;
 
     const params = {
-        Currency: 'USD',
         Country: 'UA',
-        Language: 'EN',
-        SymbolList: ['DIGI-ME'],
+        Language: 'uk',
+        CategoryId: '100181',
         Token: token
     }
 
@@ -52,8 +51,9 @@ const productsRouter = express.Router();
             console.error(error)
         })
 
-productsRouter.get( '/', expressAsyncHandler(async (req, res) => {
+
+categorySymbolsRouter.get( '/', expressAsyncHandler(async (req, res) => {
     res.send(apiData);
 }));
 
-export default productsRouter;
+export default categorySymbolsRouter;

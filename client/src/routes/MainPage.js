@@ -12,6 +12,11 @@ export default function MainPage() {
                                 Product Api
                             </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/categories">
+                                All Categories Api
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>
