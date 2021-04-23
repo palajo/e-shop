@@ -26,7 +26,7 @@ function fetchSymbols() {
     const symbolsParams = {
         Country: 'UA',
         Language: 'uk',
-        CategoryId: '100142',
+        CategoryId: '112818',
         Token: token
     }
 
@@ -49,7 +49,7 @@ function fetchSymbols() {
 
     axios.request(symbolsAxiosSettings)
         .then((res) => { 
-            symbolsData.push(res.data.Data.SymbolList)
+            symbolsData.push(res.data.Data.SymbolList.slice(0, 50))
         })
         .catch((error) => {
             console.error(error)
@@ -101,7 +101,7 @@ function fetchProducts() {
 async function fetchData() { 
     await fetchSymbols()
     setTimeout(async () => {
-        await fetchProducts()
+       await fetchProducts()
     }, 1000)
 }
 
