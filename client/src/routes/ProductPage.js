@@ -62,19 +62,19 @@ export default function ProductPage() {
                                                     <>
                                                         {
                                                             data.Data.ProductList.map((product) => (
-                                                                    <>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <img src={product.Photo} height="100px" />
-                                                                            </td>
-                                                                            <td>
-                                                                                {product.Symbol}
-                                                                            </td>
-                                                                            <td>
-                                                                                {product.Description}
-                                                                            </td>
-                                                                        </tr>
-                                                                    </>
+                                                                <>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <img src={product.Photo} height="100px" />
+                                                                        </td>
+                                                                        <td>
+                                                                            {product.Symbol}
+                                                                        </td>
+                                                                        <td>
+                                                                            {product.Description}
+                                                                        </td>
+                                                                    </tr>
+                                                                </>
                                                                 )
                                                             )
                                                         }
