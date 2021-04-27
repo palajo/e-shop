@@ -19,12 +19,12 @@ body {
     line-height: 20px;
 
     font-weight: 400;
-    color: #666;
+    color: $darkgray;
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
 
-    background: #f0f0f0;
+    background: $bodyBackground;
 }
 
 
@@ -37,42 +37,42 @@ h1 {
     line-height: 42px;
 
     font-weight: 600;
-    color: #000;
+    color: $black;
 }
 h2 {
     font-size: 30px;
     line-height: 36px;
 
     font-weight: 600;
-    color: #000;
+    color: $black;
 }
 h3 {
     font-size: 24px;
     line-height: 30px;
 
     font-weight: 600;
-    color: #000;
+    color: $black;
 }
 h4 {
     font-size: 18px;
     line-height: 24px;
 
     font-weight: 500;
-    color: #000;
+    color: $black;
 }
 h5 {
     font-size: 14px;
     line-height: 20px;
 
     font-weight: 600;
-    color: #000;
+    color: $black;
 }
 p {
     font-size: 14px;
     line-height: 20px;
 
     font-weight: 400;
-    color: #666;
+    color: $darkgray;
 
     margin-bottom: 15px;
 
@@ -90,13 +90,13 @@ b, strong {
 /* link */
 a {
     font-weight: 500;
-    color: #004F98;
+    color: $blue;
     text-decoration: none;
 
     transition: 0.1s ease;
 
     &:hover {
-        color: #0367C3;
+        color: $blueHover;
     }
 
     &.link-icon {
@@ -108,12 +108,28 @@ a {
             height: 14px;
 
             margin-right: 10px;
-            background: #004F98;
+            background: $blue;
         }
 
         &:hover {
             .icon {
-                background: #0367C3;
+                background: $blueHover;
+            }
+        }
+
+        &.white {
+            color: $white;
+
+            .icon {
+                background: $white;
+            }
+
+            &:hover {
+                color: $whiteHover;
+                
+                .icon {
+                    background: $whiteHover;
+                }
             }
         }
     }
@@ -127,12 +143,12 @@ a {
             height: 12px;
 
             margin-left: 10px;
-            background: #004F98;
+            background: $blue;
         }
 
         &:hover {
             .icon {
-                background: #0367C3;
+                background: $blueHover;
             }
         }
     }
@@ -150,14 +166,15 @@ button.button {
 
     padding: 0 20px;
 
-    background: #004F98;
+    background: $blue;
     border-radius: 5px;
 
+    font-family : inherit;
     font-size: 14px;
     line-height: 20px;
 
     font-weight: 600;
-    color: #fff;
+    color: $white;
 
     border: none;
     outline: none;
@@ -165,7 +182,7 @@ button.button {
     transition: 0.2s ease;
 
     &:hover {
-        background: #0367C3;
+        background: $blueHover;
     }
 
     &.button-small {
@@ -181,31 +198,104 @@ button.button {
         
         .icon {
             margin: 0 auto;
-            background: #fff;
+            background: $white;
         }
 
         &.button-icon-small {
             width: 42px;
             height: 36px;
         }
+
+        &.button-icon-text {
+            display: flex;
+            align-items: center;
+
+            width: auto;
+            padding: 0 15px;
+
+            font-size: 12px;
+            line-height: 18px;
+
+            font-weight: 600;
+            color: $white;
+
+            text-transform: uppercase;
+
+            .icon {
+                width: 18px;
+                height: 18px;
+                margin-right: 10px;
+            }
+        }
+
+        &.transparent {
+            background: $transparent;
+
+            &:hover {
+                background: $transparentHover;
+            }
+        }
     }
 }
 /* ------------------------------------------------------- */
+
+
+/* select */
+select {
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: transparent;
+    background-image: url("data:image/svg+xml,%0A%3Csvg width='5' height='5' viewBox='0 0 5 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.96429 4.10079L4.86563 1.32348C4.9535 1.19522 5 1.06599 5 0.958571C5 0.7509 4.83333 0.622437 4.55434 0.622437L0.445008 0.622437C0.166347 0.622437 0 0.750738 0 0.957923C0 1.0655 0.046545 1.19267 0.134656 1.32121L2.03595 4.09982C2.15842 4.27851 2.32323 4.37747 2.50022 4.37747C2.67709 4.37751 2.84186 4.27968 2.96429 4.10079Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: 5px;
+    background-position-x: 100%;
+    background-position-y: 4px;
+
+    border: none;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    color: $black;
+
+    padding-right: 8px;
+    transition: 0.1s ease;
+
+    &.white {
+        color: $white;
+
+        option {
+            color: $black;
+        }
+        
+        &:hover {
+            color: $whiteHover;
+        }
+    }
+}
+/* ------------------------------------------------------- */
+
 
 /* container, row */
 .container {
     width: 100%;
 
-    max-width: 1440px;
+    max-width: 1470px;
     margin: 0 auto;
 
-    padding-left: 30px;
-    padding-right: 30px;
-}
-.row {
-    display: flex;
-    flex-wrap: wrap;
+    padding-left: 15px;
+    padding-right: 15px;
 
-    width: 100%;
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    
+        width: 100%;
+    }
 }
+
 /* ------------------------------------------------------- */

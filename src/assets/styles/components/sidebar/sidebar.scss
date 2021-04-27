@@ -1,0 +1,67 @@
+.sidebar {
+    ul.sidebar-nav {
+        background: #fff;
+        border-radius: 10px;
+
+        margin-bottom: 0;
+        list-style: none;
+
+        li.sidebar-nav-item {
+
+            &:last-child {
+                a.category-nav-link {
+                    border-bottom: 0;
+                }
+            }
+
+            a.sidebar-nav-link {
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                width: 100%;
+                padding: 15px 50px 15px 20px;
+
+                color: $black;
+                font-weight: 500;
+                line-height: 20px;
+
+                border-bottom: 1px solid #EAEAEA;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+
+                    width: 12px;
+                    height: 12px;
+
+                    right: 20px;
+                    
+                    background: $blue;
+
+                    mask: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M9.17405 6.59406L4.01424 11.7537C3.68601 12.0821 3.15385 12.0821 2.82578 11.7537C2.49769 11.4256 2.49769 10.8935 2.82578 10.5654L7.39142 5.99991L2.82591 1.43457C2.49782 1.10635 2.49782 0.574263 2.82591 0.24617C3.15401 -0.0820565 3.68615 -0.0820565 4.01437 0.24617L9.17419 5.4059C9.33823 5.57002 9.42016 5.7849 9.42016 5.99989C9.42016 6.21498 9.33807 6.43002 9.17405 6.59406Z' fill='%23004F98'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='12' height='12' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+                    mask-size: contain;
+                    mask-position: center;
+                    mask-repeat: no-repeat;
+                }
+
+                .icon {
+                    width: 18px;
+                    height: 18px;
+
+                    margin-right: 12px;
+                    background: $blue;
+                }
+
+                &:hover {
+                    background: $sidebarHover;
+
+                    .icon,
+                    &::after {
+                        background: $blueHover;
+                    }
+                }
+            }
+        }
+    }
+}

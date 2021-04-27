@@ -1,0 +1,161 @@
+header {
+    background: $bluedark;
+    color: $white;
+
+    .header-top {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 40px;
+
+        font-size: 12px;
+
+        border-bottom: 1px solid $transparent;
+
+        .container {
+            .row {
+                justify-content: space-between;
+
+                .left-block {
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .header-block {
+                        margin-right: 40px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                .right-block {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    .header-block {
+                        margin-right: 40px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        a.link-icon {
+                            font-size: 12px;
+                        }
+
+                        .header-option {
+                            label {
+                                margin-right: 10px;
+                                color: $searchPlaceholder;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header-bottom {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 80px;
+
+        .container {
+            .row {
+                justify-content: space-between;
+
+                .left-block {
+                    display: flex;
+                    justify-content: flex-start;
+                    width: 30%;
+
+                    .header-block {
+                        margin-right: 15px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        .logo {
+                            width: 160px;
+                            height: 40px;
+    
+                            background: $transparent;
+                            border-radius: 5px;
+    
+    
+                            line-height: 40px;
+                            color: #fff;
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .center-block {
+                    display: flex;
+                    justify-content: center;
+                    width: 40%;
+
+                    .search-bar {
+                        position: relative;
+                        max-width: 540px;
+                        width: 100%;
+
+                        input.search-input {
+                            width: 100%;
+                            height: 40px;
+
+                            padding: 0 60px 0 20px;
+                            
+                            border: none;
+                            outline: none;
+                            border-radius: 5px;
+
+                            background: $transparent;
+                            color: #fff;
+
+                            transition: 0.2s ease;
+
+                            &::placeholder {
+                                color: $searchPlaceholder;
+                            }
+
+                            &:hover {
+                                background: rgba(255, 255, 255, 0.1);
+                            }
+
+                            &:focus {
+                                box-shadow: 0px 0px 4px 0px rgba(3,103,195,1);
+                            }
+                        }
+
+                        button.search-submit {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: 60px;
+                        }
+                    }
+                }
+
+                .right-block {
+                    display: flex;
+                    justify-content: flex-end;
+                    width: 30%;
+                    
+                    .header-block {
+                        margin-right: 15px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

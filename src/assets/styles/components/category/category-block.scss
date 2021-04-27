@@ -1,0 +1,49 @@
+.category-block {
+    width: 20%;
+
+    padding: 30px 20px;
+    height: auto;
+
+    border-right: 1px solid #eaeaea;
+
+    &:last-child {
+        border-right: 0;
+    }
+
+    .category-image {
+        padding: 0 10px;
+        margin-bottom: 30px;
+
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 120px;
+
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    .category-title {
+        margin-bottom: 10px;
+
+        a {
+            font-size: 16px;
+            line-height: 24px;
+    
+            font-weight: 600;
+            color: #000;
+
+            &:hover {
+                color: #0367C3;
+            }
+        }
+    }
+
+    .category-description {
+        font-size: 12px;
+        line-height: 18px;
+
+        margin-bottom: 20px;
+    }
+}

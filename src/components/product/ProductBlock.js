@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -7,11 +9,13 @@ export default function ProductBlock() {
     return (
         <div className="product-block">
             <div className="product-image">
-                <img src={ProductImage} />
+                <NavLink to="#">
+                    <img src={ProductImage} />
+                </NavLink>
             </div>
             <div className="product-title">
+                <span>CONQUER ELECTRONIC</span><br />
                 <NavLink to="#">
-                    <span>CONQUER ELECTRONIC</span><br />
                     ABE 25A 250V
                 </NavLink>
             </div>

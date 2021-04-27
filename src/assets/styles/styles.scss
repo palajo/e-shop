@@ -1,7 +1,11 @@
+@import './const.scss';
 @import './icons.scss';
 @import './global.scss';
 
 @import './components/header/header.scss';
+@import './components/layout/layout.scss';
 @import './components/section/section.scss';
+@import './components/sidebar/sidebar.scss';
 
 @import './components/product/product-block.scss';
+@import './components/category/category-block.scss';
