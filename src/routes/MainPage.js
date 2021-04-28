@@ -18,74 +18,74 @@ export default function MainPage() {
                         <div className="sidebar-block">
                             <ul className="sidebar-nav">
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Semiconductors
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Embedded and IoT systems
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Optoelectronics
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Light sources
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Passives
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Connectors
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Fuses and Circuit Breakers
                                     </NavLink>
                                 </li>
 
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Switches and Indicators
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Sound Sources
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Relays and Contactors
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Transformers and Ferrite Cores
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/catalog" className="sidebar-nav-link">
                                         <div className="icon processor"></div>
                                         Pneumatics
                                     </NavLink>
@@ -165,7 +165,7 @@ export default function MainPage() {
                                     <div className="icon processor"></div>
                                     Popular products
                                 </div>
-                                <NavLink to="#" className="link-more">
+                                <NavLink to="/catalog/category" className="link-more">
                                     Show more
                                     <div className="icon menu-arrow-right"></div>
                                 </NavLink>
@@ -184,7 +184,7 @@ export default function MainPage() {
                                     <div className="icon processor"></div>
                                     Recommended products
                                 </div>
-                                <NavLink to="#" className="link-more">
+                                <NavLink to="/catalog/category" className="link-more">
                                     Show more
                                     <div className="icon menu-arrow-right"></div>
                                 </NavLink>

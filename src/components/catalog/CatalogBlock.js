@@ -47,12 +47,12 @@ export default function CatalogBlock() {
     return (
         <div className="catalog-block">
             <div className="catalog-image">
-                <NavLink to="#">
+                <NavLink to="/catalog/category">
                     <img src={CatalogImage} />
                 </NavLink>
             </div>
             <div className="catalog-title">
-                <NavLink to="#">
+                <NavLink to="/catalog/category">
                     Semiconductors
                 </NavLink>
             </div>
@@ -61,7 +61,7 @@ export default function CatalogBlock() {
                     {
                         subcategories.slice(0, value).map((subcategory, index) => (
                             <li className="subcategories-item" key={index}>
-                                <NavLink to="#" className="subcategories-link">
+                                <NavLink to="/catalog/category" className="subcategories-link">
                                     {subcategory.title}
                                 </NavLink>
                             </li>

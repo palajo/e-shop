@@ -54,9 +54,11 @@ export default function Header() {
                                 </button>
                             </div>
                             <div className="header-block">
-                                <div className="logo">
-                                    logo
-                                </div>
+                                <NavLink to="/">
+                                    <div className="logo">
+                                        logo
+                                    </div>
+                                </NavLink>
                             </div>
                             <div className="header-block">
                                 <button className="button button-icon button-icon-text">

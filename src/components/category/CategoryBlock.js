@@ -9,12 +9,12 @@ export default function CategoryBlock() {
     return (
         <div className="category-block">
             <div className="category-image">
-                <NavLink to="#">
+                <NavLink to="/catalog">
                     <img src={CategoryImage} />
                 </NavLink>
             </div>
             <div className="category-title">
-                <NavLink to="#">
+                <NavLink to="/catalog">
                     ABE 25A 250V
                 </NavLink>
             </div>
