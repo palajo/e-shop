@@ -4,7 +4,13 @@
     padding: 30px 20px;
     height: auto;
 
+    background: $white;
     border-right: 1px solid #eaeaea;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+        border-bottom: 1px solid $blueHover;
+    }
 
     &:last-child {
         border-right: 0;
@@ -27,7 +33,7 @@
     .product-title {
         margin-bottom: 15px;
 
-        span {
+        div {
             font-size: 12px;
             line-height: 12px;
 

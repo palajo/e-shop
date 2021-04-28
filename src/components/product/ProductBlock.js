@@ -14,7 +14,9 @@ export default function ProductBlock() {
                 </NavLink>
             </div>
             <div className="product-title">
-                <span>CONQUER ELECTRONIC</span><br />
+                <div>
+                    CONQUER ELECTRONIC
+                </div>
                 <NavLink to="#">
                     ABE 25A 250V
                 </NavLink>
