@@ -121,12 +121,6 @@ export default function CategoryPage() {
     const subcategories = [];
     for (var x = 0; x < 14; x++) {
         subcategories.push(<SubcategoryBlock key={x} />);
-
-        
-        if (x === 6) {
-            subcategories.push(<div className="divider" key={x}></div>)
-            continue;
-        }
     };
     
 

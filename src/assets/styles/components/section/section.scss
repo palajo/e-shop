@@ -42,7 +42,6 @@ section.products-container {
     }
 }
 section.subcategories-container {
-    padding: 20px 0;
     background: $white;
     border-radius: 10px;
 
@@ -50,14 +49,6 @@ section.subcategories-container {
     flex-wrap: wrap;
 
     margin-bottom: 30px;
-
-    .divider {
-        width: calc(100% + 40px);
-        height: 1px;
-    
-        margin: 30px -20px;
-        background: $lightgray;
-    }
 }
 section.page-container {
     background: $white;

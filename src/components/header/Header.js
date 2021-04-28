@@ -25,7 +25,7 @@ export default function Header() {
                             <div className="header-block">
                                 <div className="header-option">
                                     <label htmlFor="language">Language:</label>
-                                    <select name="language" id="language" className="white">
+                                    <select name="language" id="language" className="white small">
                                         <option value="English">EN</option>
                                         <option value="Ukrainian">UA</option>
                                     </select>
@@ -34,7 +34,7 @@ export default function Header() {
                             <div className="header-block">
                                 <div className="header-option">
                                     <label htmlFor="currency">Currency:</label>
-                                    <select name="currency" id="currency" className="white">
+                                    <select name="currency" id="currency" className="white small">
                                         <option value="USD">USD</option>
                                         <option value="UAH">UAH</option>
                                     </select>
