@@ -5,15 +5,24 @@
     height: auto;
 
     background: $white;
-    border-right: 1px solid #eaeaea;
-    border-bottom: 1px solid transparent;
+    
+    border-right: 1px solid $lightgray;
+    border-bottom: 1px solid $lightgray;
 
     &:hover {
         border-bottom: 1px solid $blueHover;
     }
 
-    &:last-child {
+    &:nth-child(5n) {
         border-right: 0;
+    }
+
+    &:nth-last-child(-n + 5) {
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            border-bottom: 1px solid $blueHover;
+        }
     }
 
     .product-image {

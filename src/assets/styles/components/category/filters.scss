@@ -1,0 +1,206 @@
+.filters-block {
+    width: 100%;
+    padding: 30px;
+    border-bottom: 1px solid $lightgray;
+
+    &.hidden {
+        button.filters-button {
+            &::before {
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    button.filters-button {
+        cursor: pointer;
+        position: relative;
+
+        display: inline-block;
+        width: 100%;
+
+        padding: 10px 0;
+
+        background: none;
+        border: none;
+        outline: none;
+
+        font-family: inherit;
+        font-size: 14px;
+        line-height: 20px;
+
+        color: $black;
+        font-weight: 500;
+
+        text-align: left;
+
+        span {
+            color: $gray;
+            font-weight: 400;
+        }
+
+        &:hover {
+            color: $blueHover;
+
+            &::before {
+                background: $blueHover;
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 12px;
+            height: 100%;
+
+            background: $blue;
+
+            mask: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M5.40594 9.17418L0.246289 4.01436C-0.0820967 3.68613 -0.0820967 3.15397 0.246289 2.8259C0.574382 2.49781 1.10652 2.49781 1.43458 2.8259L6.00009 7.39154L10.5654 2.82604C10.8937 2.49794 11.4257 2.49794 11.7538 2.82604C12.0821 3.15413 12.0821 3.68627 11.7538 4.01449L6.5941 9.17431C6.42998 9.33836 6.2151 9.42029 6.00011 9.42029C5.78502 9.42029 5.56998 9.3382 5.40594 9.17418Z' fill='%23004F98'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='12' height='12' fill='white' transform='translate(12) rotate(90)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+            mask-size: contain;
+            mask-position: center;
+            mask-repeat: no-repeat;
+
+            transform: rotate(180deg);        
+            transition: 0.2s ease;
+        }
+    }
+
+    .filters-container {
+        margin-top: 5px;
+
+        .filters-search {
+            margin-bottom: 15px;
+
+            .filter-search-input {
+                width: 100%;
+                height: 36px;
+
+                padding: 0 15px;
+
+                border-radius: 5px;
+                border: 1px solid $lightgray;
+                outline: none;
+
+                font-size: 12px;
+                color: $black;
+
+                transition: 0.1s ease;
+
+                &::placeholder {
+                    color: $gray;
+                }
+
+                &:focus {
+                    box-shadow: 0px 0px 3px 0px rgba(3,103,195,1);
+
+                    &:hover {
+                        border: 1px solid $lightgray;
+                    }
+                }
+
+                &:hover {
+                    border: 1px solid $lightgrayHover;
+                }
+            }
+        }
+        ul.filters-nav{
+            width: 100%;
+            height: 240px;
+
+            overflow-y: auto;
+
+            margin-bottom: 0;
+            list-style: none;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+            &::-webkit-scrollbar-track {
+                background: $lightgray;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $blue;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background: $blueHover;
+            }
+
+            li.filters-nav-item {
+                .filters-nav-link {
+                    padding: 5px 20px 5px 0;
+
+                    display: flex;
+                    align-items: center;
+
+                    input.custom-checkbox {
+                        cursor: pointer;
+                        position: relative;
+
+                        width: 18px;
+                        height: 18px;
+
+                        border: 1px solid $lightgray;
+                        border-radius: 5px;
+
+                        -webkit-appearance: none;
+
+                        &:checked {
+                            background: $blue;
+                            border: 1px solid $blue;
+                            transition: 0.1s ease;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+
+                                top: 3px;
+                                left: 3px;
+
+                                width: 10px;
+                                height: 10px;
+
+                                background: $white;
+
+                                mask: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjQ1LjcwMXB4IiBoZWlnaHQ9IjQ1LjdweCIgdmlld0JveD0iMCAwIDQ1LjcwMSA0NS43IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NS43MDEgNDUuNzsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQoJPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0yMC42ODcsMzguMzMyYy0yLjA3MiwyLjA3Mi01LjQzNCwyLjA3Mi03LjUwNSwwTDEuNTU0LDI2LjcwNGMtMi4wNzItMi4wNzEtMi4wNzItNS40MzMsMC03LjUwNA0KCQkJYzIuMDcxLTIuMDcyLDUuNDMzLTIuMDcyLDcuNTA1LDBsNi45MjgsNi45MjdjMC41MjMsMC41MjIsMS4zNzIsMC41MjIsMS44OTYsMEwzNi42NDIsNy4zNjhjMi4wNzEtMi4wNzIsNS40MzMtMi4wNzIsNy41MDUsMA0KCQkJYzAuOTk1LDAuOTk1LDEuNTU0LDIuMzQ1LDEuNTU0LDMuNzUyYzAsMS40MDctMC41NTksMi43NTctMS41NTQsMy43NTJMMjAuNjg3LDM4LjMzMnoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==");
+                                mask-size: contain;
+                                mask-position: center;
+                                mask-repeat: no-repeat;
+                            }
+                            &:hover {
+                                border: 1px solid $blueHover;
+                                background: $blueHover;
+                            }
+                        }
+                    }
+
+                    label {
+                        width: calc(100% - 18px);
+                        cursor: pointer;
+                        padding-left: 10px;
+
+                        font-size: 12px;
+                        line-height: 20px;
+
+                        color: $black;
+                        font-weight: 400;
+
+                        span {
+                            margin-left: 3px;
+                            color: $gray;
+                        }
+                    }
+
+                    &:hover {
+                        label {
+                            color: $blueHover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -47,8 +47,11 @@ header {
 
                         .header-option {
                             label {
-                                margin-right: 10px;
+                                margin-right: 5px;
                                 color: $searchPlaceholder;
+                            }
+                            select {
+                                font-size: 12px;
                             }
                         }
                     }

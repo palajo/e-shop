@@ -4,8 +4,8 @@
     padding: 30px 20px;
     height: auto;
 
-    border-right: 1px solid #eaeaea;
-    border-bottom: 1px solid transparent;
+    border-right: 1px solid $lightgray;
+    border-bottom: 1px solid $lightgray;
 
     &:hover {
         border-bottom: 1px solid $blueHover;
@@ -13,6 +13,10 @@
 
     &:last-child {
         border-right: 0;
+    }
+
+    &:nth-child(-n + 5) {
+        border-bottom: 0;
     }
 
     .category-image {

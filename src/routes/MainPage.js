@@ -7,6 +7,7 @@ import ProductBlock from '../components/product/ProductBlock';
 import SliderCategoryBlock from '../components/slider/SliderCategoryBlock';
 
 import SliderBackground from '../assets/images/slider-background.jpg';
+import AboutImage from '../assets/images/about-image.jpg';
 
 export default function MainPage() {
     return (
@@ -209,6 +210,26 @@ export default function MainPage() {
                                 <CategoryBlock />
                                 <CategoryBlock />
                                 <CategoryBlock />
+                            </div>
+                        </section>
+                        <section className="about-container">
+                            <div className="about-container-body">
+                                <div className="about-container-content">
+                                    <h2 className="container-title">
+                                        About us
+                                    </h2>
+                                    <p className="container-description">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+                                    </p>
+                                    <NavLink to="#" className="container-link">
+                                        <button className="button">
+                                            Contact us
+                                        </button>
+                                    </NavLink>
+                                </div>
+                                <div className="about-container-image">
+                                    <img src={AboutImage} />
+                                </div>
                             </div>
                         </section>
                     </main>

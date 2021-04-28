@@ -1,0 +1,20 @@
+.sort-block {
+    label {
+        margin-right: 5px;
+        color: $gray;
+    }
+
+    select {
+        padding: 0 10px;
+
+        width: auto;
+        height: 36px;
+
+        font-weight: 400;
+        color: $black;
+
+        border-radius: 5px;
+        border: 1px solid $lightgray;
+        
+    }
+}

@@ -76,7 +76,7 @@ p {
 
     margin-bottom: 15px;
 
-    &:last-child {
+    &:last-of-type {
         margin-bottom: 0;
     }
 }
@@ -244,36 +244,26 @@ button.button {
 select {
     cursor: pointer;
 
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    background: transparent;
-    background-image: url("data:image/svg+xml,%0A%3Csvg width='5' height='5' viewBox='0 0 5 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.96429 4.10079L4.86563 1.32348C4.9535 1.19522 5 1.06599 5 0.958571C5 0.7509 4.83333 0.622437 4.55434 0.622437L0.445008 0.622437C0.166347 0.622437 0 0.750738 0 0.957923C0 1.0655 0.046545 1.19267 0.134656 1.32121L2.03595 4.09982C2.15842 4.27851 2.32323 4.37747 2.50022 4.37747C2.67709 4.37751 2.84186 4.27968 2.96429 4.10079Z' fill='white'/%3E%3C/svg%3E%0A");
-    background-repeat: no-repeat;
-    background-size: 5px;
-    background-position-x: 100%;
-    background-position-y: 4px;
-
     border: none;
     outline: none;
 
     font-family: inherit;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
-    color: $black;
+    color: $blue;
 
-    padding-right: 8px;
     transition: 0.1s ease;
 
+    option {
+        color: $black;
+    }
+
     &.white {
+        background: none;
         color: $white;
 
         option {
             color: $black;
-        }
-        
-        &:hover {
-            color: $whiteHover;
         }
     }
 }
@@ -297,5 +287,4 @@ select {
         width: 100%;
     }
 }
-
 /* ------------------------------------------------------- */
