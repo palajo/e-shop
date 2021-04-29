@@ -9,6 +9,10 @@
 
     &:nth-last-of-type(-n + 7) {
         border-bottom: 1px solid transparent;
+        
+        &:hover {
+            border-bottom: 1px solid $blueHover;
+        }
     }
 
     &:nth-child(7n) {

@@ -2,7 +2,6 @@
     width: 20%;
 
     padding: 30px 20px;
-    height: auto;
 
     background: $white;
     
@@ -42,11 +41,11 @@
     }
 
     .product-title {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
 
         div {
             font-size: 12px;
-            line-height: 12px;
+            line-height: 18px;
 
             font-weight: 600;
             color: #004F98;
@@ -67,7 +66,7 @@
 
     .product-description {
         font-size: 12px;
-        line-height: 18px;
+        line-height: 20px;
 
         margin-bottom: 15px;
     }
@@ -79,43 +78,65 @@
     .product-price {
         width: 100%;
 
-        .price-row {
-            position: relative;
-            z-index: 1;
+        table.price-range {
+            width: 100%;
 
-            display: flex;
-            justify-content: space-between;
+            border-collapse: collapse;
+            text-align: left;
 
-            line-height: 18px;
-            margin: 3px 0;
+            tbody {
+                tr {
+                    th {
+                        position: relative;
+                        
+                        font-size: 12px;
+                        line-height: 24px;
 
-            &::before {
-                content: '';
-                position: absolute;
+                        color: $gray;
+                        font-weight: 400;
 
-                top: 9px;
-                left: 0;
+                        width: 50%;
 
-                width: 100%;
-                height: 1px;
+                        div {
+                            position: relative;
+                            z-index: 1;
 
-                background: #eaeaea;
-                z-index: -1;
-            }
+                            background: $white;
+                            padding-right: 10px;
 
-            .price-quantity {
-                font-size: 12px;
-                background: #fff;
+                            width: fit-content;
+                        }
 
-                padding-right: 10px;
-            }
+                        &::before {
+                            content: '';
+                            position: absolute;
 
-            .price-value {
-                font-weight: 500;
-                color: #004F98;
+                            top: 12px;
+                            left: 0;
 
-                background: #fff;
-                padding-left: 10px;
+                            width: 100%;
+                            height: 1px;
+
+                            background: $lightgray;
+
+                        }    
+
+                    }
+                    td {
+                        width: 50%;
+
+                        font-size: 14px;
+                        line-height: 24px;
+
+                        color: $blue;
+                        font-weight: 500;
+
+                        div {
+                            background: $white;
+                            padding-left: 10px;
+                        }
+                    }
+                }
             }
         }
     }

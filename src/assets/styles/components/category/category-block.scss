@@ -18,7 +18,11 @@
     }
 
     &:nth-child(-n + 5) {
-        border-bottom: 0;
+        border-bottom: 1px solid transparent;
+        
+        &:hover {
+            border-bottom: 1px solid $blueHover;
+        }
     }
 
     .category-image {
@@ -53,7 +57,7 @@
 
     .category-description {
         font-size: 12px;
-        line-height: 18px;
+        line-height: 20px;
 
         margin-bottom: 20px;
     }

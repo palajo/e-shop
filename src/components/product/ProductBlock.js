@@ -9,7 +9,7 @@ export default function ProductBlock() {
     return (
         <div className="product-block">
             <div className="product-image">
-                <NavLink to="#">
+                <NavLink to="/catalog/category/product">
                     <img src={ProductImage} />
                 </NavLink>
             </div>
@@ -17,7 +17,7 @@ export default function ProductBlock() {
                 <div>
                     CONQUER ELECTRONIC
                 </div>
-                <NavLink to="#">
+                <NavLink to="/catalog/category/product">
                     ABE 25A 250V
                 </NavLink>
             </div>
@@ -26,30 +26,46 @@ export default function ProductBlock() {
             </div>
             <div className="product-block-row">
                 <div className="product-price">
-                    <div className="price-row">
-                        <div className="price-quantity">
-                            1x
-                        </div>
-                        <div className="price-value">
-                            3.99$
-                        </div>
-                    </div>
-                    <div className="price-row">
-                        <div className="price-quantity">
-                            10x
-                        </div>
-                        <div className="price-value">
-                            3.49$
-                        </div>
-                    </div>
-                    <div className="price-row">
-                        <div className="price-quantity">
-                            100x
-                        </div>
-                        <div className="price-value">
-                            2.89$
-                        </div>
-                    </div>       
+                    <table className="price-range">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <div>
+                                        5x
+                                    </div>
+                                </th>
+                                <td>
+                                    <div>
+                                        3.99$
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div>
+                                        25x
+                                    </div>
+                                </th>
+                                <td>
+                                    <div>
+                                        3.29$
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <div>
+                                        100x
+                                    </div>
+                                </th>
+                                <td>
+                                    <div>
+                                        2.89$
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div className="product-add-to-cart">
                     <button className="button button-icon button-icon-small">

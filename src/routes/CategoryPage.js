@@ -108,6 +108,33 @@ export default function CategoryPage() {
                     filterQuantity: 231
                 },
             ]
+        },
+        {
+            id: 3,
+            filterTitle: "Type",
+            filterQuantity: 2184,
+            filters: [
+                {
+                    filterTitle: "AC switch",
+                    filterQuantity: 7
+                },
+                {
+                    filterTitle: "BOD",
+                    filterQuantity: 10
+                },
+                {
+                    filterTitle: "FLC",
+                    filterQuantity: 35
+                },
+                {
+                    filterTitle: "SBS",
+                    filterQuantity: 212
+                },
+                {
+                    filterTitle: "Sidak",
+                    filterQuantity: 67
+                }
+            ]
         }
     ]
 

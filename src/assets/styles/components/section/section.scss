@@ -209,3 +209,16 @@ section.category-container {
         }
     }
 }
+
+section.product-container {
+    width: 100%;
+    background: $white;
+    
+    border-radius: 10px;
+
+    .product-container-row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
