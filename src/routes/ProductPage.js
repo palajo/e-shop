@@ -1,11 +1,59 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+
+import $ from 'jquery';
 
 import ProductImage from '../assets/images/product-image.png'
 
 export default function ProductPage() {
+
+    const prices = [
+        {
+            id: 1,
+            quantity: 5,
+            price: 3.99
+        },
+        {
+            id: 2,
+            quantity: 25,
+            price: 3.79
+        },
+        {
+            id: 3,
+            quantity: 50,
+            price: 3.49
+        },
+        {
+            id: 4,
+            quantity: 75,
+            price: 3.19
+        },
+        {
+            id: 5,
+            quantity: 100,
+            price: 2.89
+        }
+    ]
+
+    useEffect(() => {
+        $(document).ready(function() {
+            $('.product-tabs-nav-link').click(function() {
+                $('.product-tabs-nav-link').removeClass('active');
+                $('.product-tab-pane').removeClass('active');
+
+                $(this).addClass('active');
+
+                var tabId = $(this).attr('id');
+                $('#' + tabId + '-tab').addClass('active');
+            })
+        })
+    }, []);
+
+    const [value, setValue] = useState(3);
+    const [showButton, setShowButton] = useState(true);
+
     return (
         <div id="wrapper">
             <div className="container">
@@ -113,48 +161,32 @@ export default function ProductPage() {
                                         </h5>
                                         <table className="price-range">
                                             <tbody>
-                                                <tr>
-                                                    <th>
-                                                        <div>
-                                                            5x
-                                                        </div>
-                                                    </th>
-                                                    <td>
-                                                        <div>
-                                                            $3.99
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>
-                                                        <div>
-                                                            25x
-                                                        </div>
-                                                    </th>
-                                                    <td>
-                                                        <div>
-                                                            $3.49
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>
-                                                        <div>
-                                                            100x
-                                                        </div>
-                                                    </th>
-                                                    <td>
-                                                        <div>
-                                                            $2.89
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                {
+                                                    prices.slice(0, value).map((price) => (
+                                                        <tr key={price.id}>
+                                                            <th>
+                                                                <div>
+                                                                    {price.quantity}x
+                                                                </div>
+                                                            </th>
+                                                            <td>
+                                                                <div>
+                                                                    ${price.price}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    ))
+                                                }
                                             </tbody>
                                         </table>
-                                        <NavLink to="#" className="link-more">
-                                            Show more
-                                            <div className="icon menu-arrow-bottom"></div>
-                                        </NavLink>
+                                        {
+                                            showButton ? (
+                                                <NavLink to="#" className="link-more" onClick={() => {setValue(10); setShowButton(false)}}>
+                                                    Show more
+                                                    <div className="icon menu-arrow-bottom"></div>
+                                                </NavLink>
+                                            ) : ''
+                                        }
                                     </div>
                                 </div>
                             </div>
