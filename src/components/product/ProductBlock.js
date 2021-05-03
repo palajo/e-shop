@@ -36,7 +36,7 @@ export default function ProductBlock() {
                                 </th>
                                 <td>
                                     <div>
-                                        3.99$
+                                        $3.99
                                     </div>
                                 </td>
                             </tr>
@@ -48,7 +48,7 @@ export default function ProductBlock() {
                                 </th>
                                 <td>
                                     <div>
-                                        3.29$
+                                        $3.29
                                     </div>
                                 </td>
                             </tr>
@@ -60,7 +60,7 @@ export default function ProductBlock() {
                                 </th>
                                 <td>
                                     <div>
-                                        2.89$
+                                        $2.89
                                     </div>
                                 </td>
                             </tr>

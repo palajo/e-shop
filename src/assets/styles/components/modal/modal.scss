@@ -1,0 +1,124 @@
+.modal {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 99;
+
+    .modal-overlay {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+    
+        width: 100%;
+        height: 100%;    
+
+        background: rgba(4, 16, 28, 0.7);
+    }
+
+    .modal-dialog {
+        display: flex;
+        align-items: center;
+
+        height: 100%;
+        width: 100%;
+        max-width: 960px;
+
+        margin: 0 auto;
+
+        .modal-content {
+            position: relative;
+            z-index: 1;
+
+            width: 100%;
+            background: $white;
+            
+            border-radius: 10px;
+
+            animation: modalFadeOut 0.3s ease;
+            animation-fill-mode: forwards;
+
+            .modal-header {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+
+                width: 100%;
+                height: 70px;
+
+                padding: 0 30px;
+
+                border-bottom: 1px solid $lightgray;
+
+                .modal-title {
+                    font-size: 24px;
+                    line-height: 30px;
+
+                    color: $black;
+                    font-weight: 500;
+                }
+
+                .modal-close {
+                    cursor: pointer;
+
+                    width: 18px;
+                    height: 18px;
+
+                    .icon {
+                        width: 18px;
+                        height: 18px;
+
+                        background: $gray;
+                        transition: 0.1s ease;
+
+                        &:hover {
+                            background: $blueHover;
+                        }
+                    }
+                }
+            }
+
+            .modal-body {
+                padding: 20px 60px;
+            }
+
+            .modal-footer {
+                padding: 20px 60px 40px 60px;
+
+                .modal-footer-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+
+                    .modal-footer-block {
+                        margin-right: 40px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@keyframes modalFadeOut {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        transform: scale(1);
+    }
+}

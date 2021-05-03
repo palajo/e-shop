@@ -10,6 +10,7 @@ import CatalogPage from './routes/CatalogPage';
 import CategoryPage from './routes/CategoryPage';
 import ScrollToTop from './ScrollToTop';
 import ProductPage from './routes/ProductPage';
+import CheckoutPage from './routes/CheckoutPage';
 
 function App() {
     return(
@@ -21,6 +22,7 @@ function App() {
                     <Route component={CatalogPage} path="/catalog" exact />
                     <Route component={CategoryPage} path="/catalog/category" exact />
                     <Route component={ProductPage} path="/catalog/category/product" exact />
+                    <Route component={CheckoutPage} path="/checkout" exact />
                 </Switch>
             </ScrollToTop>
         </BrowserRouter>
