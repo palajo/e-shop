@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
+import $ from 'jquery';
 
-import CartProductsTable from './CartProductsTable'
+import CartProductsTable from './CartProductsTable';
 
 export default function CartModal() {
+    
+    useEffect(() => {
+        $(document).ready(function() {
+            $('.button').click(function() {
+                $(this).closest('.modal').fadeOut(0);
+            })
+        })
+    }, []);
+
     return (
         <div className="modal modal-cart" id="cart-modal">
             <div className="modal-overlay"></div>

@@ -1,6 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import $ from 'jquery';
 
 export default function RegisterModal() {
+
+    useEffect(() => {
+        $(document).ready(function() {
+            $('.button').click(function() {
+                $(this).closest('.modal').fadeOut(0);
+            })
+        })
+    }, []);
+
     return (
         <div className="modal modal-register" id="register-modal">
             <div className="modal-overlay"></div>

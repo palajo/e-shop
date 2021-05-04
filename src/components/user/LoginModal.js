@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import $ from 'jquery';
+import { NavLink } from 'react-router-dom';
 
 export default function LoginModal() {
+
+    useEffect(() => {
+        $(document).ready(function() {
+            $('.button').click(function() {
+                $(this).closest('.modal').fadeOut(0);
+            })
+        })
+    }, []);
+
     return (
         <div className="modal modal-login" id="login-modal">
             <div className="modal-overlay"></div>
@@ -45,7 +56,9 @@ export default function LoginModal() {
                                     <div className="register-now">
                                         Don't have an account? <span data-toggle="modal" data-target="register-modal">Register now!</span>
                                     </div>
-                                    <button type="submit" className="button">Login</button>
+                                    <NavLink to="/user">
+                                        <button type="submit" className="button">Login</button>
+                                    </NavLink>
                                 </div>
                             </div>
                         </div>

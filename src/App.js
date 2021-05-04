@@ -16,6 +16,7 @@ import SuccessPage from './routes/SuccessPage';
 import CartModal from './components/cart/CartModal';
 import LoginModal from './components/user/LoginModal';
 import RegisterModal from './components/user/RegisterModal';
+import UserPage from './routes/UserPage';
 
 function App() {
 
@@ -43,6 +44,9 @@ function App() {
                     <Route component={ProductPage} path="/catalog/category/product" exact />
                     <Route component={CheckoutPage} path="/checkout" exact />
                     <Route component={SuccessPage} path="/success" exact />
+
+                    <Route component={UserPage} path="/user" exact />
+
                 </Switch>
                 <CartModal />
                 <LoginModal />
