@@ -28,7 +28,7 @@ function App() {
             });
 
             $('.modal-close, .modal-overlay').click(function() {
-                $(this).closest('.modal').fadeOut(0);
+                $(this).closest('.modal').fadeOut(100);
             });
         })
     }, []);
