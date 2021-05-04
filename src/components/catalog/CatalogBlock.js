@@ -70,10 +70,10 @@ export default function CatalogBlock() {
                 </ul>
                 {
                     showButton ? (
-                        <NavLink to="#" className="link-more" onClick={() => {setValue(10); setShowButton(false)}}>
+                        <button className="link-more" onClick={() => {setValue(10); setShowButton(false)}}>
                             Show more
                             <div className="icon menu-arrow-bottom"></div>
-                        </NavLink>
+                        </button>
                     ) : ''
                 }
                 

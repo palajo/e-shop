@@ -10,50 +10,51 @@
         list-style: none;
 
         li.product-tabs-nav-item {
+            cursor: pointer;
+            display: inline-block;
+
+            padding: 15px 30px;
+            margin: 0 10px;
+
+            font-size: 14px;
+            line-height: 20px;
+
+            font-weight: 500;
+            color: $darkgray;
+
+            border: 1px solid transparent;
+            border-bottom: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+
+            transition: 0.1s ease;
+
+            &.active {
+                color: $blue;
+                border: 1px solid $lightgray;
+                border-bottom: 0;
+
+                background: $white; 
+            }
+
+            &:hover {
+                color: $blueHover;
+            }
+
             &:first-child {
-                a.product-tabs-nav-link {
-                    margin-left: 0;
-                }
+                margin-left: 0;
             }
 
             &:last-child {
-                a.product-tabs-nav-link {
-                    margin-right: 0;
-                }
-            }
-            a.product-tabs-nav-link {
-                display: inline-block;
-
-                padding: 15px 30px;
-                margin: 0 10px;
-
-                font-size: 14px;
-                line-height: 20px;
-
-                font-weight: 500;
-                color: $darkgray;
-
-                border: 1px solid transparent;
-                border-bottom: 0;
-                border-top-left-radius: 10px;
-                border-top-right-radius: 10px;
-
-
-                transition: 0.1s ease;
-
-                &.active {
-                    color: $blue;
-                    border: 1px solid $lightgray;
-                    border-bottom: 0;
-
-                    background: $white; 
-                }
+                margin-right: 0;
             }
         }
     }
 
     .product-tab-content {
         padding: 40px 30px 0 30px;
+        min-height: 300px;
+
         margin-top: -1px;
         border-top: 1px solid $lightgray;
 

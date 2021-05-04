@@ -39,8 +39,8 @@ export default function ProductPage() {
 
     useEffect(() => {
         $(document).ready(function() {
-            $('.product-tabs-nav-link').click(function() {
-                $('.product-tabs-nav-link').removeClass('active');
+            $('.product-tabs-nav-item').click(function() {
+                $('.product-tabs-nav-item').removeClass('active');
                 $('.product-tab-pane').removeClass('active');
 
                 $(this).addClass('active');
@@ -181,10 +181,10 @@ export default function ProductPage() {
                                         </table>
                                         {
                                             showButton ? (
-                                                <NavLink to="#" className="link-more" onClick={() => {setValue(10); setShowButton(false)}}>
+                                                <button className="link-more" onClick={() => {setValue(10); setShowButton(false)}}>
                                                     Show more
                                                     <div className="icon menu-arrow-bottom"></div>
-                                                </NavLink>
+                                                </button>
                                             ) : ''
                                         }
                                     </div>
@@ -195,22 +195,15 @@ export default function ProductPage() {
                         <div className="product-container-row">
                             <div className="product-tabs-container">
                                 <ul className="product-tabs-nav">
-                                    <li className="product-tabs-nav-item">
-                                        <a href="#" className="product-tabs-nav-link active" id="specifications">
-                                            Specifications
-                                        </a>
+                                    <li className="product-tabs-nav-item active" id="specifications">
+                                        Specifications
                                     </li>
-                                    <li className="product-tabs-nav-item">
-                                        <a href="#" className="product-tabs-nav-link" id="technical-information">
-                                            Technical information
-                                        </a>
+                                    <li className="product-tabs-nav-item" id="technical-information">
+                                        Technical information
                                     </li>
-                                    <li className="product-tabs-nav-item">
-                                        <a href="#" className="product-tabs-nav-link" id="additional-information">
-                                            Additional information
-                                        </a>
+                                    <li className="product-tabs-nav-item" id="additional-information">
+                                        Additional information
                                     </li>
-
                                 </ul>
                                 <div className="product-tab-content">
                                     <div className="product-tab-pane active" id="specifications-tab">

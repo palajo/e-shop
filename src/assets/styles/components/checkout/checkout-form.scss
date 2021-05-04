@@ -38,7 +38,7 @@
                 line-height: 18px;
 
                 font-weight: 400;
-                color: $gray;
+                color: $darkgray;
 
                 margin-bottom: 5px;
             }
@@ -62,6 +62,8 @@
                 font-weight: 400;
 
                 -webkit-appearance: none;
+
+                transition: 0.2s ease;
 
                 &::placeholder {
                     color: $gray;
