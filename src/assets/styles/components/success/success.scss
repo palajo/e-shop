@@ -1,0 +1,190 @@
+section.success-container {
+    width: 100%;
+
+    border-radius: 10px;
+    background: $white;
+
+    padding: 40px;
+
+    .success-container-row {
+        display: flex;
+        flex-wrap: wrap;
+
+        width: 100%;
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.justify-content-center {
+            justify-content: center;
+        }
+
+        .success-container-row-title {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+
+            .icon-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 36px;
+                height: 36px;
+
+                border-radius: 5px;
+
+                background: $blue;
+                margin-right: 15px;
+
+                .icon {
+                    background: $white;
+                }
+            }
+
+            h1.container-title {
+                font-size: 24px;
+                line-height: 30px;
+
+                font-weight: 500;
+            }
+        }
+
+        table.order-details {
+            width: 100%;
+            border-collapse: collapse;
+
+            tbody {
+                display: block;
+                max-height: 262px;
+                overflow-y: auto;
+        
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+                &::-webkit-scrollbar-track {
+                    background: $lightgray;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: $blue;
+                    border-radius: 10px;
+                }
+                &::-webkit-scrollbar-thumb:hover {
+                    background: $blueHover;
+                }
+
+                tr {
+                    display: flex;
+                    justify-content: space-between;      
+                    align-items: center;
+
+                    width: 100%;
+                    padding: 15px 60px;
+
+                    border-bottom: 1px solid $lightgray;
+
+                    &:first-child {
+                        border-top: 1px solid $lightgray;
+                    }
+                    td {
+
+                        &.product-image {
+                            img {
+                                height: 50px;
+                                max-width: 100%;
+
+                                object-fit: contain;
+                            }
+                        }
+
+                        &.product-title {
+                            .product-title-title {
+                                a {
+                                    font-size: 14px;
+                                    line-height: 20px;
+
+                                    color: $black;
+                                    font-weight: 500;
+
+                                    &:hover {
+                                        color: $blueHover;
+                                    }
+                                }
+
+                                span {
+                                    margin-left: 5px;
+                                    color: $gray;
+                                    font-weight: 400;
+                                }
+                            }
+                            .product-code {
+                                font-size: 12px;
+                                line-height: 18px;
+
+                                color: $gray;
+                                font-weight: 400;
+                            }
+                        }
+
+                        &.product-total-price {
+                            font-size: 14px;
+                            line-height: 20px;
+
+                            color: $blue;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+
+        table.success-informative-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+
+            tbody {
+                tr {
+
+                    &:first-child {
+                        th {
+                            border-top: 1px solid $lightgray;
+                        }
+                        td {
+                            border-top: 1px solid $lightgray;
+                        }
+                    }
+                    th {
+                        width: 50%;
+
+                        font-weight: 400;
+                        color: $gray;
+
+                        padding: 10px 30px;
+                        border-bottom: 1px solid $lightgray;
+                    }
+
+                    td {
+                        width: 50%;
+
+                        font-weight: 600;
+                        color: $black;
+
+                        padding: 15px 30px;
+
+                        border-bottom: 1px solid $lightgray;
+                    }
+                }
+            }
+        }
+    }
+}

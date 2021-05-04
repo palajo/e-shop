@@ -1,0 +1,138 @@
+.login-form {
+    .login-form-row {
+        display: flex;
+        width: 100%;
+
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .login-form-block {
+            width: 100%;
+
+            label {
+                display: block;
+
+                font-size: 12px;
+                line-height: 18px;
+
+                color: $darkgray;
+                font-weight: 400;
+
+                margin-bottom: 10px;
+
+                &.required {
+                    &::after {
+                        content: '*';
+                        color: #f23030;
+                        margin-left: 2px;
+                    }
+                }
+            }
+
+            input.login-input {
+                width: 100%;
+                height: 40px;
+                padding: 0 15px;
+
+                border-radius: 5px;
+                border: 1px solid $lightgray;
+                outline: none;
+                background: $white;
+
+                font-family: inherit;
+
+                font-size: 14px;
+                line-height: 20px;
+                
+                font-weight: 400;
+                color: $black;
+
+                -webkit-appearance: none;
+                transition: 0.2s ease;
+
+                &::placeholder {
+                    color: $gray;
+                }
+
+                &:focus {
+                    box-shadow: 0px 0px 3px 0px rgba(3,103,195,1);
+                }
+            }
+
+            .custom-checkbox {
+                display: flex;
+                align-items: center;
+                margin: 5px 0;
+
+                &:hover {
+                    label {
+                        color: $blueHover;
+                    }
+                }
+
+                label {
+                    cursor: pointer;
+
+                    color: $black;
+                    margin: 0 0 0 10px;
+                }
+
+                input.login-checkbox {
+                    cursor: pointer;
+
+                    width: 18px;
+                    height: 18px;
+
+                    border-radius: 5px;
+                    border: 1px solid $lightgray;
+
+                    background: $white;
+
+                    -webkit-appearance: none;
+
+                    &:checked {
+                        background: $blue;
+
+                        mask: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjQ1LjcwMXB4IiBoZWlnaHQ9IjQ1LjdweCIgdmlld0JveD0iMCAwIDQ1LjcwMSA0NS43IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0NS43MDEgNDUuNzsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQoJPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0yMC42ODcsMzguMzMyYy0yLjA3MiwyLjA3Mi01LjQzNCwyLjA3Mi03LjUwNSwwTDEuNTU0LDI2LjcwNGMtMi4wNzItMi4wNzEtMi4wNzItNS40MzMsMC03LjUwNA0KCQkJYzIuMDcxLTIuMDcyLDUuNDMzLTIuMDcyLDcuNTA1LDBsNi45MjgsNi45MjdjMC41MjMsMC41MjIsMS4zNzIsMC41MjIsMS44OTYsMEwzNi42NDIsNy4zNjhjMi4wNzEtMi4wNzIsNS40MzMtMi4wNzIsNy41MDUsMA0KCQkJYzAuOTk1LDAuOTk1LDEuNTU0LDIuMzQ1LDEuNTU0LDMuNzUyYzAsMS40MDctMC41NTksMi43NTctMS41NTQsMy43NTJMMjAuNjg3LDM4LjMzMnoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==");
+                        mask-size: 12px;
+                        mask-position: center;
+                        mask-repeat: no-repeat;
+                    }
+                }
+            }
+
+            &.login-submit {
+                margin-top: 15px;
+                text-align: center;
+
+                .register-now {
+                    margin-bottom: 15px;
+                    color: $black;
+
+                    span {
+                        cursor: pointer;
+                        font-size: 14px;
+                        line-height: 20px;
+
+                        font-weight: 500;
+                        color: $blue;
+
+                        transition: 0.1s ease;
+                        
+                        &:hover {
+                            color: $blueHover;
+                        }
+                    }
+                }
+
+                button {
+                    margin: 0 auto;
+                }
+            } 
+           
+        }
+    }
+}

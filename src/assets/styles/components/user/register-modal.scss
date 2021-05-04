@@ -1,0 +1,29 @@
+.modal.modal-register {
+    .modal-dialog {
+        max-width: 720px;
+        
+        .modal-content {
+            padding: 40px; 
+            
+            .modal-header {
+                position: relative;
+                justify-content: center;
+                border-bottom: 0;
+
+                padding: 0;
+                height: auto;
+
+                margin-bottom: 30px;
+
+                .modal-close {
+                    position: absolute;
+                    top: -20px;
+                    right: -20px;
+                }
+            }
+            .modal-body {
+                padding: 0;
+            }
+        }
+    }
+}

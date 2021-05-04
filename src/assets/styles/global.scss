@@ -331,6 +331,10 @@ select {
     padding-left: 30px;
     padding-right: 30px;
 
+    &.narrow {
+        max-width: 840px;
+    }
+
     .row {
         display: flex;
         flex-wrap: wrap;

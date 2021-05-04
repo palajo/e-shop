@@ -9,13 +9,20 @@
     main {
         margin-left: 40px;
         width: calc(100% - 300px - 40px);
-    
-        &>section {
-            margin-bottom: 30px;
-            
-            &:last-child {
-                margin-bottom: 0;
+        
+        &.with-sidebar {
+            &>section {
+                margin-bottom: 30px;
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
             }
+        }
+        
+        &.full-width {
+            margin: 0;
+            width: 100%;
         }
     }
 }

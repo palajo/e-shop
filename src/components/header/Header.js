@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import CartModal from '../cart/CartModal'
 
 export default function Header() {
     return (
@@ -78,12 +77,17 @@ export default function Header() {
                         </div>
                         <div className="right-block">
                             <div className="header-block">
-                                <button className="button button-icon">
+                                <button className="button button-icon" data-toggle="modal" data-target="login-modal">
                                     <div className="icon user"></div>
                                 </button>
                             </div>
                             <div className="header-block">
-                                <CartModal />
+                                <button className="button button-icon cart-button" data-toggle="modal" data-target="cart-modal">
+                                    <div className="icon cart"></div>
+                                    <div className="cart-button-counter">
+                                        5
+                                    </div>
+                                </button>
                             </div>
                         </div>
                     </div>

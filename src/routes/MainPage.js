@@ -138,7 +138,7 @@ export default function MainPage() {
                             </div>
                         </div>
                     </aside>
-                    <main className="content">
+                    <main className="with-sidebar">
                         <section className="slider">
                             <div className="container">
                                 <div className="row">
