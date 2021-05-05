@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-export default function UserPage() {
+export default function UserTopicsPage() {
     return (
         <div id="wrapper">
             <div className="container">
@@ -41,7 +41,7 @@ export default function UserPage() {
                                 </div>
                             </div>
                             <div className="page-container-body">
-                                profile settings
+                                all the topics
                             </div>
                         </section>
                     </main>

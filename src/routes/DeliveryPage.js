@@ -20,7 +20,7 @@ export default function DeliveryPage() {
                             </li>
                         </ul>
                     </section>
-                    <aside className="sidebar">
+                    <aside className="sidebar info-sidebar">
                         <div className="sidebar-block">
                             <ul className="sidebar-nav">
                                 <li className="sidebar-nav-item">

@@ -15,11 +15,13 @@ import SuccessPage from './routes/SuccessPage';
 import CartModal from './components/cart/CartModal';
 import LoginModal from './components/user/LoginModal';
 import RegisterModal from './components/user/RegisterModal';
-import UserPage from './routes/UserPage';
 import ContactsPage from './routes/ContactsPage';
 import AboutPage from './routes/AboutPage';
 import DeliveryPage from './routes/DeliveryPage';
 import PrivacyPolicyPage from './routes/PrivacyPolicyPage';
+import UserOrdersPage from './routes/UserOrdersPage';
+import UserTopicsPage from './routes/UserTopicsPage';
+import UserPage from './routes/UserPage';
 
 function App() {
     return(
@@ -35,6 +37,9 @@ function App() {
                     <Route component={SuccessPage} path="/success" exact />
 
                     <Route component={UserPage} path="/user" exact />
+                    <Route component={UserOrdersPage} path="/user/orders" exact />
+                    <Route component={UserTopicsPage} path="/user/topics" exact />
+
 
                     <Route component={ContactsPage} path="/contacts" exact />
                     <Route component={AboutPage} path="/about-us" exact />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-export default function UserPage() {
+export default function UserOrdersPage() {
     return (
         <div id="wrapper">
             <div className="container">
@@ -37,11 +37,11 @@ export default function UserPage() {
                         <section className="page-container contacts-container">
                             <div className="page-container-header">
                                 <div className="page-container-title">
-                                    My Profile
+                                    My Orders
                                 </div>
                             </div>
                             <div className="page-container-body">
-                                profile settings
+                                orders list
                             </div>
                         </section>
                     </main>
