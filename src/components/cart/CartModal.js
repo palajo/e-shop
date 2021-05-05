@@ -8,7 +8,7 @@ export default function CartModal() {
     
     useEffect(() => {
         $(document).ready(function() {
-            $('.button').click(function() {
+            $("#close-modal").click(function() {
                 $(this).closest('.modal').fadeOut(100);
             })
         })
@@ -40,7 +40,7 @@ export default function CartModal() {
                             </div>
                             <div className="modal-footer-block">
                                 <NavLink to="/checkout">
-                                    <button className="button">
+                                    <button className="button" id="close-modal">
                                         Checkout
                                     </button>
                                 </NavLink>

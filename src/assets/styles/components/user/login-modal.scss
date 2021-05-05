@@ -23,6 +23,39 @@
             }
             .modal-body {
                 padding: 0;
+
+                form {
+                    .form-row {
+                        .form-block {
+                            &.login-submit {
+                                margin-top: 15px;
+                                
+                                .register-now {
+                                    width: 100%;
+                                    text-align: center;
+                                    margin-bottom: 15px;
+
+                                    span {
+                                        cursor: pointer;
+
+                                        font-weight: 500;
+                                        color: $blue;
+
+                                        transition: 0.1s ease;
+
+                                        &:hover {
+                                            color: $blueHover;
+                                        }
+                                    }
+                                }
+
+                                .button {
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

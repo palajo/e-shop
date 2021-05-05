@@ -49,7 +49,7 @@ export default function SuccessPage() {
                             </div>
                             <div className="success-container-row">
                                 <h4 className="success-container-row-title">
-                                    Order details:
+                                    Order #247:
                                 </h4>
                                 <table className="order-details">
                                     <tbody>
