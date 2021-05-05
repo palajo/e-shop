@@ -9,7 +9,7 @@ export default function CartModal() {
     useEffect(() => {
         $(document).ready(function() {
             $('.button').click(function() {
-                $(this).closest('.modal').fadeOut(0);
+                $(this).closest('.modal').fadeOut(100);
             })
         })
     }, []);
