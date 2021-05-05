@@ -98,31 +98,25 @@ export default function MainPage() {
                             </div>
                             <ul className="sidebar-nav">
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/about-us" className="sidebar-nav-link" exact>
                                         <div className="icon processor"></div>
                                         About Us
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
-                                        <div className="icon processor"></div>
-                                        All Brands
-                                    </NavLink>
-                                </li>
-                                <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/delivery-and-payment" className="sidebar-nav-link" exact>
                                         <div className="icon processor"></div>
                                         Delivery and Payment
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/contacts" className="sidebar-nav-link" exact>
                                         <div className="icon processor"></div>
                                         Contacts
                                     </NavLink>
                                 </li>
                                 <li className="sidebar-nav-item">
-                                    <NavLink to="#" className="sidebar-nav-link">
+                                    <NavLink to="/privacy-policy" className="sidebar-nav-link" exact>
                                         <div className="icon processor"></div>
                                         Privacy Policy
                                     </NavLink>

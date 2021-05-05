@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import $ from 'jquery';
 
 import './assets/styles/styles.scss';
 import Header from './components/header/Header';
@@ -17,22 +16,12 @@ import CartModal from './components/cart/CartModal';
 import LoginModal from './components/user/LoginModal';
 import RegisterModal from './components/user/RegisterModal';
 import UserPage from './routes/UserPage';
+import ContactsPage from './routes/ContactsPage';
+import AboutPage from './routes/AboutPage';
+import DeliveryPage from './routes/DeliveryPage';
+import PrivacyPolicyPage from './routes/PrivacyPolicyPage';
 
 function App() {
-
-    useEffect(() => {
-        $(document).ready(function() {
-            $('[data-toggle="modal"]').click(function() {
-                var modalId = $(this).attr('data-target').toString();
-                $('#' + modalId + '.modal').fadeIn(0);
-            });
-
-            $('.modal-close, .modal-overlay').click(function() {
-                $(this).closest('.modal').fadeOut(100);
-            });
-        })
-    }, []);
-
     return(
         <BrowserRouter>
             <ScrollToTop>
@@ -46,6 +35,11 @@ function App() {
                     <Route component={SuccessPage} path="/success" exact />
 
                     <Route component={UserPage} path="/user" exact />
+
+                    <Route component={ContactsPage} path="/contacts" exact />
+                    <Route component={AboutPage} path="/about-us" exact />
+                    <Route component={DeliveryPage} path="/delivery-and-payment" exact />
+                    <Route component={PrivacyPolicyPage} path="/privacy-policy" exact />
 
                 </Switch>
                 <CartModal />

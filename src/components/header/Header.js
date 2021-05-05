@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import $ from 'jquery';
 
 export default function Header() {
+
+    useEffect(() => {
+        $(document).ready(function() {
+            $('[data-toggle="modal"]').click(function() {
+                var modalId = $(this).attr('data-target').toString();
+                $('#' + modalId + '.modal').fadeIn(0);
+            });
+
+            $('.modal-close, .modal-overlay').click(function() {
+                $(this).closest('.modal').fadeOut(100);
+            });
+        })
+    }, []);
+
+
     return (
         <header>
             <div className="header-top">

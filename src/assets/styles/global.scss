@@ -69,21 +69,54 @@ h5 {
 }
 p {
     font-size: 14px;
-    line-height: 20px;
+    line-height: 24px;
 
     font-weight: 400;
     color: $darkgray;
 
     margin-bottom: 15px;
 
-    &:last-of-type {
+    &:last-child {
         margin-bottom: 0;
     }
 }
 b, strong {
     font-weight: 600;
 }
+.paragraph-block {
+    max-width: 960px;
+    width: 100%;
 
+    margin-bottom: 30px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .paragraph-title {
+        margin-bottom: 15px;    
+    }
+
+    ul {
+        padding-left: 20px;
+
+        .ul-title {
+            font-size: 16px;
+            line-height: 24px;
+            
+            font-weight: 500;
+            color: $black;
+
+            margin-bottom: 5px;
+            margin-left: -20px;
+        }
+
+        li {
+            color: $black;
+            line-height: 24px;
+        }
+    }
+}
 /* ------------------------------------------------------- */
 
 
