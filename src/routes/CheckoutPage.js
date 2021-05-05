@@ -24,64 +24,64 @@ export default function CheckoutPage() {
                             </ul>
                         </section>
                         <section className="checkout-container">
-                            <div className="checkout-form-container">
-                                <div className="checkout-form-container-header">
-                                    <div className="checkout-form-container-title">
-                                        Checkout
-                                    </div>
-                                </div>
-                                <div className="checkout-form-container-body">
-                                    <CartProductsTable />
-                                    <CheckoutForm />
-                                </div>
-                            </div>
-                            <div className="checkout-total-container">
-                                <div className="checkout-total-container-header">
-                                    <div className="checkout-total-container-title">
-                                        Total
-                                    </div>
-                                </div>
-                                <div className="checkout-total-container-body">
-                                    <div className="checkout-total-container-block">
-                                        <table className="totals">
-                                            <tbody>
-                                                <tr>
-                                                    <th>
-                                                        Total:
-                                                    </th>
-                                                    <td>
-                                                        $9576.32
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th>
-                                                        Shipping:
-                                                    </th>
-                                                    <td>
-                                                        $34
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div className="checkout-total-container-block">
-                                        <div className="payment">
-                                            Pay on delivery
+                            <form action="/success" className="checkout-form">
+                                <div className="checkout-form-container">
+                                    <div className="checkout-form-container-header">
+                                        <div className="checkout-form-container-title">
+                                            Checkout
                                         </div>
                                     </div>
-                                    <div className="checkout-total-container-block">
-                                        <div className="total-to-pay">
-                                            <label>Total to pay:</label>
-                                            $9606.32
+                                    <div className="checkout-form-container-body">
+                                        <CartProductsTable />
+                                        <CheckoutForm />
+                                    </div>
+                                </div>
+                                <div className="checkout-total-container">
+                                    <div className="checkout-total-container-header">
+                                        <div className="checkout-total-container-title">
+                                            Total
                                         </div>
-                                        <NavLink to="/success">
-                                            <button className="button">
+                                    </div>
+                                    <div className="checkout-total-container-body">
+                                        <div className="checkout-total-container-block">
+                                            <table className="totals">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            Total:
+                                                        </th>
+                                                        <td>
+                                                            $9576.32
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>
+                                                            Shipping:
+                                                        </th>
+                                                        <td>
+                                                            $34
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div className="checkout-total-container-block">
+                                            <div className="payment">
+                                                Pay on delivery
+                                            </div>
+                                        </div>
+                                        <div className="checkout-total-container-block">
+                                            <div className="total-to-pay">
+                                                <label>Total to pay:</label>
+                                                $9606.32
+                                            </div>
+                                            <button className="button" type="submit">
                                                 Confirm order
                                             </button>
-                                        </NavLink>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </section>
                     </main>
                 </div>

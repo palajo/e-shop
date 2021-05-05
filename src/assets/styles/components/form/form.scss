@@ -177,6 +177,9 @@ form {
     }
 
     &.checkout-form {
+        display: flex;
+        justify-content: space-between;
+        
         .form-row {
             flex-wrap: wrap;   
             padding: 40px;
