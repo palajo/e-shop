@@ -39,13 +39,31 @@
             position: relative;
             z-index: 1;
 
-            width: 100%;
+            width: 100%;    
+            max-height: 90%;
+
             background: $white;
             
             border-radius: 10px;
 
             animation: modalFadeOut 0.3s ease;
             animation-fill-mode: forwards;
+
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+            &::-webkit-scrollbar-track {
+                background: none;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $blue;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background: $blueHover;
+            }
 
             .modal-header {
                 display: flex;

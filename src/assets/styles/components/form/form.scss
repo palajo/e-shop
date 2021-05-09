@@ -3,13 +3,15 @@ form {
 
     .form-row {
         display: flex;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
 
         &:last-child {
             margin-bottom: 0;
         }
 
         .form-row-title {
+            display: flex;
+            align-items: center;
             width: 100%;
 
             font-size: 18px;
@@ -19,6 +21,20 @@ form {
             font-weight: 500;
 
             margin-bottom: 30px;
+
+            .icon {
+                background: $blue;
+                transition: 0.2s ease;
+
+                width: 30px;
+                height: 30px;
+
+                margin-right: 15px;
+
+                &:hover {
+                    background: $blueHover;
+                }
+            }
         }
 
         .form-block {
@@ -176,11 +192,9 @@ form {
         }
     }
 
-    &.checkout-form {
-        display: flex;
-        justify-content: space-between;
-        
+    &.checkout-form {        
         .form-row {
+            width: 100%;
             flex-wrap: wrap;   
             padding: 40px;
             border-bottom: 1px solid $lightgray;
@@ -195,19 +209,22 @@ form {
                 margin-bottom: 30px;
                 width: 33.33%;
 
-                &:nth-last-child(-n + 3) {
-                    margin-bottom: 0;
+                padding: 0 15px;
+
+                &:first-of-type {
+                    padding-left: 0
                 }
 
-                &:nth-child(4n + 1) {
+                &:nth-of-type(4n) {
                     padding-left: 0;
                 }
 
-                &:last-child {
-                    padding-right: 15px;
-                }
-                &:nth-child(3n + 1) {
+                &:nth-of-type(3n) {
                     padding-right: 0;
+                }
+
+                &:nth-last-of-type(-n + 3) {
+                    margin-bottom: 0;
                 }
             }
         }

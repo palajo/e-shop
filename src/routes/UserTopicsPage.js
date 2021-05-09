@@ -34,10 +34,10 @@ export default function UserTopicsPage() {
                         </div>
                     </aside>
                     <main className="with-sidebar">
-                        <section className="page-container contacts-container">
+                        <section className="page-container user-container">
                             <div className="page-container-header">
                                 <div className="page-container-title">
-                                    My Profile
+                                    My Topics
                                 </div>
                             </div>
                             <div className="page-container-body">

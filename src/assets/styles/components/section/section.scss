@@ -50,6 +50,7 @@ section.subcategories-container {
 
     margin-bottom: 30px;
 }
+
 section.page-container {
     background: $white;
     border-radius: 10px;
@@ -92,6 +93,10 @@ section.page-container {
 
         width: 100%;
         padding: 40px 40px 50px 40px;
+
+        &.no-padding {
+            padding: 0;
+        }
     }
 
     .divider {
@@ -100,6 +105,28 @@ section.page-container {
     
         margin: 40px -40px;
         background: $lightgray;
+    }
+
+    &.user-container {
+        min-height: calc(100vh - 200px);
+
+        .page-container-header {
+            .edit-user-information {
+                .icon {
+                    width: 24px;
+                    height: 24px;
+                    
+                    cursor: pointer;
+                    background: $blue;
+
+                    transition: 0.2s ease;
+
+                    &:hover {
+                        background: $blueHover;
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -5,6 +5,13 @@
 
     width: 100%;
 
+    .checkout-form {
+        display: flex;
+        flex-wrap: nowrap;
+
+        justify-content: space-between;
+    }
+
     .checkout-form-container {
         background: $white;
         border-radius: 10px;
