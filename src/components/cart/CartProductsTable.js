@@ -30,7 +30,7 @@ export function CartProductsTableRow() {
                     <div className="quantity-button">
                         <div className="icon minus"></div>
                     </div>
-                    <input type="number" className="quantity-input" min="1" value="1" />
+                    <input type="number" className="quantity-input" min="1" value="1" readOnly />
                     <div className="quantity-button">
                         <div className="icon plus"></div>
                     </div>

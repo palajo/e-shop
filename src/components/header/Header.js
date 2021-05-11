@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import $ from 'jquery';
+
+import CatalogNavigation from './CatalogNavigation';
 
 export default function Header() {
 
@@ -14,11 +16,29 @@ export default function Header() {
             $('.modal-close, .modal-overlay').click(function() {
                 $(this).closest('.modal').fadeOut(100);
             });
-        })
+
+            $('.open-catalog-navigation').click(function() {
+                $('.catalog-navigation').fadeIn(0);
+            });
+
+            $('.catalog-navigation-overlay').click(function() {
+                $('.catalog-navigation').fadeOut(100);
+            });
+        });
     }, []);
 
+    const [openNav, setOpenNav] = useState(false);
+
+    const handleOpenNav = () => {
+        setOpenNav(true);
+    };
+
+    const handleCloseNav = () => {
+        setOpenNav(false);
+    };
 
     return (
+        <>
         <header>
             <div className="header-top">
                 <div className="container">
@@ -77,7 +97,7 @@ export default function Header() {
                                 </NavLink>
                             </div>
                             <div className="header-block">
-                                <button className="button button-icon button-icon-text">
+                                <button className="button button-icon button-icon-text" onClick={handleOpenNav}>
                                     <div className="icon catalog"></div>
                                     Catalog
                                 </button>
@@ -110,5 +130,11 @@ export default function Header() {
                 </div>
             </div>
         </header>
+        <CatalogNavigation 
+            openNav={openNav}
+            handleOpenNav={handleOpenNav}
+            handleCloseNav={handleCloseNav}
+        />
+        </>
     )
 }
