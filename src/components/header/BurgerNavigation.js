@@ -34,13 +34,13 @@ export default function BurgerNavigation({ showBurgermenu, toggleBurgermenu, tog
                                 </NavLink>
                             </li>
                             <li className="burger-nav-item">
-                                <div className="burger-nav-link" onClick={toggleNavigation}>
+                                <div className="burger-nav-link with-arrow" onClick={toggleNavigation}>
                                     <div className="icon catalog"></div>
                                     Catalog
                                 </div>
                             </li>
                             <li className="burger-nav-item">
-                                <div className="burger-nav-link" onClick={toggleLoginModal}>
+                                <div className="burger-nav-link with-arrow" onClick={toggleLoginModal}>
                                     <div className="icon user"></div>
                                     My profile
                                 </div>
