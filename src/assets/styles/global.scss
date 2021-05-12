@@ -386,8 +386,18 @@ select {
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .container {
         max-width: 768px;
-        padding-left: 50px;
-        padding-right: 50px;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    .container {
+        max-width: 1200px;
     }
 }
 /* ------------------------------------------------------- */
