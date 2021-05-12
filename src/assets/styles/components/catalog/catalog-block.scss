@@ -1,23 +1,18 @@
 .catalog-block {
     width: 20%;
 
-    padding: 30px 30px;
+    padding: 30px 40px;
     height: auto;
 
-    border-right: 1px solid #eaeaea;
-    border-bottom: 1px solid transparent;
+    border-right: 1px solid $lightgray;
+    border-bottom: 1px solid $lightgray;
 
     transition: 0.1s ease;
 
     &:hover {
+        position: relative;
+        z-index: 2;
         border-bottom: 1px solid $blueHover;
-    }
-
-    &:nth-child(5) {
-        border-right: 0;
-    }
-    &:last-child {
-        border-right: 0;
     }
 
     .catalog-image {
@@ -76,5 +71,30 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .catalog-block {
+        width: 100%;
+        border-right: 0;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .catalog-block {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .catalog-block {
+        width: 33.333%;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+    .catalog-block {
+        width: 25%;
     }
 }

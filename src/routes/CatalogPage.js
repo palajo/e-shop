@@ -34,7 +34,6 @@ export default function CatalogPage() {
                                 <CatalogBlock />
                                 <CatalogBlock />
                                 <CatalogBlock />
-                                <div className="divider"></div>
                                 <CatalogBlock />
                                 <CatalogBlock />
                                 <CatalogBlock />

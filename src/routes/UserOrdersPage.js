@@ -1,17 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import $ from 'jquery';
 
 import OrderModal from '../components/user/OrderModal'
 
-export function OrderTableRow() {
+export function OrderTableRow({ toggleOrderModal }) {
     return(
         <tr>
             <td className="order-id">
                 <label>
                     Order ID:
                 </label>
-                <NavLink to="#" data-toggle="modal" data-target="order-modal">
+                <NavLink to="#" onClick={toggleOrderModal}>
                     #213
                 </NavLink>
             </td>
@@ -38,18 +37,12 @@ export function OrderTableRow() {
 }
 
 export default function UserOrdersPage() {
-    useEffect(() => {
-        $(document).ready(function() {
-            $('[data-toggle="modal"]').click(function() {
-                var modalId = $(this).attr('data-target').toString();
-                $('#' + modalId + '.modal').fadeIn(0);
-            });
+    
+    const [showOrderModal, setShowOrderModal] = useState(false);
 
-            $('.modal-close, .modal-overlay').click(function() {
-                $(this).closest('.modal').fadeOut(100);
-            });
-        })
-    }, []);
+    const toggleOrderModal = () => {
+        setShowOrderModal(!showOrderModal);
+    };
 
     return (
         <div id="wrapper">
@@ -92,11 +85,21 @@ export default function UserOrdersPage() {
                             <div className="page-container-body no-padding">
                                 <table className="orders">
                                     <tbody>
-                                        <OrderTableRow />
-                                        <OrderTableRow />
-                                        <OrderTableRow />
-                                        <OrderTableRow />
-                                        <OrderTableRow />
+                                        <OrderTableRow 
+                                            toggleOrderModal={toggleOrderModal}
+                                        />
+                                        <OrderTableRow 
+                                            toggleOrderModal={toggleOrderModal}
+                                        />
+                                        <OrderTableRow 
+                                            toggleOrderModal={toggleOrderModal}
+                                        />
+                                        <OrderTableRow 
+                                            toggleOrderModal={toggleOrderModal}
+                                        />
+                                        <OrderTableRow 
+                                            toggleOrderModal={toggleOrderModal}
+                                        />
                                     </tbody>
                                 </table>
                             </div>
@@ -104,7 +107,10 @@ export default function UserOrdersPage() {
                     </main>
                 </div>
             </div>
-            <OrderModal />
+            <OrderModal 
+                showOrderModal={showOrderModal}
+                toggleOrderModal={toggleOrderModal}
+            />
         </div>
     )
 }
