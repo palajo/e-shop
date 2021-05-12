@@ -18,9 +18,15 @@ export default function ProductsContainer() {
         infinite: false,
         responsive: [
             {
-                breakpoint: 767,
+                breakpoint: 479,
                 settings: {
                     slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2
                 }
             },
             {

@@ -304,7 +304,7 @@ section.product-container {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 479px) {
     section.products-container {    
         .products-container-header {    
             min-height: 60px;
@@ -339,6 +339,69 @@ section.product-container {
 
                                     margin: 0 auto;
                                     border-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section.about-container {
+        padding: 30px;
+
+        .about-container-body {
+            .about-container-content {
+                order: 2;
+                width: 100%;
+                padding-right: 0;
+            }
+    
+            .about-container-image {
+                order: 1;
+                width: 100%;
+                padding-left: 0;
+
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    section.products-container {    
+        .products-container-header {    
+            min-height: 60px;
+            height: auto;
+            padding: 15px 30px;  
+    
+            .products-container-title {
+                align-items: center;
+            }
+
+            .products-container-slider-arrows {
+                display: flex;
+            }
+        }
+    
+        .products-container-body {            
+            .slick-slider {
+                .slick-list {
+                    .slick-track {
+                        .slick-slide {
+                            &>div {
+                                .product-block {
+                                    width: 100%;
+                                    max-width: 220px;
+
+                                    margin: 0 auto;
+                                }
+                                .category-block {
+                                    width: 100%;
+                                    max-width: 220px;
+
+                                    margin: 0 auto;
                                 }
                             }
                         }

@@ -60,7 +60,7 @@ export function CatalogNavigationPunct(props) {
     )
 }
 
-export default function CatalogNavigation({openNav, handleCloseNav}) {
+export default function CatalogNavigation({showNavigation, toggleNavigation}) {
 
     const [showSubcategory] = useState(true);
 
@@ -71,9 +71,9 @@ export default function CatalogNavigation({openNav, handleCloseNav}) {
     return (
         <>
         {
-            openNav ? (
+            showNavigation ? (
                 <div className="catalog-navigation">
-                    <div className="catalog-navigation-overlay" onClick={handleCloseNav}></div>
+                    <div className="catalog-navigation-overlay" onClick={toggleNavigation}></div>
                     <div className="catalog-navigation-container">
                         {
                             navigation.map((nav, index) => (

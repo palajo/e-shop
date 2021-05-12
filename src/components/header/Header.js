@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import $ from 'jquery';
 
 import CatalogNavigation from './CatalogNavigation';
+import BurgerNavigation from './BurgerNavigation';
 
 export default function Header() {
 
@@ -27,14 +28,15 @@ export default function Header() {
         });
     }, []);
 
-    const [openNav, setOpenNav] = useState(false);
+    const [showNavigation, setShowNavigation] = useState(false);
+    const [showBurgermenu, setShowBurgermenu] = useState(false);
 
-    const handleOpenNav = () => {
-        setOpenNav(true);
+    const toggleNavigation = () => {
+        setShowNavigation(!showNavigation);
     };
 
-    const handleCloseNav = () => {
-        setOpenNav(false);
+    const toggleBurgermenu = () => {
+        setShowBurgermenu(!showBurgermenu);
     };
 
     return (
@@ -84,27 +86,27 @@ export default function Header() {
                 <div className="container">
                     <div className="row">
                         <div className="left-block">
-                            <div className="header-block">
-                                <button className="button transparent button-icon">
+                            <div className="header-block" id="burger-block">
+                                <button className="button transparent button-icon" onClick={toggleBurgermenu}>
                                     <div className="icon burger"></div>
                                 </button>
                             </div>
-                            <div className="header-block">
+                            <div className="header-block" id="logo-block">
                                 <NavLink to="/">
                                     <div className="logo">
                                         logo
                                     </div>
                                 </NavLink>
                             </div>
-                            <div className="header-block">
-                                <button className="button button-icon button-icon-text" onClick={handleOpenNav}>
+                            <div className="header-block" id="catalog-block">
+                                <button className="button button-icon button-icon-text" onClick={toggleNavigation}>
                                     <div className="icon catalog"></div>
                                     Catalog
                                 </button>
                             </div>
                         </div>
                         <div className="center-block">
-                            <div className="search-bar">
+                            <div className="search-bar" id="search-bar">
                                 <input type="text" placeholder="Search.." className="search-input" />
                                 <button className="button button-icon search-submit" type="submit">
                                     <div className="icon search"></div>
@@ -112,12 +114,17 @@ export default function Header() {
                             </div>
                         </div>
                         <div className="right-block">
-                            <div className="header-block">
+                            <div className="header-block" id="search-block">
+                                <button className="button button-icon" data-toggle="modal" data-target="search-modal">
+                                    <div className="icon search"></div>
+                                </button>
+                            </div>
+                            <div className="header-block" id="user-block">
                                 <button className="button button-icon" data-toggle="modal" data-target="login-modal">
                                     <div className="icon user"></div>
                                 </button>
                             </div>
-                            <div className="header-block">
+                            <div className="header-block" id="cart-block">
                                 <button className="button button-icon cart-button" data-toggle="modal" data-target="cart-modal">
                                     <div className="icon cart"></div>
                                     <div className="cart-button-counter">
@@ -130,10 +137,14 @@ export default function Header() {
                 </div>
             </div>
         </header>
+        <BurgerNavigation 
+            showBurgermenu={showBurgermenu}
+            toggleBurgermenu={toggleBurgermenu}
+            toggleNavigation={toggleNavigation}
+        />
         <CatalogNavigation 
-            openNav={openNav}
-            handleOpenNav={handleOpenNav}
-            handleCloseNav={handleCloseNav}
+            showNavigation={showNavigation}
+            toggleNavigation={toggleNavigation}
         />
         </>
     )
