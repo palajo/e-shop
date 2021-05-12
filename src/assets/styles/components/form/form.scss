@@ -230,3 +230,19 @@ form {
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    form {
+        width: 100%;
+    
+        .form-row {
+            flex-wrap: wrap;
+            margin-bottom: 0;
+            
+            .form-block {
+                margin-bottom: 20px;
+                padding: 0;
+            }
+        }
+    }
+}
