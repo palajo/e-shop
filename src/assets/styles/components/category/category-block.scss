@@ -13,10 +13,6 @@
         border-bottom: 1px solid $blueHover;
     }
 
-    &:last-child {
-        border-right: 0;
-    }
-
     &:nth-child(-n + 5) {
         border-bottom: 1px solid transparent;
         

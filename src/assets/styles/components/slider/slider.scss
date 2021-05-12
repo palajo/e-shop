@@ -128,3 +128,107 @@ section.slider {
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    section.slider {     
+        height: 350px;
+        margin-bottom: 40px !important;  
+
+        .container {
+            padding-left: 30px;
+            padding-right: 30px;
+    
+            .row {    
+                .slider-content {
+                    .slider-title {
+                        font-size: 24px;
+                        line-height: 30px;
+                    }
+                }
+
+                .slider-featured-category {    
+                    display: none;
+                }
+            }
+        }
+    }    
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    section.slider {     
+        margin-bottom: 84px !important;
+
+        .container {
+            padding-left: 30px;
+            padding-right: 30px;
+    
+            .row {    
+                .slider-content {
+                    max-width: 320px;
+
+                    .slider-title {
+                        font-size: 30px;
+                        line-height: 36px;
+                    }
+                }
+                .slider-featured-category {
+                    position: absolute;
+    
+                    top: 30px;
+                    right: 30px;
+    
+                    width: 260px;
+                    height: 464px;
+    
+                    .slider-category-block {
+                        padding: 30px;
+    
+                        .slider-category-image {
+                            padding-bottom: 20px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    section.slider {     
+        margin-bottom: 84px !important;
+
+        .container {
+            padding-left: 50px;
+            padding-right: 50px;
+    
+            .row {    
+                .slider-content {
+                    max-width: 450px;
+
+                    .slider-title {
+                        font-size: 30px;
+                        line-height: 36px;
+                    }
+                }
+                .slider-featured-category {
+                    position: absolute;
+    
+                    top: 50px;
+                    right: 50px;
+    
+                    width: 280px;
+                    height: 444px;
+    
+                    .slider-category-block {
+                        padding: 30px;
+    
+                        .slider-category-image {
+                            padding-bottom: 20px;
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }   
+}

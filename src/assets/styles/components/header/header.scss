@@ -69,12 +69,13 @@ header {
 
         .container {
             .row {
+                flex-wrap: nowrap;
                 justify-content: space-between;
 
                 .left-block {
                     display: flex;
                     justify-content: flex-start;
-                    width: 30%;
+                    width: auto;
 
                     .header-block {
                         margin-right: 15px;
@@ -101,7 +102,10 @@ header {
                 .center-block {
                     display: flex;
                     justify-content: center;
-                    width: 40%;
+
+                    padding: 0 15px;
+                    width: 100%;
+                    max-width: 540px;
 
                     .search-bar {
                         position: relative;
@@ -148,7 +152,7 @@ header {
                 .right-block {
                     display: flex;
                     justify-content: flex-end;
-                    width: 30%;
+                    width: auto;
                     
                     .header-block {
                         margin-right: 15px;
@@ -156,6 +160,161 @@ header {
                         &:last-child {
                             margin-right: 0;
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        .header-top {
+            .container {
+                .row {
+                    .left-block {
+                        display: none;
+                    }
+                    .right-block {
+                        width: 100%;
+                        justify-content: flex-start;
+
+                        .header-block {
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .header-bottom {
+            .container {
+                .row {
+                    .left-block {
+                        width: auto;
+
+                        .header-block {
+                            margin-right: 0;
+                            margin-left: 15px;
+
+                            &:first-child {
+                                margin-left: 0;
+                            }
+
+                            .logo {
+                                width: 120px;
+                            }
+
+                            &:nth-child(3) {
+                                display: none;
+                            }
+                        }
+                    }
+                    .center-block {
+                        width: auto;
+
+                        .search-bar {
+                            width: 50px;
+
+                            input.search-input {
+                                display: none;
+                            }
+                            
+                            button.search-submit {
+                                width: 50px;
+                            }
+                        }
+                    }
+                    .right-block {
+                        width: auto;
+
+                        .header-block {
+                            &:nth-child(1) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    header {
+        .header-top {
+            .container {
+                .row {
+                    .left-block {
+                        .header-block {
+                            margin-right: 20px;
+                        }
+                    }
+                    .right-block {
+                        .header-block {
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .header-bottom {
+            .container {
+                .row {
+                    .left-block {
+                        width: auto;
+
+                        .header-block {
+                            margin-right: 0;
+                            margin-left: 15px;
+
+                            &:first-child {
+                                margin-left: 0;
+                            }
+
+                            .logo {
+                                width: 120px;
+                            }
+
+                            &:nth-child(3) {
+                                display: none;
+                            }
+                        }
+                    }
+                    .right-block {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+    header {
+        .header-top {
+            .container {
+                .row {
+                    .left-block {
+                        .header-block {
+                            margin-right: 30px;
+                        }
+                    }
+                    .right-block {
+                        .header-block {
+                            margin-right: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        .header-bottom {
+            .container {
+                .row {
+                    .left-block {
+                        width: auto;
+                    }
+                    .right-block {
+                        width: auto;
                     }
                 }
             }

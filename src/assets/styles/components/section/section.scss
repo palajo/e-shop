@@ -3,6 +3,7 @@ section.products-container {
     border-radius: 10px;
 
     width: 100%;
+    overflow: hidden;
 
     .products-container-header {
         display: flex;
@@ -32,13 +33,66 @@ section.products-container {
                 margin-right: 15px;
             }
         }
+
+        .products-container-slider-arrows {
+            display: none;
+
+            .arrow {
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                .icon {
+                    cursor: pointer;
+                    background: $blue;
+
+                    width: 14px;
+                    height: 14px;
+
+                    &:hover {
+                        background: $blueHover;
+                    }
+                }
+            }
+        }
     }
 
     .products-container-body {
-        display: flex;
-        flex-wrap: wrap;
-
+        position: relative;
         width: 100%;
+
+        &::before {
+            content: '';
+            position: absolute;
+    
+            top: 0;
+            right: 0;
+    
+            height: 100%;
+            width: 1px;
+    
+            background: $white;
+            z-index: 1;
+        }
+
+        .slick-slider {
+            .slick-list {
+                .slick-track {
+                    .slick-slide {
+                        &>div {
+                            .product-block {
+                                width: 100%;
+                            }
+                            .category-block {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 section.subcategories-container {
@@ -247,5 +301,93 @@ section.product-container {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section.products-container {    
+        .products-container-header {    
+            min-height: 60px;
+            height: auto;
+            padding: 15px 30px;  
+    
+            .products-container-title {
+                align-items: center;
+            }
+
+            .products-container-slider-arrows {
+                display: flex;
+            }
+        }
+    
+        .products-container-body {            
+            .slick-slider {
+                .slick-list {
+                    .slick-track {
+                        .slick-slide {
+                            &>div {
+                                .product-block {
+                                    width: 100%;
+                                    max-width: 220px;
+
+                                    margin: 0 auto;
+                                    border-right: 0;
+                                }
+                                .category-block {
+                                    width: 100%;
+                                    max-width: 220px;
+
+                                    margin: 0 auto;
+                                    border-right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section.about-container {
+        padding: 30px;
+
+        .about-container-body {
+            .about-container-content {
+                order: 2;
+                width: 100%;
+                padding-right: 0;
+            }
+    
+            .about-container-image {
+                order: 1;
+                width: 100%;
+                padding-left: 0;
+
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    section.products-container {    
+        .products-container-header {    
+            .products-container-slider-arrows {
+                display: flex;
+            }
+        }
+    }
+    section.about-container {
+        padding: 40px 30px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    section.products-container {    
+        .products-container-header {    
+            .products-container-slider-arrows {
+                display: flex;
+            }
+        }
     }
 }

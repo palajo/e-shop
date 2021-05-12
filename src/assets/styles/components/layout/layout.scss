@@ -26,3 +26,42 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    #wrapper {
+        aside.sidebar {
+            display: none;
+        }
+
+        main {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #wrapper {
+        aside.sidebar {
+            display: none;
+        }
+
+        main {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+    #wrapper {
+        aside.sidebar {
+            display: none;
+        }
+
+        main {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+}

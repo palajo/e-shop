@@ -62,7 +62,7 @@ export function CatalogNavigationPunct(props) {
 
 export default function CatalogNavigation({openNav, handleCloseNav}) {
 
-    const [showSubcategory, setShowSubcategory] = useState(true);
+    const [showSubcategory] = useState(true);
 
     const handleShowSubcategory= () => {
         // setShowSubcategory(!showSubcategory);

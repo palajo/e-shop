@@ -2,12 +2,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import CategoryBlock from '../components/category/CategoryBlock';
-import ProductBlock from '../components/product/ProductBlock';
 import SliderCategoryBlock from '../components/slider/SliderCategoryBlock';
 
 import SliderBackground from '../assets/images/slider-background.jpg';
 import AboutImage from '../assets/images/about-image.jpg';
+import ProductsContainer from '../components/product/ProductsContainer';
+import CategoryContainer from '../components/category/CategoryContainer';
 
 export default function MainPage() {
     return (
@@ -153,59 +153,9 @@ export default function MainPage() {
                                 </div>
                             </div>
                         </section>
-                        <section className="products-container">
-                            <div className="products-container-header">
-                                <div className="products-container-title">
-                                    <div className="icon processor"></div>
-                                    Popular products
-                                </div>
-                                <NavLink to="/catalog/category" className="link-more">
-                                    Show more
-                                    <div className="icon menu-arrow-right"></div>
-                                </NavLink>
-                            </div>
-                            <div className="products-container-body">
-                                <ProductBlock />
-                                <ProductBlock />
-                                <ProductBlock />
-                                <ProductBlock />
-                                <ProductBlock />
-                            </div>
-                        </section>
-                        <section className="products-container">
-                            <div className="products-container-header">
-                                <div className="products-container-title">
-                                    <div className="icon processor"></div>
-                                    Recommended products
-                                </div>
-                                <NavLink to="/catalog/category" className="link-more">
-                                    Show more
-                                    <div className="icon menu-arrow-right"></div>
-                                </NavLink>
-                            </div>
-                            <div className="products-container-body">
-                                <ProductBlock />
-                                <ProductBlock />
-                                <ProductBlock />
-                                <ProductBlock />
-                                <ProductBlock />
-                            </div>
-                        </section>
-                        <section className="products-container">
-                            <div className="products-container-header">
-                                <div className="products-container-title">
-                                    <div className="icon processor"></div>
-                                    Recommended categories
-                                </div>
-                            </div>
-                            <div className="products-container-body">
-                                <CategoryBlock />
-                                <CategoryBlock />
-                                <CategoryBlock />
-                                <CategoryBlock />
-                                <CategoryBlock />
-                            </div>
-                        </section>
+                        <ProductsContainer />
+                        <ProductsContainer />
+                        <CategoryContainer />
                         <section className="about-container">
                             <div className="about-container-body">
                                 <div className="about-container-content">
