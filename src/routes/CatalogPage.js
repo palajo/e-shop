@@ -28,7 +28,7 @@ export default function CatalogPage() {
                                     Diodes
                                 </div>
                             </div>
-                            <div className="page-container-body">
+                            <div className="page-container-body no-padding">
                                 <CatalogBlock />
                                 <CatalogBlock />
                                 <CatalogBlock />
