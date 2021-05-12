@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
 
-export default function BurgerNavigation({ showBurgermenu, toggleBurgermenu, toggleNavigation }) {
+export default function BurgerNavigation({ showBurgermenu, toggleBurgermenu, toggleNavigation, toggleLoginModal }) {
     return (
         <CSSTransition 
             in={showBurgermenu}
@@ -40,10 +40,10 @@ export default function BurgerNavigation({ showBurgermenu, toggleBurgermenu, tog
                                 </div>
                             </li>
                             <li className="burger-nav-item">
-                                <NavLink to="/user" className="burger-nav-link">
+                                <div className="burger-nav-link" onClick={toggleLoginModal}>
                                     <div className="icon user"></div>
                                     My profile
-                                </NavLink>
+                                </div>
                             </li>
                             <li className="burger-nav-item">
                                 <NavLink to="/about-us" className="burger-nav-link">

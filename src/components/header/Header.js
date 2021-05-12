@@ -119,6 +119,7 @@ export default function Header({ toggleCartModal, toggleLoginModal }) {
                 showBurgermenu={showBurgermenu}
                 toggleBurgermenu={toggleBurgermenu}
                 toggleNavigation={toggleNavigation}
+                toggleLoginModal={toggleLoginModal}
             />
             <CatalogNavigation 
                 showNavigation={showNavigation}
