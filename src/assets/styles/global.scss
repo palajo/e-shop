@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 
 * {
     margin: 0;
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 
     font-size: 14px;
     line-height: 20px;
@@ -27,9 +27,12 @@ body {
     background: $bodyBackground;
 }
 
-
 /* h1, h2, h3, h4, h5, p, b */
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     margin: 0;
 }
 h1 {
@@ -80,7 +83,8 @@ p {
         margin-bottom: 0;
     }
 }
-b, strong {
+b,
+strong {
     font-weight: 600;
 }
 .paragraph-block {
@@ -94,7 +98,7 @@ b, strong {
     }
 
     .paragraph-title {
-        margin-bottom: 15px;    
+        margin-bottom: 15px;
     }
 
     ul {
@@ -103,7 +107,7 @@ b, strong {
         .ul-title {
             font-size: 16px;
             line-height: 24px;
-            
+
             font-weight: 500;
             color: $black;
 
@@ -118,7 +122,6 @@ b, strong {
     }
 }
 /* ------------------------------------------------------- */
-
 
 /* link */
 a {
@@ -159,7 +162,7 @@ a {
 
             &:hover {
                 color: $whiteHover;
-                
+
                 .icon {
                     background: $whiteHover;
                 }
@@ -188,7 +191,6 @@ a {
 }
 /* ------------------------------------------------------- */
 
-
 /* button */
 button.button {
     cursor: pointer;
@@ -202,7 +204,7 @@ button.button {
     background: $blue;
     border-radius: 5px;
 
-    font-family : inherit;
+    font-family: inherit;
     font-size: 14px;
     line-height: 20px;
 
@@ -228,7 +230,7 @@ button.button {
         min-width: auto;
         width: 50px;
         padding: 0;
-        
+
         .icon {
             margin: 0 auto;
             background: $white;
@@ -307,7 +309,6 @@ button.link-more {
 }
 /* ------------------------------------------------------- */
 
-
 /* select */
 select {
     position: relative;
@@ -323,7 +324,7 @@ select {
 
     transition: 0.1s ease;
     -webkit-appearance: none;
-    background: none;  
+    background: none;
 
     background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M5.40594 9.17418L0.246289 4.01436C-0.0820967 3.68613 -0.0820967 3.15397 0.246289 2.8259C0.574382 2.49781 1.10652 2.49781 1.43458 2.8259L6.00009 7.39154L10.5654 2.82604C10.8937 2.49794 11.4257 2.49794 11.7538 2.82604C12.0821 3.15413 12.0821 3.68627 11.7538 4.01449L6.5941 9.17431C6.42998 9.33836 6.2151 9.42029 6.00011 9.42029C5.78502 9.42029 5.56998 9.3382 5.40594 9.17418Z' fill='%23004F98'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='12' height='12' fill='blue' transform='translate(12) rotate(90)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
@@ -339,7 +340,7 @@ select {
     &.white {
         background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0)'%3E%3Cpath d='M5.40594 9.17418L0.246289 4.01436C-0.0820967 3.68613 -0.0820967 3.15397 0.246289 2.8259C0.574382 2.49781 1.10652 2.49781 1.43458 2.8259L6.00009 7.39154L10.5654 2.82604C10.8937 2.49794 11.4257 2.49794 11.7538 2.82604C12.0821 3.15413 12.0821 3.68627 11.7538 4.01449L6.5941 9.17431C6.42998 9.33836 6.2151 9.42029 6.00011 9.42029C5.78502 9.42029 5.56998 9.3382 5.40594 9.17418Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Crect width='12' height='12' fill='white' transform='translate(12) rotate(90)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
         background-position: calc(100% - 10px) center;
-        
+
         color: $white;
 
         option {
@@ -353,7 +354,6 @@ select {
     }
 }
 /* ------------------------------------------------------- */
-
 
 /* container, row */
 .container {
@@ -372,18 +372,18 @@ select {
     .row {
         display: flex;
         flex-wrap: wrap;
-    
+
         width: 100%;
     }
 }
 
-@media screen and (max-width: 479px){
+@media screen and (max-width: 479px) {
     .container {
         max-width: 375px;
     }
 }
 
-@media screen and (min-width: 480px) and (max-width: 767px){
+@media screen and (min-width: 480px) and (max-width: 767px) {
     .container {
         max-width: 480px;
     }

@@ -13,16 +13,15 @@
 
         top: 0;
         left: 0;
-    
+
         width: 100%;
-        height: 100%;    
+        height: 100%;
 
         background: rgba(4, 16, 28, 0.7);
 
         animation: fadeOut 0.3s ease;
         animation-fill-mode: forwards;
     }
-
 
     .burger-navigation-container {
         position: relative;
@@ -36,6 +35,9 @@
         padding: 30px 0;
 
         background: $white;
+        -webkit-box-shadow: 5px 0px 15px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 5px 0px 15px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 5px 0px 15px 0px rgba(0, 0, 0, 0.1);
 
         .burger-navigation-block {
             width: 100%;
@@ -68,7 +70,7 @@
                     .icon {
                         cursor: pointer;
                         background: $gray;
-                    
+
                         &:hover {
                             background: $blueHover;
                         }
@@ -81,7 +83,6 @@
                 margin-bottom: 0;
 
                 li.burger-nav-item {
-
                     &:first-child {
                         a.burger-nav-link {
                             border-top: 1px solid $lightgray;
@@ -94,16 +95,16 @@
 
                         display: flex;
                         align-items: center;
-        
+
                         width: 100%;
                         padding: 15px 30px;
-        
+
                         font-size: 14px;
                         line-height: 20px;
 
                         font-weight: 500;
                         color: $black;
-        
+
                         border-bottom: 1px solid $lightgray;
 
                         transition: 0.1s ease;
@@ -111,13 +112,13 @@
                         .icon {
                             width: 18px;
                             height: 18px;
-        
+
                             margin-right: 12px;
                             background: $blue;
 
                             transition: 0.1s ease;
-                        } 
-                        
+                        }
+
                         &:hover {
                             background: $sidebarHover;
                             color: $blueHover;
@@ -128,15 +129,12 @@
                         }
 
                         &.active {
-                            background: $blue;
-                            color: $white;
-
-                            .icon {
-                                background: $white;
-                            }
+                            background: #f8f8f8;
+                            color: $blue;
 
                             &:hover {
-                                background: $blueHover;
+                                background: $sidebarHover;
+                                color: $blueHover;
                             }
                         }
                     }
@@ -144,4 +142,22 @@
             }
         }
     }
+}
+
+.burgermenu-animation-enter {
+    transform: translateX(-320px);
+    transition: transform 400ms;
+}
+
+.burgermenu-animation-enter-active {
+    transform: translateX(0);
+}
+
+.burgermenu-animation-exit {
+    transform: translateX(0);
+    transition: transform 400ms;
+}
+
+.burgermenu-animation-exit-active {
+    transform: translateX(-320px);
 }

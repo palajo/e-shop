@@ -22,6 +22,7 @@ import PrivacyPolicyPage from './routes/PrivacyPolicyPage';
 import UserOrdersPage from './routes/UserOrdersPage';
 import UserTopicsPage from './routes/UserTopicsPage';
 import UserPage from './routes/UserPage';
+import TestPage from './routes/TestPage';
 
 function App() {
     return(
@@ -45,6 +46,8 @@ function App() {
                     <Route component={AboutPage} path="/about-us" exact />
                     <Route component={DeliveryPage} path="/delivery-and-payment" exact />
                     <Route component={PrivacyPolicyPage} path="/privacy-policy" exact />
+
+                    <Route component={TestPage} path="/test" exact />
 
                 </Switch>
                 <CartModal />
