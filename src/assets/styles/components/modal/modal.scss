@@ -1,5 +1,4 @@
 .modal {
-    display: none;
     position: fixed;
 
     top: 0;
@@ -133,24 +132,53 @@
 
 }
 
-@keyframes modalFadeOut {
-    0% {
+// modal animation
+.modal-animation-enter {
+    .modal-overlay {
         opacity: 0;
-        transform: translateY(30px);
-        transform: scale(0.95);
+        transition: opacity 300ms;
     }
-    100% {
+    .modal-content {
+        opacity: 0;
+        transform: translateY(100px);
+        transform: scale(0.95);
+
+        transition: opacity 300ms, transform 300ms;
+    }
+}
+
+.modal-animation-enter-active {
+    .modal-overlay {
+        opacity: 1;
+    }
+    .modal-content {
         opacity: 1;
         transform: translateY(0);
         transform: scale(1);
     }
 }
 
-@keyframes fadeOut {
-    0% {
-        opacity: 0;
-    }
-    100% {
+.modal-animation-exit {
+    .modal-overlay {
         opacity: 1;
+    }
+    .modal-content {
+        opacity: 1;
+        transform: translateY(0);
+        transform: scale(1);
+    }
+}
+
+.modal-animation-exit-active {
+    .modal-overlay {
+        opacity: 0;
+        transition: opacity 300ms;
+    }
+    .modal-content {
+        opacity: 0;
+        transform: translateY(100px);
+        transform: scale(0.95);
+
+        transition: opacity 300ms, transform 300ms;
     }
 }

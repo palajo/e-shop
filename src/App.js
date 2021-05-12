@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './assets/styles/styles.scss';
@@ -25,10 +25,30 @@ import UserPage from './routes/UserPage';
 import TestPage from './routes/TestPage';
 
 function App() {
+
+    const [showCartModal, setShowCartModal] = useState(false);
+    const [showLoginModal, setShowLoginModal] = useState(false);
+    const [showRegisterModal, setShowRegisterModal] = useState(false);
+
+    const toggleCartModal = () => {
+        setShowCartModal(!showCartModal);
+    };
+
+    const toggleLoginModal = () => {
+        setShowLoginModal(!showLoginModal);
+    };
+
+    const toggleRegisterModal = () => {
+        setShowRegisterModal(!showRegisterModal);
+    };
+
     return(
         <BrowserRouter>
             <ScrollToTop>
-                <Header />
+                <Header 
+                    toggleCartModal={toggleCartModal}
+                    toggleLoginModal={toggleLoginModal}
+                />
                 <Switch>
                     <Route component={MainPage} path="/" exact />
                     <Route component={CatalogPage} path="/catalog" exact />
@@ -50,9 +70,19 @@ function App() {
                     <Route component={TestPage} path="/test" exact />
 
                 </Switch>
-                <CartModal />
-                <LoginModal />
-                <RegisterModal />
+                <CartModal
+                    showCartModal={showCartModal}
+                    toggleCartModal={toggleCartModal}
+                />
+                <LoginModal
+                    showLoginModal={showLoginModal}
+                    toggleLoginModal={toggleLoginModal}
+                    toggleRegisterModal={toggleRegisterModal}
+                />
+                <RegisterModal
+                    showRegisterModal={showRegisterModal}
+                    toggleRegisterModal={toggleRegisterModal}
+                />
             </ScrollToTop>
         </BrowserRouter>
     )

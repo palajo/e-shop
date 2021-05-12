@@ -11,8 +11,7 @@ export default function BurgerNavigation({ showBurgermenu, toggleBurgermenu, tog
             unmountOnExit
         >
             <div className="burger-navigation">
-                {/*<div className="burger-navigation-overlay" onClick={toggleBurgermenu}></div>*/}
-                
+                <div className="burger-navigation-overlay" onClick={toggleBurgermenu}></div>
                 <div className="burger-navigation-container">
                     <div className="burger-navigation-block">
                         <div className="burger-navigation-row">

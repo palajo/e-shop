@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { CSSTransition } from 'react-transition-group'
 
 const navigation = [
     {
@@ -69,130 +70,131 @@ export default function CatalogNavigation({showNavigation, toggleNavigation}) {
     };
 
     return (
-        <>
-        {
-            showNavigation ? (
-                <div className="catalog-navigation">
-                    <div className="catalog-navigation-overlay" onClick={toggleNavigation}></div>
-                    <div className="catalog-navigation-container">
-                        {
-                            navigation.map((nav, index) => (
-                                <>
-                                    <div className={`catalog-navigation-block hidden`}>
-                                        <div className="catalog-navigation-block-title">
-                                            {nav.navTitle}
-                                        </div>
-                                        <ul className="catalog-nav">
-                                            {
-                                                nav.navTree.map((depthOneNav) => (
-                                                    <CatalogNavigationPunct 
-                                                        toggleDepth="1"
-                                                        categoryTitle={depthOneNav.categoryTitle}
-                                                        key={depthOneNav.categoryId}
-
-                                                        onClick={handleShowSubcategory}
-                                                    />
-                                                ))
-                                            }
-                                        </ul>
+        <CSSTransition 
+            in={showNavigation}
+            timeout={500}
+            classNames="catalog-navigation-animation"
+            unmountOnExit
+        >
+            <div className="catalog-navigation">
+                <div className="catalog-navigation-overlay" onClick={toggleNavigation}></div>
+                <div className="catalog-navigation-container">
+                    {
+                        navigation.map((nav, index) => (
+                            <>
+                                <div className={`catalog-navigation-block hidden`}>
+                                    <div className="catalog-navigation-block-title">
+                                        {nav.navTitle}
                                     </div>
-                                    {
-                                        nav.navTree.map((nav, index) => (
-                                            <>
-                                                {
-                                                    showSubcategory ? (
-                                                        <>
-                                                        <div className={`catalog-navigation-block hidden`} key={index}>
-                                                            <div className="catalog-navigation-block-title">
-                                                                {nav.categoryTitle}
-                                                            </div>
-                                                            <ul className="catalog-nav">
-                                                                {
-                                                                    nav.subcategories.map((nav, index) => (
-                                                                        <CatalogNavigationPunct 
-                                                                            toggleDepth="1"
-                                                                            categoryTitle={nav.categoryTitle}
-                                                                            key={nav.categoryId}
+                                    <ul className="catalog-nav">
+                                        {
+                                            nav.navTree.map((depthOneNav) => (
+                                                <CatalogNavigationPunct 
+                                                    toggleDepth="1"
+                                                    categoryTitle={depthOneNav.categoryTitle}
+                                                    key={depthOneNav.categoryId}
 
-                                                                            onClick={handleShowSubcategory}
-                                                                        />
-                                                                    ))
-                                                                }
-                                                            </ul>
+                                                    onClick={handleShowSubcategory}
+                                                />
+                                            ))
+                                        }
+                                    </ul>
+                                </div>
+                                {
+                                    nav.navTree.map((nav, index) => (
+                                        <>
+                                            {
+                                                showSubcategory ? (
+                                                    <>
+                                                    <div className={`catalog-navigation-block hidden`} key={index}>
+                                                        <div className="catalog-navigation-block-title">
+                                                            {nav.categoryTitle}
                                                         </div>
-                                                        {
-                                                            nav.subcategories.map((nav, index) => (
-                                                                <>
-                                                                    {
-                                                                        showSubcategory ? (
-                                                                            <>
-                                                                                <div className="catalog-navigation-block previous" key={index}>
-                                                                                    <div className="catalog-navigation-block-title">
-                                                                                        {nav.categoryTitle}
-                                                                                    </div>
-                                                                                    <ul className="catalog-nav">
-                                                                                        {
-                                                                                            nav.subcategories.map((nav, index) => (
-                                                                                                <CatalogNavigationPunct 
-                                                                                                    toggleDepth="3"
-                                                                                                    categoryTitle={nav.categoryTitle}
-                                                                                                    key={nav.categoryId}
-                            
-                                                                                                    onClick={handleShowSubcategory}
-                                                                                                />        
-                                                                                            ))
-                                                                                        }
-                                                                                    </ul>
+                                                        <ul className="catalog-nav">
+                                                            {
+                                                                nav.subcategories.map((nav, index) => (
+                                                                    <CatalogNavigationPunct 
+                                                                        toggleDepth="1"
+                                                                        categoryTitle={nav.categoryTitle}
+                                                                        key={nav.categoryId}
+
+                                                                        onClick={handleShowSubcategory}
+                                                                    />
+                                                                ))
+                                                            }
+                                                        </ul>
+                                                    </div>
+                                                    {
+                                                        nav.subcategories.map((nav, index) => (
+                                                            <>
+                                                                {
+                                                                    showSubcategory ? (
+                                                                        <>
+                                                                            <div className="catalog-navigation-block previous" key={index}>
+                                                                                <div className="catalog-navigation-block-title">
+                                                                                    {nav.categoryTitle}
                                                                                 </div>
-                                                                                {
-                                                                                    nav.subcategories.map((nav, index) => (
-                                                                                        <>
-                                                                                            {
-                                                                                                showSubcategory ? (
-                                                                                                    <>
-                                                                                                        <div className="catalog-navigation-block current" key={index}>
-                                                                                                            <div className="catalog-navigation-block-title">
-                                                                                                                {nav.categoryTitle}
-                                                                                                            </div>
-                                                                                                            <ul className="catalog-nav">
-                                                                                                                {
-                                                                                                                    nav.subcategories.map((nav, index) => (
-                                                                                                                        <CatalogNavigationPunct 
-                                                                                                                            toggleDepth="3"
-                                                                                                                            categoryTitle={nav.categoryTitle}
-                                                                                                                            key={nav.categoryId}
-                                                    
-                                                                                                                            onClick={handleShowSubcategory}
-                                                                                                                        />        
-                                                                                                                    ))
-                                                                                                                }
-                                                                                                            </ul>
+                                                                                <ul className="catalog-nav">
+                                                                                    {
+                                                                                        nav.subcategories.map((nav, index) => (
+                                                                                            <CatalogNavigationPunct 
+                                                                                                toggleDepth="3"
+                                                                                                categoryTitle={nav.categoryTitle}
+                                                                                                key={nav.categoryId}
+                        
+                                                                                                onClick={handleShowSubcategory}
+                                                                                            />        
+                                                                                        ))
+                                                                                    }
+                                                                                </ul>
+                                                                            </div>
+                                                                            {
+                                                                                nav.subcategories.map((nav, index) => (
+                                                                                    <>
+                                                                                        {
+                                                                                            showSubcategory ? (
+                                                                                                <>
+                                                                                                    <div className="catalog-navigation-block current" key={index}>
+                                                                                                        <div className="catalog-navigation-block-title">
+                                                                                                            {nav.categoryTitle}
                                                                                                         </div>
-                                                                                                    </>
-                                                                                                ) : null
-                                                                                            }
-                                                                                        </>
-                                                                                    ))
-                                                                                }
-                                                                            </>
-                                                                        ) : null
-                                                                    }
-                                                                </>
-                                                            ))
-                                                        }
-                                                        </>
-                                                    ) : null
-                                                }
-                                            </>
-                                        ))
-                                    }
-                                </>
-                            ))
-                        }
-                    </div>
+                                                                                                        <ul className="catalog-nav">
+                                                                                                            {
+                                                                                                                nav.subcategories.map((nav, index) => (
+                                                                                                                    <CatalogNavigationPunct 
+                                                                                                                        toggleDepth="3"
+                                                                                                                        categoryTitle={nav.categoryTitle}
+                                                                                                                        key={nav.categoryId}
+                                                
+                                                                                                                        onClick={handleShowSubcategory}
+                                                                                                                    />        
+                                                                                                                ))
+                                                                                                            }
+                                                                                                        </ul>
+                                                                                                    </div>
+                                                                                                </>
+                                                                                            ) : null
+                                                                                        }
+                                                                                    </>
+                                                                                ))
+                                                                            }
+                                                                        </>
+                                                                    ) : null
+                                                                }
+                                                            </>
+                                                        ))
+                                                    }
+                                                    </>
+                                                ) : null
+                                            }
+                                        </>
+                                    ))
+                                }
+                            </>
+                        ))
+                    }
                 </div>
-            ) : null
-        }
-        </>
+            </div>
+        </CSSTransition>
     )
 }

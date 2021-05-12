@@ -18,9 +18,6 @@
         height: 100%;    
 
         background: rgba(4, 16, 28, 0.7);
-
-        animation: fadeOut 0.3s ease;
-        animation-fill-mode: forwards;
     }
 
     .catalog-navigation-container {
@@ -223,5 +220,50 @@
                 }
             }
         }
+    }
+}
+
+// catalog-navigation animation
+.catalog-navigation-animation-enter {
+    .catalog-navigation-overlay {
+        opacity: 0;
+        transition: opacity 300ms;
+    }
+    .catalog-navigation-block {
+        opacity: 0;
+        transform: translateX(-320px);
+        transition: opacity 500ms, transform 500ms;
+    }
+}
+
+.catalog-navigation-animation-enter-active {
+    .catalog-navigation-overlay {
+        opacity: 1;
+    }
+    .catalog-navigation-block {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.catalog-navigation-animation-exit {
+    .catalog-navigation-overlay {
+        opacity: 1;
+    }
+    .catalog-navigation-block {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.catalog-navigation-animation-exit-active {
+    .catalog-navigation-overlay {
+        opacity: 0;
+        transition: opacity 300ms;
+    }
+    .catalog-navigation-block {
+        opacity: 0;
+        transform: translateX(-320px);
+        transition: opacity 500ms, transform 500ms;
     }
 }
