@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
                         </div>
                     </aside>
                     <main className="content">
-                        <section className="page-container contacts-container">
+                        <section className="page-container">
                             <div className="page-container-header">
                                 <div className="page-container-title">
                                     Privacy Policy
