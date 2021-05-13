@@ -167,3 +167,107 @@ table.cart-table {
         }
     }
 }
+
+@media screen and (max-width: 479px) {
+    table.cart-table {
+        tbody {
+            max-height: 287px;
+
+            tr {
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding: 30px 30px;
+
+                td {
+                    padding: 10px 0;
+
+                    &.product-image {
+                        width: 100%;
+                        text-align: center;
+
+                        a{
+                            img {
+                                height: 80px;
+                            }
+                        }
+                    }
+
+                    &.product-title {
+                        width: calc(100% - 38px);
+                        order: 1;
+                    }
+
+                    &.product-price,
+                    &.product-quantity,
+                    &.product-total-price {
+                        width: auto;
+                        order: 3;
+                    }
+                    &.product-remove-from-cart {
+                        width: 18px;
+                        margin-left: 20px;
+                        order: 2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    table.cart-table {
+        tbody {
+            max-height: 410px;
+
+            tr {
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding: 30px 30px;
+
+                td {
+                    padding: 10px 0;
+
+                    &.product-image {
+                        order: 1;
+                        width: auto;
+
+                        width: 100px;
+                        margin-right: 20px;
+                    }
+
+                    &.product-title {
+                        width: calc(100% - 158px);
+                        order: 2;
+                    }
+
+                    &.product-remove-from-cart {
+                        order: 3;
+
+                        width: 18px;
+                        margin-left: 20px;
+                    }
+
+                    &.product-price,
+                    &.product-quantity,
+                    &.product-total-price {
+                        width: auto;
+                        order: 4;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    table.cart-table {
+        tbody {
+            tr {
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding: 30px 40px;
+            }
+        }
+    }
+}

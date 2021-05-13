@@ -18,7 +18,7 @@ export default function CartModal({ showCartModal, toggleCartModal }) {
                     <div className="modal-content">
                         <div className="modal-header">
                             <div className="modal-title">
-                                Cart
+                                Cart <span>(5)</span>
                             </div>
                             <div className="modal-close">
                                 <div className="icon close" onClick={toggleCartModal}></div>

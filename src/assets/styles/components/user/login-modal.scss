@@ -60,3 +60,11 @@
         }
     }
 }
+
+@media screen and (max-width: 479px) {
+    .modal.modal-login {
+        .modal-dialog {
+            max-width: 90%;
+        }
+    }
+}

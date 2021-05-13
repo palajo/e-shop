@@ -20,9 +20,6 @@
         height: 100%;    
 
         background: rgba(4, 16, 28, 0.7);
-
-        animation: fadeOut 0.3s ease;
-        animation-fill-mode: forwards;
     }
 
     .modal-dialog {
@@ -180,5 +177,30 @@
         transform: scale(0.95);
 
         transition: opacity 300ms, transform 300ms;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .modal {
+        .modal-dialog {
+            max-width: 90%;
+        }
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .modal {
+        .modal-dialog {
+            max-width: 90%;
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .modal {
+        .modal-dialog {
+            max-width: 90%;
+        }
     }
 }
