@@ -1,143 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { CSSTransition } from 'react-transition-group';
+
+import filters from '../components/api/filters';
+import FiltersModal from '../components/category/FiltersModal';
 
 import SubcategoryBlock from '../components/category/SubcategoryBlock';
 import ProductBlock from '../components/product/ProductBlock'
 
 export default function CategoryPage() {
 
-    const filters = [
-        {
-            id: 1,
-            filterTitle: "Manufacturer",
-            filterQuantity: 6532,
-            filters: [
-                {
-                    filterTitle: "Check all",
-                    filterQuantity: 136
-                },
-                {
-                    filterTitle: "Bourns",
-                    filterQuantity: 314
-                },
-                {
-                    filterTitle: "CDIL",
-                    filterQuantity: 125
-                },
-                {
-                    filterTitle: "Central Semiconductor corp.",
-                    filterQuantity: 200
-                },
-                {
-                    filterTitle: "Daco Semiconductor",
-                    filterQuantity: 234
-                },
-                {
-                    filterTitle: "DC Components",
-                    filterQuantity: 564
-                },
-                {
-                    filterTitle: "Alpha & Omega Conductors",
-                    filterQuantity: 145
-                },
-                {
-                    filterTitle: "Central Semiconductor corp.",
-                    filterQuantity: 421
-                },
-                {
-                    filterTitle: "CDIL",
-                    filterQuantity: 631
-                },
-                {
-                    filterTitle: "Bourns",
-                    filterQuantity: 1235
-                },
-                {
-                    filterTitle: "Alpha & Omega Conductors",
-                    filterQuantity: 231
-                },
-            ]
-        },
-        {
-            id: 2,
-            filterTitle: "Brand",
-            filterQuantity: 2184,
-            filters: [
-                {
-                    filterTitle: "AAEON",
-                    filterQuantity: 136
-                },
-                {
-                    filterTitle: "ACME SYSTEMS",
-                    filterQuantity: 314
-                },
-                {
-                    filterTitle: "GRINN",
-                    filterQuantity: 125
-                },
-                {
-                    filterTitle: "OLIMEX",
-                    filterQuantity: 200
-                },
-                {
-                    filterTitle: "RASPBERRY PI",
-                    filterQuantity: 234
-                },
-                {
-                    filterTitle: "SEEED STUDIO",
-                    filterQuantity: 564
-                },
-                {
-                    filterTitle: "SINOVOIP",
-                    filterQuantity: 145
-                },
-                {
-                    filterTitle: "SOLIDRUN",
-                    filterQuantity: 421
-                },
-                {
-                    filterTitle: "SOMLABS",
-                    filterQuantity: 631
-                },
-                {
-                    filterTitle: "VIA TECHNOLOGIES",
-                    filterQuantity: 1235
-                },
-                {
-                    filterTitle: "Allwinner A33 Quad-Core",
-                    filterQuantity: 231
-                },
-            ]
-        },
-        {
-            id: 3,
-            filterTitle: "Type",
-            filterQuantity: 2184,
-            filters: [
-                {
-                    filterTitle: "AC switch",
-                    filterQuantity: 7
-                },
-                {
-                    filterTitle: "BOD",
-                    filterQuantity: 10
-                },
-                {
-                    filterTitle: "FLC",
-                    filterQuantity: 35
-                },
-                {
-                    filterTitle: "SBS",
-                    filterQuantity: 212
-                },
-                {
-                    filterTitle: "Sidak",
-                    filterQuantity: 67
-                }
-            ]
-        }
-    ]
+    const [width, setWidth] = useState(window.innerWidth);
 
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
 
     const products = [];
     for (var i = 0; i < 15; i++) {
@@ -151,11 +35,19 @@ export default function CategoryPage() {
     };
     
 
-    const [showFilter, setShowFilter] = useState(true);
+    const [showFilter, setShowFilter] = useState(false);
+
     const toggleShowFilter = (index) => setShowFilter(showFilter => ({
         ...showFilter,
         [index]: !showFilter[index]
     }));
+
+
+    const [showFiltersModal, setShowFiltersModal] = useState(false);
+
+    const toggleFiltersModal = () => {
+        setShowFiltersModal(!showFiltersModal);
+    };
 
     return (
         <div id="wrapper">
@@ -189,60 +81,89 @@ export default function CategoryPage() {
                                 <div className="category-container-title">
                                     SMD transil diodes
                                 </div>
-                                <div className="category-container-sort">
-                                    <div className="sort-block">
-                                        <select name="show-on-page" id="show-on-page" className="show-on-page">
-                                            <option value="relevant">Most Relevant</option>
-                                            <option value="popular">Most Popular</option>
-                                            <option value="hightolow">Price (from high to low)</option>
-                                            <option value="lowtohigh">Price (from low to high)</option>
-                                        </select>
-                                    </div>
-                                    <div className="sort-block">
-                                        <select name="show-on-page" id="show-on-page" className="show-on-page">
-                                            <option value="15">15</option>
-                                            <option value="25">25</option>
-                                            <option value="45">45</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                {
+                                    width <= 1023 ? (
+                                        <div className="category-container-toggle-filters">
+                                            <button className="button button-icon button-icon-text" onClick={toggleFiltersModal}>
+                                                <div className="icon filter"></div>
+                                                Filters
+                                            </button>
+                                        </div>
+                                    ) : null
+                                }
+                                {
+                                    width >= 1024 ? (
+                                        <div className="category-container-sort">
+                                            <div className="sort-block">
+                                                <select name="show-on-page" id="show-on-page" className="show-on-page">
+                                                    <option value="relevant">Most Relevant</option>
+                                                    <option value="popular">Most Popular</option>
+                                                    <option value="hightolow">Price (from high to low)</option>
+                                                    <option value="lowtohigh">Price (from low to high)</option>
+                                                </select>
+                                            </div>
+                                            <div className="sort-block">
+                                                <select name="show-on-page" id="show-on-page" className="show-on-page">
+                                                    <option value="15">15</option>
+                                                    <option value="25">25</option>
+                                                    <option value="45">45</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    ) : null
+                                }
                             </div>
                             <div className="category-container-body">
-                                <div className="category-container-filters">
-                                    {
-                                        filters.map((filter, index) => (
-                                            <div className={showFilter[index] ? "filters-block hidden" : "filters-block"} key={index}>
-                                                <button className="filters-button" onClick={() => toggleShowFilter(index)}>
-                                                    {filter.filterTitle} <span>({filter.filterQuantity})</span>
-                                                </button>
-                                                {
-                                                    showFilter[index] ? (
-                                                        null
-                                                    ) : (
-                                                        <div className="filters-container">
-                                                            <div className="filters-search">
-                                                                <input type="text" placeholder="Search.." className="filter-search-input" />
+                                {
+                                    width >= 1024 ? (
+                                        <div className="category-container-filters">
+                                            {
+                                                filters.map((filter, index) => (
+                                                    <div className={showFilter[index] ? "filters-block hidden" : "filters-block"} key={index}>
+                                                        <button className="filters-button" onClick={() => toggleShowFilter(index)}>
+                                                            {filter.filterTitle} <span>({filter.filterQuantity})</span>
+                                                        </button>
+                                                        <CSSTransition 
+                                                            in={index === 0 ? !showFilter[index] : showFilter[index]}
+                                                            timeout={400}
+                                                            classNames="filters-animation"
+                                                            unmountOnExit
+                                                            key={index}
+                                                        >
+                                                            <div className="filters-container">
+                                                                <div className="filters-search">
+                                                                    <input type="text" placeholder="Search.." className="filter-search-input" />
+                                                                </div>
+                                                                <ul className="filters-nav">
+                                                                    {
+                                                                        filter.filters.map((subfilter, index) => (
+                                                                            <li className="filters-nav-item" key={index}>
+                                                                                <div className="filters-nav-link">
+                                                                                    <input type="checkbox" className="custom-checkbox" name="checkbox-example" id={subfilter.filterTitle + index} />
+                                                                                    <label htmlFor={subfilter.filterTitle + index}>{subfilter.filterTitle}<span>({subfilter.filterQuantity})</span></label>
+                                                                                </div>
+                                                                            </li>
+                                                                        ))
+                                                                    }
+                                                                </ul>
                                                             </div>
-                                                            <ul className="filters-nav">
-                                                                {
-                                                                    filter.filters.map((subfilter, index) => (
-                                                                        <li className="filters-nav-item" key={index}>
-                                                                            <div className="filters-nav-link">
-                                                                                <input type="checkbox" className="custom-checkbox" name="checkbox-example" id={subfilter.filterTitle + index} />
-                                                                                <label htmlFor={subfilter.filterTitle + index}>{subfilter.filterTitle}<span>({subfilter.filterQuantity})</span></label>
-                                                                            </div>
-                                                                        </li>
-                                                                    ))
-                                                                }
-                                                            </ul>
-                                                        </div>
-                                                    )
-                                                }
-
-                                            </div>
-                                        ))
-                                    }
-                                </div>
+                                                        </CSSTransition>
+                                                    </div>
+                                                ))
+                                            }
+                                        </div>
+                                    ) : null 
+                                }
+                                {
+                                    width <= 1023 ? (
+                                        <FiltersModal 
+                                            showFiltersModal={showFiltersModal}
+                                            toggleFiltersModal={toggleFiltersModal}
+                                            showFilter={showFilter}
+                                            toggleShowFilter={toggleShowFilter}
+                                        />
+                                    ) : null 
+                                }
                                 <div className="category-container-products">
                                     {products}
                                 </div>

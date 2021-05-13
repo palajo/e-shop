@@ -36,6 +36,22 @@
         -moz-box-shadow: 5px 0px 15px 0px rgba(0, 0, 0, 0.1);
         box-shadow: 5px 0px 15px 0px rgba(0, 0, 0, 0.1);
 
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+        &::-webkit-scrollbar-track {
+            background: $lightgray;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $blue;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: $blueHover;
+        }
+
         .burger-navigation-block {
             width: 100%;
             margin-bottom: 30px;

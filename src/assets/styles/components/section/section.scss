@@ -324,6 +324,10 @@ section.category-container {
             color: #000;
         }
 
+        .category-container-toggle-filters {
+            margin-left: 30px;
+        }
+
         .category-container-sort {
             display: flex;
             align-items: center;
@@ -344,20 +348,6 @@ section.category-container {
         flex-wrap: wrap;
 
         width: 100%;
-
-        &::before {
-            content: '';
-            position: absolute;
-    
-            top: 0;
-            right: 0;
-    
-            height: 100%;
-            width: 1px;
-    
-            background: $white;
-            z-index: 3;
-        }
     
         &::after {
             content: '';
@@ -485,14 +475,11 @@ section.product-container {
 
     section.category-container {
         .category-container-header {
-            .category-container-sort {
-                display: none;
-            }
+            min-height: 70px;
+            height: auto;
+            padding: 15px 30px;
         }
         .category-container-body {
-            .category-container-filters {
-                display: none;
-            }
             .category-container-products {
                 width: 100%;
             }
@@ -583,14 +570,11 @@ section.product-container {
 
     section.category-container {
         .category-container-header {
-            .category-container-sort {
-                display: none;
-            }
+            min-height: 70px;
+            height: auto;
+            padding: 15px 30px;
         }
         .category-container-body {
-            .category-container-filters {
-                display: none;
-            }
             .category-container-products {
                 width: 100%;
             }
@@ -613,14 +597,16 @@ section.product-container {
 
     section.category-container {
         .category-container-header {
-            .category-container-sort {
-                display: none;
+            min-height: 70px;
+            height: auto;
+            padding: 15px 30px;
+            
+            .category-container-toggle-filters {
+                display: block;
+                margin-left: 30px;
             }
         }
         .category-container-body {
-            .category-container-filters {
-                display: none;
-            }
             .category-container-products {
                 width: 100%;
             }
