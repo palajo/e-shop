@@ -69,26 +69,38 @@ export default function SuccessPage() {
                                     <tbody>
                                         <tr>
                                             <th>
-                                                Total:
+                                                <div>
+                                                    Total
+                                                </div>
                                             </th>
                                             <td>
-                                                $2997
+                                                <div>
+                                                    $2997
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>
-                                                Shipment:
+                                                <div>
+                                                    Shipment
+                                                </div>
                                             </th>
                                             <td>
-                                                $50
+                                                <div>
+                                                    $50
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>
-                                                Total to pay:
+                                                <div>
+                                                    Total to pay
+                                                </div>
                                             </th>
                                             <td>
-                                                $3047
+                                                <div>
+                                                    $3047
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -102,42 +114,62 @@ export default function SuccessPage() {
                                     <tbody>
                                         <tr>
                                             <th>
-                                                Full Name
+                                                <div>
+                                                    Full Name
+                                                </div>
                                             </th>
                                             <td>
-                                                Voloshyn Volodymyr
+                                                <div>
+                                                    Voloshyn Volodymyr
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>
-                                                E-mail
+                                                <div>
+                                                    E-mail
+                                                </div>
                                             </th>
                                             <td>
-                                                admin@leadbranding.net
+                                                <div>
+                                                    admin@leadbranding.net
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>
-                                                Phone number
+                                                <div>
+                                                    Phone number
+                                                </div>
                                             </th>
                                             <td>
-                                                +38 (000) 00 00 000
+                                                <div>
+                                                    +38 (000) 00 00 000
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>
-                                                City
+                                                <div>
+                                                    City
+                                                </div>
                                             </th>
                                             <td>
-                                                Lviv
+                                                <div>
+                                                    Lviv
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>
-                                                Department Nova Poshta
+                                                <div>
+                                                    Department Nova Poshta
+                                                </div>
                                             </th>
                                             <td>
-                                                #64
+                                                <div>
+                                                    #64
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
