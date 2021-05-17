@@ -1,0 +1,70 @@
+.modal.modal-login {
+    .modal-dialog {
+        max-width: 360px;
+        
+        .modal-content {
+            padding: 40px; 
+            
+            .modal-header {
+                position: relative;
+                justify-content: center;
+                border-bottom: 0;
+
+                padding: 0;
+                height: auto;
+
+                margin-bottom: 30px;
+
+                .modal-close {
+                    position: absolute;
+                    top: -20px;
+                    right: -20px;
+                }
+            }
+            .modal-body {
+                padding: 0;
+
+                form {
+                    .form-row {
+                        .form-block {
+                            &.login-submit {
+                                margin-top: 15px;
+                                
+                                .register-now {
+                                    width: 100%;
+                                    text-align: center;
+                                    margin-bottom: 15px;
+
+                                    span {
+                                        cursor: pointer;
+
+                                        font-weight: 500;
+                                        color: $blue;
+
+                                        transition: 0.1s ease;
+
+                                        &:hover {
+                                            color: $blueHover;
+                                        }
+                                    }
+                                }
+
+                                .button {
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .modal.modal-login {
+        .modal-dialog {
+            max-width: 90%;
+        }
+    }
+}

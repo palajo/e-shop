@@ -1,0 +1,206 @@
+.modal {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 101;
+
+    .modal-overlay {
+        cursor: pointer;
+        position: fixed;
+
+        top: 0;
+        left: 0;
+    
+        width: 100%;
+        height: 100%;    
+
+        background: rgba(4, 16, 28, 0.7);
+    }
+
+    .modal-dialog {
+        display: flex;
+        align-items: center;
+
+        height: 100%;
+        width: 100%;
+        max-width: 960px;
+
+        margin: 0 auto;
+
+        .modal-content {
+            position: relative;
+            z-index: 1;
+
+            width: 100%;    
+            max-height: 90%;
+
+            background: $white;
+            
+            border-radius: 10px;
+
+            animation: modalFadeOut 0.3s ease;
+            animation-fill-mode: forwards;
+
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+            &::-webkit-scrollbar-track {
+                background: none;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $blue;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background: $blueHover;
+            }
+
+            .modal-header {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+
+                width: 100%;
+                height: 70px;
+
+                padding: 0 30px;
+
+                border-bottom: 1px solid $lightgray;
+
+                .modal-title {
+                    font-size: 24px;
+                    line-height: 30px;
+
+                    color: $black;
+                    font-weight: 500;
+                }
+
+                .modal-close {
+                    cursor: pointer;
+
+                    width: 18px;
+                    height: 18px;
+
+                    .icon {
+                        width: 18px;
+                        height: 18px;
+
+                        background: $gray;
+                        transition: 0.1s ease;
+
+                        &:hover {
+                            background: $blueHover;
+                        }
+                    }
+                }
+            }
+
+            .modal-body {
+                padding: 20px 60px;
+            }
+
+            .modal-footer {
+                padding: 20px 60px 40px 60px;
+
+                .modal-footer-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+
+                    .modal-footer-block {
+                        margin-right: 40px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+// modal animation
+.modal-animation-enter {
+    .modal-overlay {
+        opacity: 0;
+        transition: opacity 300ms;
+    }
+    .modal-content {
+        opacity: 0;
+        transform: translateY(100px);
+        transform: scale(0.95);
+
+        transition: opacity 300ms, transform 300ms;
+    }
+}
+
+.modal-animation-enter-active {
+    .modal-overlay {
+        opacity: 1;
+    }
+    .modal-content {
+        opacity: 1;
+        transform: translateY(0);
+        transform: scale(1);
+    }
+}
+
+.modal-animation-exit {
+    .modal-overlay {
+        opacity: 1;
+    }
+    .modal-content {
+        opacity: 1;
+        transform: translateY(0);
+        transform: scale(1);
+    }
+}
+
+.modal-animation-exit-active {
+    .modal-overlay {
+        opacity: 0;
+        transition: opacity 300ms;
+    }
+    .modal-content {
+        opacity: 0;
+        transform: translateY(100px);
+        transform: scale(0.95);
+
+        transition: opacity 300ms, transform 300ms;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .modal {
+        .modal-dialog {
+            max-width: 90%;
+        }
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .modal {
+        .modal-dialog {
+            max-width: 90%;
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .modal {
+        .modal-dialog {
+            max-width: 90%;
+        }
+    }
+}

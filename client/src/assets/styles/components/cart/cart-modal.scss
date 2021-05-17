@@ -1,0 +1,111 @@
+.modal.modal-cart {
+    .modal-dialog {
+        .modal-content {
+            .modal-header {
+                .modal-title { 
+                    span {
+                        font-weight: 400;
+                        color: $gray;
+                    }
+                }
+            }
+            .modal-body {
+                padding: 0;
+            }
+            .modal-footer {
+                padding: 40px 30px;
+
+                .modal-footer-row {
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    .cart-total-price {
+                        display: block;
+                        margin-left: 30px;
+
+                        label {
+                            display: block;
+
+                            font-size: 12px;
+                            line-height: 18px;
+
+                            color: $darkgray;
+                            font-weight: 400;
+                        }
+
+                        font-size: 24px;
+                        line-height: 30px;
+
+                        font-weight: 500;
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
+.cart-button {
+    position: relative;
+
+    .cart-button-counter {
+        position: absolute;
+
+        top: 7px;
+        right: 9px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 12px;
+        height: 12px;
+
+        border-radius: 50%;
+        background: #f23030;
+
+        font-size: 9px;
+        text-align: center;
+
+        z-index: 1;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .modal.modal-cart {
+        .modal-dialog {
+            .modal-content {
+                .modal-header {
+                    .modal-title { 
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+                }
+
+                .modal-footer {
+                    .modal-footer-row {
+                        justify-content: space-between;
+
+                        .cart-total-price {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .modal.modal-cart {
+        .modal-dialog {
+            .modal-content {
+                .modal-header {
+                    .modal-title { 
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,302 @@
+section.success-container {
+    width: 100%;
+
+    border-radius: 10px;
+    background: $white;
+
+    .success-container-row {
+        display: flex;
+        flex-wrap: wrap;
+
+        width: 100%;
+
+        padding: 50px 40px;
+        border-bottom: 1px solid $lightgray;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.justify-content-center {
+            justify-content: center;
+        }
+
+        .success-container-row-title {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+
+            .icon-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 36px;
+                height: 36px;
+
+                border-radius: 5px;
+
+                background: $blue;
+                margin-right: 15px;
+
+                .icon {
+                    background: $white;
+                }
+            }
+
+            h1.container-title {
+                font-size: 24px;
+                line-height: 30px;
+
+                font-weight: 500;
+                color: $blue;
+            }
+        }
+
+        table.order-details {
+            width: 100%;
+            border-collapse: collapse;
+
+            tbody {
+                display: block;
+                max-height: 264px;
+                overflow-y: auto;
+        
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+                &::-webkit-scrollbar-track {
+                    background: $lightgray;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: $blue;
+                    border-radius: 10px;
+                }
+                &::-webkit-scrollbar-thumb:hover {
+                    background: $blueHover;
+                }
+
+                tr {
+                    display: flex;
+                    justify-content: space-between;      
+                    align-items: center;
+
+                    width: 100%;
+                    padding: 15px 60px;
+
+                    border-bottom: 1px solid $lightgray;
+
+                    &:first-child {
+                        border-top: 1px solid $lightgray;
+                    }
+                    
+                    td {
+
+                        &.product-image {
+                            img {
+                                height: 50px;
+                                max-width: 100%;
+
+                                object-fit: contain;
+                            }
+                        }
+
+                        &.product-title {
+                            .product-title-title {
+                                a {
+                                    font-size: 14px;
+                                    line-height: 20px;
+
+                                    color: $black;
+                                    font-weight: 500;
+
+                                    &:hover {
+                                        color: $blueHover;
+                                    }
+                                }
+
+                                span {
+                                    margin-left: 5px;
+                                    color: $gray;
+                                    font-weight: 400;
+                                }
+                            }
+                            .product-code {
+                                font-size: 12px;
+                                line-height: 18px;
+
+                                color: $gray;
+                                font-weight: 400;
+                            }
+                        }
+
+                        &.product-total-price {
+                            font-size: 16px;
+                            line-height: 24px;
+
+                            color: $blue;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+
+        table.success-informative-table {
+            width: 100%;
+            max-width: 450px;
+
+            border-collapse: collapse;
+            text-align: left;
+
+            tbody {
+                tr {
+                    th {
+                        position: relative;
+                        
+                        font-size: 14px;
+                        line-height: 24px;
+
+                        color: $gray;
+                        font-weight: 400;
+
+                        width: 50%;
+                        padding: 10px 0;
+
+                        div {
+                            position: relative;
+                            z-index: 1;
+
+                            background: $white;
+                            padding-right: 20px;
+
+                            width: fit-content;
+                        }
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+
+                            top: 50%;
+                            left: 0;
+
+                            width: 100%;
+                            height: 1px;
+
+                            background: $lightgray;
+                        }    
+
+                    }
+                    td {
+                        font-size: 14px;
+                        line-height: 24px;
+
+                        color: $black;
+                        font-weight: 500;
+
+                        width: 50%;
+                        padding: 10px 0;
+
+                        div {
+                            background: $white;
+                            padding-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section.success-container {
+        .success-container-row {
+            padding: 50px 30px;
+            margin-bottom: 0;
+            border-bottom: 1px solid $lightgray;
+
+            .thank-you-title {
+                width: 100%;
+
+                flex-wrap: wrap;
+                justify-content: center;
+
+                .icon-box {
+                    width: 30px;
+                    height: 30px;
+
+                    margin-right: 0;
+                    margin-bottom: 15px;
+                }
+
+                h1.container-title {
+                    text-align: center;
+                    padding: 0 10px;
+
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+            }
+
+            table.order-details { 
+                tbody {
+                    max-height: 400px;
+
+                    tr {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        padding: 20px 15px;
+
+                        td {
+                            width: 100%;
+                            margin-bottom: 20px;
+                            
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            table.success-informative-table {
+                display: block;
+                overflow-x: auto;
+                width: 100%;
+
+                padding-bottom: 20px;
+
+                &::-webkit-scrollbar {
+                    width: 4px;
+                    height: 4px;
+                }
+                &::-webkit-scrollbar-track {
+                    background: $lightgray;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: $blue;
+                    border-radius: 10px;
+                }
+                &::-webkit-scrollbar-thumb:hover {
+                    background: $blueHover;
+                }
+
+                tbody {
+                    tr {
+                        th, td {
+                            min-width: 120px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

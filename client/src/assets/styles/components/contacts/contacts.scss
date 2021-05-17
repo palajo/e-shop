@@ -1,0 +1,93 @@
+section.page-container.contacts-container {
+    .page-container-body {
+        width: 100%;
+
+        .contacts-row {
+            display: flex;
+            flex-wrap: wrap;
+
+            width: 100%;
+
+            .contact-map-block {
+                width: 50%;
+                height: 100%;
+
+                iframe {
+                    width: 100%;
+                    height: 100%;
+
+                    border: 0;
+                }
+            }
+
+            .contacts-content-block {
+                width: 50%;
+                padding-left: 70px;
+
+                .contacts-block {
+                    h4 {
+                        margin-bottom: 20px;
+                    }
+
+                    .contacts-list {
+                        .link-icon {
+                            margin-bottom: 15px;
+    
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+                .divider {
+                    margin: 40px 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    section.page-container.contacts-container {
+        .page-container-body {
+            padding: 0;
+
+            .contacts-row {
+                .contact-map-block {
+                    width: 100%;
+                    height: 350px;
+                }
+
+                .contacts-content-block {
+                    width: 100%;
+                    padding: 50px 40px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    section.page-container.contacts-container {
+        .page-container-body {
+            .contacts-row {
+                .contacts-content-block {
+                    padding-left: 50px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    section.page-container.contacts-container {
+        .page-container-body {
+            .contacts-row {
+                .contacts-content-block {
+                    padding-left: 50px;
+                }
+            }
+        }
+    }
+}
