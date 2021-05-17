@@ -37,6 +37,21 @@
             height: 100%;
 
             background: $white;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+            &::-webkit-scrollbar-track {
+                background: $lightgray;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $blue;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-thumb:hover {
+                background: $blueHover;
+            }
 
             .catalog-navigation-block-title {
                 padding: 0 30px;
@@ -78,13 +93,14 @@
                         font-weight: 500;
                         color: $black;
         
-                        border-top: 1px solid $lightgray;
+                        border-bottom: 1px solid $lightgray;
 
                         transition: 0.1s ease;
         
                         .catalog-nav-link-title {
                             display: flex;
                             align-items: center;
+                            padding-right: 10px;
                         
                             .icon {
                                 width: 18px;
@@ -267,3 +283,47 @@
         transition: opacity 500ms, transform 500ms;
     }
 }
+
+
+// catalog-navigation subcategory animation
+.catalog-navigation {
+    .catalog-navigation-container {
+        .catalog-navigation-block {
+            &.catalog-navigation-subcategory-animation-enter {
+                opacity: 0;
+                transform: translateX(-320px);
+                transition: opacity 500ms, transform 500ms;
+            
+                position: relative;
+                z-index: 0;
+            }
+            
+            &.catalog-navigation-subcategory-animation-enter-active {
+                transform: translateX(0);
+                opacity: 1;
+            
+                position: relative;
+                z-index: 0;
+            
+            }
+            
+            &.catalog-navigation-subcategory-animation-exit {
+                transform: translateX(0);
+                opacity: 1;
+            
+                position: relative;
+                z-index: 0;
+            }
+            
+            &.catalog-navigation-subcategory-animation-exit-active {
+                opacity: 0;
+                transform: translateX(-320px);
+                transition: opacity 500ms, transform 500ms;
+            
+                position: relative;
+                z-index: 0;
+            }
+        }
+    }
+} 
+
