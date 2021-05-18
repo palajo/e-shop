@@ -51,7 +51,7 @@ function App() {
                 />
                 <Switch>
                     <Route component={MainPage} path="/" exact />
-                    <Route component={CatalogPage} path="/catalog" exact />
+                    <Route component={CatalogPage} path="/catalog/:id" exact />
                     <Route component={CategoryPage} path="/catalog/category" exact />
                     <Route component={ProductPage} path="/catalog/category/product" exact />
                     <Route component={CheckoutPage} path="/checkout" exact />

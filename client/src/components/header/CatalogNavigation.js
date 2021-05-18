@@ -109,14 +109,28 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                                                 <ul className="catalog-nav">
                                                     {
                                                         data.Data.CategoryTree.SubTree.map((category, index) => (
-                                                            <CatalogNavigationPunct
-                                                                name={category.Name}
-                                                                id={category.Id}
-                                                                key={category.Id}
-                                                                child={category.SubTreeCount > 0 ? '1' : '0'}
-                                                                onClick={() => handleDepthOne(index)}
-                                                                icon="processor"
-                                                            />
+                                                            <li className="catalog-nav-item" onClick={() => handleDepthOne(index)} key={index}>
+                                                                <div className={`catalog-nav-link ${index === depthOne ? 'chosen' : ''}`}>
+                                                                    <div className="catalog-nav-link-title">
+                                                                        <div className={`icon processor`}></div>
+                                                                        {category.Name}
+                                                                    </div>
+                                                                    <div className="catalog-nav-link-actions">
+                                                                        {
+                                                                            category.SubTreeCount > 0 ? (
+                                                                                <div className="catalog-nav-link-action">
+                                                                                    <NavLink to={`/catalog/${category.Id}`}>
+                                                                                        <div className="icon external-link"></div>
+                                                                                    </NavLink>
+                                                                                </div>
+                                                                            ) : null
+                                                                        }
+                                                                        <div className="catalog-nav-link-action">
+                                                                            <div className="icon menu-arrow-right"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
                                                         ))
                                                     }
                                                 </ul>
@@ -138,15 +152,32 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                                                     {catalog[0].Data.CategoryTree.SubTree[depthOne].Name}
                                                 </div>
                                                 <ul className="catalog-nav">
-                                                    {catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree.map((category, index) => (
-                                                        <CatalogNavigationPunct
-                                                            name={category.Name}
-                                                            id={category.Id}
-                                                            key={category.Id}
-                                                            child={category.SubTreeCount > 0 ? '1' : '0'}
-                                                            onClick={() => handleDepthTwo(index)}
-                                                        />
-                                                    ))}
+                                                    {
+                                                        catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree.map((category, index) => (
+                                                            <li className="catalog-nav-item" onClick={() => handleDepthTwo(index)} key={index}>
+                                                                <div className={`catalog-nav-link ${index === depthTwo ? 'chosen' : ''}`}>
+                                                                    <div className="catalog-nav-link-title">
+                                                                        <div className={`icon processor`}></div>
+                                                                        {category.Name}
+                                                                    </div>
+                                                                    <div className="catalog-nav-link-actions">
+                                                                        {
+                                                                            category.SubTreeCount > 0 ? (
+                                                                                <div className="catalog-nav-link-action">
+                                                                                    <NavLink to={`/catalog/${category.Id}`}>
+                                                                                        <div className="icon external-link"></div>
+                                                                                    </NavLink>
+                                                                                </div>
+                                                                            ) : null
+                                                                        }
+                                                                        <div className="catalog-nav-link-action">
+                                                                            <div className="icon menu-arrow-right"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        ))
+                                                    }
                                                 </ul>
                                             </div>
                                         </CSSTransition>
@@ -164,15 +195,32 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                                                             {catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].Name}
                                                         </div>
                                                         <ul className="catalog-nav">
-                                                            {catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTree.map((category, index) => (
-                                                                <CatalogNavigationPunct
-                                                                    name={category.Name}
-                                                                    id={category.Id}
-                                                                    key={category.Id}
-                                                                    child={category.SubTreeCount > 0 ? '1' : '0'}
-                                                                    onClick={() => handleDepthThree(index)}
-                                                                />
-                                                            ))}
+                                                            {
+                                                                catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTree.map((category, index) => (
+                                                                    <li className="catalog-nav-item" onClick={() => handleDepthThree(index)} key={index}>
+                                                                        <div className={`catalog-nav-link ${index === depthThree ? 'chosen' : ''}`}>
+                                                                            <div className="catalog-nav-link-title">
+                                                                                <div className={`icon processor`}></div>
+                                                                                {category.Name}
+                                                                            </div>
+                                                                            <div className="catalog-nav-link-actions">
+                                                                                {
+                                                                                    category.SubTreeCount > 0 ? (
+                                                                                        <div className="catalog-nav-link-action">
+                                                                                            <NavLink to={`/catalog/${category.Id}`}>
+                                                                                                <div className="icon external-link"></div>
+                                                                                            </NavLink>
+                                                                                        </div>
+                                                                                    ) : null
+                                                                                }
+                                                                                <div className="catalog-nav-link-action">
+                                                                                    <div className="icon menu-arrow-right"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </li>
+                                                                ))
+                                                            }
                                                         </ul>
                                                     </div>
                                                 </CSSTransition>
@@ -190,15 +238,32 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                                                                 {catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTree[depthThree].Name}
                                                             </div>
                                                             <ul className="catalog-nav">
-                                                                {catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTree[depthThree].SubTree.map((category, index) => (
-                                                                    <CatalogNavigationPunct
-                                                                        name={category.Name}
-                                                                        id={category.Id}
-                                                                        key={category.Id}
-                                                                        child={category.SubTreeCount > 0 ? '1' : '0'}
-                                                                        onClick={() => handleDepthFour(index)}
-                                                                    />
-                                                                ))}
+                                                                {
+                                                                    catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTree[depthThree].SubTree.map((category, index) => (
+                                                                        <li className="catalog-nav-item" onClick={() => handleDepthFour(index)} key={index}>
+                                                                            <div className={`catalog-nav-link ${index === depthFour ? 'chosen' : ''}`}>
+                                                                                <div className="catalog-nav-link-title">
+                                                                                    <div className={`icon processor`}></div>
+                                                                                    {category.Name}
+                                                                                </div>
+                                                                                <div className="catalog-nav-link-actions">
+                                                                                    {
+                                                                                        category.SubTreeCount > 0 ? (
+                                                                                            <div className="catalog-nav-link-action">
+                                                                                                <NavLink to={`/catalog/${category.Id}`}>
+                                                                                                    <div className="icon external-link"></div>
+                                                                                                </NavLink>
+                                                                                            </div>
+                                                                                        ) : null
+                                                                                    }
+                                                                                    <div className="catalog-nav-link-action">
+                                                                                        <div className="icon menu-arrow-right"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    ))
+                                                                }
                                                             </ul>
                                                         </div>
                                                         </CSSTransition>
