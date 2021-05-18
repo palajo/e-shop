@@ -38,6 +38,7 @@
 
             background: $white;
             overflow-y: auto;
+            overflow-x: hidden;
 
             &::-webkit-scrollbar {
                 width: 4px;
@@ -85,6 +86,7 @@
                         align-items: center;
         
                         width: 100%;
+                        min-width: 316px;
                         padding: 15px 30px;
         
                         font-size: 14px;
@@ -100,7 +102,7 @@
                         .catalog-nav-link-title {
                             display: flex;
                             align-items: center;
-                            padding-right: 10px;
+                            padding-right: 12px;
                         
                             .icon {
                                 width: 18px;
@@ -152,23 +154,23 @@
                         }
 
                         &.chosen {
-                            background: $blue;
-                            color: $white;
+                            background: #f5f5f5;
+                            color: $blueHover;
 
                             .icon {
-                                background: $white;
+                                background: $blueHover;
                             }
 
                             .catalog-nav-link-actions {
                                 .catalog-nav-link-action {
                                     .icon {
-                                        background: $white;
+                                        background: $blueHover;
                                     }
                                 }
                             }
 
                             &:hover {
-                                background: $blueHover;
+                                background: #f0f0f0;
                             }
                         }
                     }
@@ -177,6 +179,8 @@
 
             &.previous {
                 background: #f5f5f5;
+                transition: width 0.4s ease;
+
                 ul.catalog-nav {
                     li.catalog-nav-item {
                         .catalog-nav-link {
@@ -218,9 +222,9 @@
 
                 width: 50px;
                 background: $darkblue;
-
-                transition: 0.2s ease;
                 border-left: 1px solid $transparent;
+
+                transition: width 0.4s ease;
 
                 &:hover {
                     background: $blue;

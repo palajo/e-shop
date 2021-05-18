@@ -20,8 +20,8 @@ const categoriesRouter = express.Router();
     const url = domain + path + format;
 
     const params = {
-        Country: 'UA',
-        Language: 'uk',
+        Country: 'UK',
+        Language: 'EN',
         Token: token
     }
 
