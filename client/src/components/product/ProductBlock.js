@@ -5,24 +5,24 @@ import { NavLink } from 'react-router-dom';
 
 import ProductImage from '../../assets/images/product-image.png';
 
-export default function ProductBlock() {
+export default function ProductBlock(props) {
     return (
         <div className="product-block">
             <div className="product-image">
                 <NavLink to="/catalog/category/product">
-                    <img src={ProductImage} />
+                    <img src={props.image} alt={props.alt} />
                 </NavLink>
             </div>
             <div className="product-title">
                 <div>
-                    CONQUER ELECTRONIC
+                    {props.producer}
                 </div>
                 <NavLink to="/catalog/category/product">
-                    ABE 25A 250V
+                    {props.title}
                 </NavLink>
             </div>
             <div className="product-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                {props.description}
             </div>
             <div className="product-block-row">
                 <div className="product-price">

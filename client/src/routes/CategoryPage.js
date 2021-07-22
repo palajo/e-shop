@@ -7,206 +7,246 @@ import FiltersModal from '../components/category/FiltersModal';
 
 import SubcategoryBlock from '../components/category/SubcategoryBlock';
 import ProductBlock from '../components/product/ProductBlock'
+import { useDispatch, useSelector } from 'react-redux';
+import { listCategory } from '../redux/actions/categoryActions';
+import CategoryProducts from '../components/category/CategoryProducts';
 
-export default function CategoryPage() {
+export default function CategoryPage(props) {
 
-    const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(window.innerWidth);
 
-    function handleWindowSizeChange() {
-        setWidth(window.innerWidth);
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
     }
+  }, []);
 
-    useEffect(() => {
-        window.addEventListener('resize', handleWindowSizeChange);
-        return () => {
-            window.removeEventListener('resize', handleWindowSizeChange);
-        }
-    }, []);
+  const [showFilter, setShowFilter] = useState(false);
 
-    const products = [];
-    for (var i = 0; i < 15; i++) {
-        products.push(<ProductBlock key={i} />);
-    };
+  const toggleShowFilter = (index) => setShowFilter(showFilter => ({
+    ...showFilter,
+    [index]: !showFilter[index]
+  }));
 
 
-    const subcategories = [];
-    for (var x = 0; x < 14; x++) {
-        subcategories.push(<SubcategoryBlock key={x} />);
-    };
-    
+  const [showFiltersModal, setShowFiltersModal] = useState(false);
 
-    const [showFilter, setShowFilter] = useState(false);
+  const toggleFiltersModal = () => {
+    setShowFiltersModal(!showFiltersModal);
+  };
 
-    const toggleShowFilter = (index) => setShowFilter(showFilter => ({
-        ...showFilter,
-        [index]: !showFilter[index]
-    }));
+  // fetching category data
+  const dispatch = useDispatch();
+  const categoryId = props.match.params.categoryId;
 
+  const categoryList = useSelector((state) => state.categoryList);
+  const {loading, error, categories} = categoryList;
 
-    const [showFiltersModal, setShowFiltersModal] = useState(false);
+  useEffect(() => {
+    dispatch(listCategory(categoryId));
+  }, [dispatch, categoryId]);
 
-    const toggleFiltersModal = () => {
-        setShowFiltersModal(!showFiltersModal);
-    };
+  console.log(categories);
 
-    return (
-        <div id="wrapper">
-            <div className="container">
-                <div className="row">
-                    <main className="full-width">
-                        <section className="breadcrumbs-container">
-                            <ul className="breadcrumbs">
-                                <li className="breadcrumbs-item">
-                                    <NavLink to="/" className="breadcrumbs-link" exact>
-                                        Mainpage
-                                    </NavLink>
-                                </li>
-                                <li className="breadcrumbs-item">
-                                    <NavLink to="/catalog" className="breadcrumbs-link" exact>
-                                        Catalog
-                                    </NavLink>
-                                </li>
-                                <li className="breadcrumbs-item">
-                                    <NavLink to="/catalog/category" className="breadcrumbs-link" exact>
-                                        Category
-                                    </NavLink>
-                                </li>
-                            </ul>
-                        </section>
-                        <section className="subcategories-container">
-                            {subcategories}
-                        </section>
-                        <section className="category-container">
-                            <div className="category-container-header">
-                                <div className="category-container-title">
-                                    SMD transil diodes
-                                </div>
-                                {
-                                    width <= 1023 ? (
-                                        <div className="category-container-toggle-filters">
-                                            <button className="button button-icon button-icon-text" onClick={toggleFiltersModal}>
-                                                <div className="icon filter"></div>
-                                                Filters
-                                            </button>
-                                        </div>
-                                    ) : null
-                                }
-                                {
-                                    width >= 1024 ? (
-                                        <div className="category-container-sort">
-                                            <div className="sort-block">
-                                                <select name="show-on-page" id="show-on-page" className="show-on-page">
-                                                    <option value="relevant">Most Relevant</option>
-                                                    <option value="popular">Most Popular</option>
-                                                    <option value="hightolow">Price (from high to low)</option>
-                                                    <option value="lowtohigh">Price (from low to high)</option>
-                                                </select>
-                                            </div>
-                                            <div className="sort-block">
-                                                <select name="show-on-page" id="show-on-page" className="show-on-page">
-                                                    <option value="15">15</option>
-                                                    <option value="25">25</option>
-                                                    <option value="45">45</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    ) : null
-                                }
-                            </div>
-                            <div className="category-container-body">
-                                {
-                                    width >= 1024 ? (
-                                        <div className="category-container-filters">
-                                            {
-                                                filters.map((filter, index) => (
-                                                    <div className={showFilter[index] ? "filters-block hidden" : "filters-block"} key={index}>
-                                                        <button className="filters-button" onClick={() => toggleShowFilter(index)}>
-                                                            {filter.filterTitle} <span>({filter.filterQuantity})</span>
-                                                        </button>
-                                                        <CSSTransition 
-                                                            in={index === 0 ? !showFilter[index] : showFilter[index]}
-                                                            timeout={400}
-                                                            classNames="filters-animation"
-                                                            unmountOnExit
-                                                            key={index}
-                                                        >
-                                                            <div className="filters-container">
-                                                                <div className="filters-search">
-                                                                    <input type="text" placeholder="Search.." className="filter-search-input" />
-                                                                </div>
-                                                                <ul className="filters-nav">
-                                                                    {
-                                                                        filter.filters.map((subfilter, index) => (
-                                                                            <li className="filters-nav-item" key={index}>
-                                                                                <div className="filters-nav-link">
-                                                                                    <input type="checkbox" className="custom-checkbox" name="checkbox-example" id={subfilter.filterTitle + index} />
-                                                                                    <label htmlFor={subfilter.filterTitle + index}>{subfilter.filterTitle}<span>({subfilter.filterQuantity})</span></label>
-                                                                                </div>
-                                                                            </li>
-                                                                        ))
-                                                                    }
-                                                                </ul>
-                                                            </div>
-                                                        </CSSTransition>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
-                                    ) : null 
-                                }
-                                {
-                                    width <= 1023 ? (
-                                        <FiltersModal 
-                                            showFiltersModal={showFiltersModal}
-                                            toggleFiltersModal={toggleFiltersModal}
-                                            showFilter={showFilter}
-                                            toggleShowFilter={toggleShowFilter}
-                                        />
-                                    ) : null 
-                                }
-                                <div className="category-container-products">
-                                    {products}
-                                </div>
-                            </div>
-                        </section>
-                        <section className="pagination-container">
-                            <ul className="pagination">
-                                <li className="pagination-item">
-                                    <NavLink to="/catalog/category" className="pagination-link" exact>
-                                        1
-                                    </NavLink>
-                                </li>
-                                <li className="pagination-item">
-                                    <NavLink to="/" className="pagination-link" exact>
-                                        2
-                                    </NavLink>
-                                </li>
-                                <li className="pagination-item">
-                                    <NavLink to="/" className="pagination-link" exact>
-                                        3
-                                    </NavLink>
-                                </li>
-                                <li className="pagination-item">
-                                    <NavLink to="/" className="pagination-link" exact>
-                                        ...
-                                    </NavLink>
-                                </li>
-                                <li className="pagination-item">
-                                    <NavLink to="/" className="pagination-link" exact>
-                                        13
-                                    </NavLink>
-                                </li>
-                                <li className="pagination-item">
-                                    <NavLink to="/" className="pagination-link" exact>
-                                        14
-                                    </NavLink>
-                                </li>
-                            </ul>
-                        </section>
-
-                    </main>
+  return (
+    <div id="wrapper">
+      <div className="container">
+        <div className="row">
+          <main className="full-width">
+            {
+              loading ? (
+                <>
+                  loading...
+                </>
+              ) : error ? (
+                <div>
+                  {error}
                 </div>
-            </div>
+              ) : (
+                <>
+                  <section className="breadcrumbs-container">
+                    <ul className="breadcrumbs">
+                      <li className="breadcrumbs-item">
+                        <NavLink to="/" className="breadcrumbs-link" exact>
+                          Mainpage
+                        </NavLink>
+                      </li>
+                      <li className="breadcrumbs-item">
+                        <NavLink to="/catalog" className="breadcrumbs-link" exact>
+                          Catalog
+                        </NavLink>
+                      </li>
+                      <li className="breadcrumbs-item">
+                        <NavLink to="/catalog/category" className="breadcrumbs-link" exact>
+                          Category
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </section>
+                  {
+                    categories.Data.CategoryTree.SubTree.length > 0 && (
+                      <section className="subcategories-container">
+                        {
+                          categories.Data.CategoryTree.SubTree.map((subcategories, index) => (
+                            <SubcategoryBlock
+                              key={index}
+                              parentCategory={subcategories.ParentId}
+                              categoryId={subcategories.Id}
+                              image={subcategories.Thumbnail}
+                              alt={subcategories.Name}
+                              title={subcategories.Name}
+                            />
+                          ))
+                        }
+                      </section>
+                    )
+                  }
+                  <section className="category-container">
+                    <div className="category-container-header">
+                      <div className="category-container-title">
+                        {
+                          categories.Data.CategoryTree.Name
+                        }
+                      </div>
+                      {
+                        width <= 1023 ? (
+                          <div className="category-container-toggle-filters">
+                            <button className="button button-icon button-icon-text" onClick={toggleFiltersModal}>
+                              <div className="icon filter"></div>
+                              Filters
+                            </button>
+                          </div>
+                        ) : null
+                      }
+                      {
+                        width >= 1024 ? (
+                          <div className="category-container-sort">
+                            <div className="sort-block">
+                              <select name="show-on-page" id="show-on-page" className="show-on-page">
+                                <option value="relevant">Most Relevant</option>
+                                <option value="popular">Most Popular</option>
+                                <option value="hightolow">Price (from high to low)</option>
+                                <option value="lowtohigh">Price (from low to high)</option>
+                              </select>
+                            </div>
+                            <div className="sort-block">
+                              <select name="show-on-page" id="show-on-page" className="show-on-page">
+                                <option value="15">15</option>
+                                <option value="25">25</option>
+                                <option value="45">45</option>
+                              </select>
+                            </div>
+                          </div>
+                        ) : null
+                      }
+                    </div>
+                    <div className="category-container-body">
+                      {
+                        width >= 1024 ? (
+                          <div className="category-container-filters">
+                            {
+                              filters.map((filter, index) => (
+                                <div className={showFilter[index] ? 'filters-block hidden' : 'filters-block'}
+                                     key={index}>
+                                  <button className="filters-button" onClick={() => toggleShowFilter(index)}>
+                                    {filter.filterTitle} <span>({filter.filterQuantity})</span>
+                                  </button>
+                                  <CSSTransition
+                                    in={index === 0 ? !showFilter[index] : showFilter[index]}
+                                    timeout={400}
+                                    classNames="filters-animation"
+                                    unmountOnExit
+                                    key={index}
+                                  >
+                                    <div className="filters-container">
+                                      <div className="filters-search">
+                                        <input type="text" placeholder="Search.." className="filter-search-input"/>
+                                      </div>
+                                      <ul className="filters-nav">
+                                        {
+                                          filter.filters.map((subfilter, index) => (
+                                            <li className="filters-nav-item" key={index}>
+                                              <div className="filters-nav-link">
+                                                <input type="checkbox" className="custom-checkbox"
+                                                       name="checkbox-example"
+                                                       id={subfilter.filterTitle + index}/>
+                                                <label
+                                                  htmlFor={subfilter.filterTitle + index}>{subfilter.filterTitle}<span>({subfilter.filterQuantity})</span></label>
+                                              </div>
+                                            </li>
+                                          ))
+                                        }
+                                      </ul>
+                                    </div>
+                                  </CSSTransition>
+                                </div>
+                              ))
+                            }
+                          </div>
+                        ) : null
+                      }
+                      {
+                        width <= 1023 ? (
+                          <FiltersModal
+                            showFiltersModal={showFiltersModal}
+                            toggleFiltersModal={toggleFiltersModal}
+                            showFilter={showFilter}
+                            toggleShowFilter={toggleShowFilter}
+                          />
+                        ) : null
+                      }
+                      <div className="category-container-products">
+                        <CategoryProducts
+                          categoryId={categoryId}
+                        />
+                      </div>
+                    </div>
+                  </section>
+                  <section className="pagination-container">
+                    <ul className="pagination">
+                      <li className="pagination-item">
+                        <NavLink to="/catalog/category" className="pagination-link" exact>
+                          1
+                        </NavLink>
+                      </li>
+                      <li className="pagination-item">
+                        <NavLink to="/" className="pagination-link" exact>
+                          2
+                        </NavLink>
+                      </li>
+                      <li className="pagination-item">
+                        <NavLink to="/" className="pagination-link" exact>
+                          3
+                        </NavLink>
+                      </li>
+                      <li className="pagination-item">
+                        <NavLink to="/" className="pagination-link" exact>
+                          ...
+                        </NavLink>
+                      </li>
+                      <li className="pagination-item">
+                        <NavLink to="/" className="pagination-link" exact>
+                          13
+                        </NavLink>
+                      </li>
+                      <li className="pagination-item">
+                        <NavLink to="/" className="pagination-link" exact>
+                          14
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </section>
+                </>
+              )
+            }
+          </main>
         </div>
-    )
+      </div>
+    </div>
+  )
 }

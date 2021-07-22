@@ -4,13 +4,15 @@ import thunk from 'redux-thunk';
 import { productListReducer } from './redux/reducers/productReducers';
 import { catalogListReducer } from './redux/reducers/catalogReducers';
 import { categoryListReducer } from './redux/reducers/categoryReducers';
+import { categoryProductsListReducer } from './redux/reducers/categoryProductsReducers';
 
 const initialState = {};
 
 const reducer = combineReducers({
     productList: productListReducer,
     catalogList: catalogListReducer,
-    categoryList: categoryListReducer
+    categoryList: categoryListReducer,
+    categoryProductsList: categoryProductsListReducer
 })
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

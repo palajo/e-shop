@@ -15,12 +15,11 @@ export default function CatalogPage(props) {
         dispatch(listCategory(categoryId));
     }, [dispatch, categoryId]);
 
-
     const [showSubcategories, setShowSubcategories] = useState(5);
 
     const handleShowSubcategories = (index, count) => {
         setShowSubcategories(count)
-    }
+    };
 
     console.log(categories)
 
@@ -67,12 +66,12 @@ export default function CatalogPage(props) {
                                             categories.Data.CategoryTree.SubTree.map((subcategories, index) => (
                                                 <div className="catalog-block" key={index}>
                                                     <div className="catalog-image">
-                                                        <NavLink to="/catalog/category">
+                                                        <NavLink to={`/catalog/${subcategories.ParentId}/${subcategories.Id}`}>
                                                             <img src={subcategories.Thumbnail} alt={subcategories.Name} />
                                                         </NavLink>
                                                     </div>
                                                     <div className="catalog-title">
-                                                        <NavLink to="/catalog/category">
+                                                        <NavLink to={`/catalog/${subcategories.ParentId}/${subcategories.Id}`}>
                                                             {subcategories.Name}
                                                         </NavLink>
                                                     </div>
@@ -81,7 +80,7 @@ export default function CatalogPage(props) {
                                                             {
                                                                 subcategories.SubTree.slice(0, 5).map((subcategories, index) => (
                                                                     <li className="subcategories-item" key={index}>
-                                                                        <NavLink to="#" className="subcategories-link">
+                                                                        <NavLink to={`/catalog/${subcategories.ParentId}/${subcategories.Id}`} className="subcategories-link">
                                                                             {subcategories.Name}
                                                                         </NavLink>
                                                                     </li>

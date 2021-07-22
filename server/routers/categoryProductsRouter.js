@@ -14,23 +14,19 @@ const secret = "9afc3d89fa3ace87c52f"
 const domain = "https://api.tme.eu/"
 const format = ".json"
 
-const symbolsData = []
-const productsData = []
-
 /* Get Symbols */
-function fetchSymbols() {
-
+function fetchSymbols(categoryId) {
     const symbolsPath = "Products/GetSymbols"
     const symbolsUrl = domain + symbolsPath + format;
 
     const symbolsParams = {
         Country: 'UA',
-        Language: 'uk',
-        CategoryId: '112818',
+        Language: 'en',
+        CategoryId: categoryId.toString(),
         Token: token
     }
 
-    const symbolsSortedParams = sortKeys(symbolsParams, { deep: true })
+    const symbolsSortedParams = sortKeys(symbolsParams, {deep: true})
     const symbolsQueryParams = httpBuildQuery(symbolsSortedParams)
 
     const symbolsSignatureRequest = 'POST&' + encodeURIComponent(symbolsUrl) + "&" + encodeURIComponent(symbolsQueryParams)
@@ -47,25 +43,32 @@ function fetchSymbols() {
         data: symbolsParams
     }
 
-    axios.request(symbolsAxiosSettings)
-        .then((res) => { 
-            symbolsData.push(res.data.Data.SymbolList.slice(0, 50))
-        })
-        .catch((error) => {
-            console.error(error)
-        })
-    }
+    const symbolsData = axios.request(symbolsAxiosSettings)
+      .then((res) => {
+          const symbolsData = res.data
+          return symbolsData;
+      })
+      .catch((error) => {
+          console.error(error)
+      })
+
+    return symbolsData;
+}
 /* --------------------------------------------------------------------------- */
 
 /* Get Products */
-function fetchProducts() {
+function fetchProducts(symbols) {
+    const slicedSymbols = symbols.Data.SymbolList.slice(0, 20);
+
+    console.log(slicedSymbols);
+
     const productsPath = "Products/GetProducts"
     const productsUrl = domain + productsPath + format;
 
     const productsParams = {
         Country: 'UA',
-        Language: 'uk',
-        SymbolList: symbolsData[0],
+        Language: 'en',
+        SymbolList: slicedSymbols,
         Token: token
     }
 
@@ -86,30 +89,24 @@ function fetchProducts() {
         data: productsParams
     }
 
-    axios.request(productsAxiosSettings)
-        .then((res) => { 
-            productsData.push(res.data)
-        })
-        .catch((error) => {
-            console.error(error)
-        })
+    const productsData = axios.request(productsAxiosSettings)
+      .then((res) => {
+          const productsData = res.data
+          return productsData;
+      })
+      .catch((error) => {
+          console.error(error)
+      })
 
+    return productsData;
 }
 /* --------------------------------------------------------------------------- */
 
-/* run one after another */
-async function fetchData() { 
-    await fetchSymbols()
-    setTimeout(async () => {
-       await fetchProducts()
-    }, 1000)
-}
+categoryProductsRouter.get( '/:id', expressAsyncHandler(async (req, res) => {
+    const symbols = await fetchSymbols(req.params.id);
+    const products = await fetchProducts(symbols);
 
-fetchData()
-/* --------------------------------------------------------------------------- */
-
-categoryProductsRouter.get( '/', expressAsyncHandler(async (req, res) => {
-    res.send(productsData);
+    res.send(products);
 }));
 
 export default categoryProductsRouter;
