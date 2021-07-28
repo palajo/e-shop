@@ -51,8 +51,6 @@ export default function CategoryPage(props) {
     dispatch(listCategory(categoryId));
   }, [dispatch, categoryId]);
 
-  console.log(categories);
-
   return (
     <div id="wrapper">
       <div className="container">

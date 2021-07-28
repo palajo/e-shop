@@ -8,6 +8,10 @@ import categoryRouter from './routers/categoryRouter.js';
 import categoryProductsRouter from './routers/categoryProductsRouter.js';
 import categorySymbolsRouter from './routers/categorySymbolsRouter.js';
 
+import productInfoRouter from './routers/product/productInfoRouter.js';
+import productPricesRouter from './routers/product/productPricesRouter.js';
+import productParametersRouter from './routers/product/productParametersRouter.js';
+
 process.on('SIGINT', () => { 
     process.kill();
 });
@@ -27,6 +31,10 @@ app.use('/api/catalog/', categoriesRouter);
 app.use('/api/category/', categoryRouter);
 app.use('/api/categorySymbols/', categorySymbolsRouter);
 app.use('/api/categoryProducts/', categoryProductsRouter);
+
+app.use('/api/product/info/', productInfoRouter);
+app.use('/api/product/prices/', productPricesRouter);
+app.use('/api/product/parameters/', productParametersRouter);
 
 const httpServer = http.Server(app);
 

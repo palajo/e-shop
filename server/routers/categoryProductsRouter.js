@@ -60,8 +60,6 @@ function fetchSymbols(categoryId) {
 function fetchProducts(symbols) {
     const slicedSymbols = symbols.Data.SymbolList.slice(0, 20);
 
-    console.log(slicedSymbols);
-
     const productsPath = "Products/GetProducts"
     const productsUrl = domain + productsPath + format;
 
@@ -89,16 +87,13 @@ function fetchProducts(symbols) {
         data: productsParams
     }
 
-    const productsData = axios.request(productsAxiosSettings)
+    return axios.request(productsAxiosSettings)
       .then((res) => {
-          const productsData = res.data
-          return productsData;
+          return res.data;
       })
       .catch((error) => {
           console.error(error)
       })
-
-    return productsData;
 }
 /* --------------------------------------------------------------------------- */
 

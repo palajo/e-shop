@@ -54,7 +54,7 @@ function App() {
 
                     <Route component={CatalogPage} path="/catalog/:id" exact />
                     <Route component={CategoryPage} path="/catalog/:parentCategoryId/:categoryId" exact />
-                    <Route component={ProductPage} path="/catalog/category/" exact />
+                    <Route component={ProductPage} path="/product/:productId" exact />
 
                     <Route component={CheckoutPage} path="/checkout" exact />
                     <Route component={SuccessPage} path="/success" exact />

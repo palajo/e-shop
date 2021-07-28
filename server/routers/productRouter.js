@@ -146,7 +146,11 @@ async function fetchData() {
 fetchData()
 /* --------------------------------------------------------------------------- */
 
-productRouter.get( '/', expressAsyncHandler(async (req, res) => {
+productRouter.get( '/:id', expressAsyncHandler(async (req, res) => {
+    const productInfo = await fetchProductInfo();
+    const productPrices = await fetchProductPrices();
+    const productParameters = await fetchProductParameters();
+
     res.send(apiData);
 }));
 

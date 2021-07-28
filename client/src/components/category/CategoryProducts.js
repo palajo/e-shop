@@ -30,10 +30,12 @@ function CategoryProducts(props) {
             {
               products.Data.ProductList.map((product, index) => (
                 <ProductBlock
+                  key={index}
                   image={product.Photo}
                   producer={product.Producer}
                   title={product.OriginalSymbol}
                   description={product.Description}
+                  productId={product.Symbol}
                 />
               ))
             }
