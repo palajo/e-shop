@@ -2,7 +2,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import SubcategoryImage from '../../assets/images/product-image.png'
+import SubcategoryImage from '../../../assets/images/product-image.png'
 
 export default function SubcategoryBlock(props) {
     return (

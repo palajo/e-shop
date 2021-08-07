@@ -1,7 +1,7 @@
 import React from 'react'
 import { CSSTransition } from 'react-transition-group'
 
-import { OrderTableRow } from '../../routes/SuccessPage'
+import { OrderTableRow } from '../../../../routes/shop/cart/SuccessPage'
 
 export default function OrderModal({ showOrderModal, toggleOrderModal }) {
     return (

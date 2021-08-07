@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom'
-import { listCategory } from '../redux/actions/categoryActions';
+import { listCategory } from '../../redux/actions/categoryActions';
+import Loading from '../../components/utils/Loading';
 
 export default function CatalogPage(props) {
 
@@ -21,15 +22,13 @@ export default function CatalogPage(props) {
         setShowSubcategories(count)
     };
 
-    console.log(categories)
-
     return (
         <>
         {
             loading ? (
-                <>
-                loading...
-                </>
+                <Loading
+                  fullheight
+                />
             ) : error ? (
                 <div>
                     {error}

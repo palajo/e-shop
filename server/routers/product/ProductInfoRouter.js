@@ -21,7 +21,7 @@ function fetchProductInfo(productId) {
 
   const infoParams = {
     Country: 'UA',
-    Language: 'uk',
+    Language: 'en',
     SymbolList: [productId],
     Token: token
   }

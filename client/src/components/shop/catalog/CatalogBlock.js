@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import CatalogImage from '../../assets/images/product-image.png'
+import CatalogImage from '../../../assets/images/product-image.png'
 
 const subcategories = [
     {

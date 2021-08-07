@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import ProductBlock from '../product/ProductBlock';
 import { useDispatch, useSelector } from 'react-redux';
-import { listCategoryProducts } from '../../redux/actions/categoryProductsActions';
+import { listCategoryProducts } from '../../../redux/actions/categoryProductsActions';
+import Loading from '../../utils/Loading';
 
 function CategoryProducts(props) {
   // fetching category data
@@ -14,13 +15,13 @@ function CategoryProducts(props) {
     dispatch(listCategoryProducts(props.categoryId));
   }, [dispatch, props.categoryId]);
 
+  console.log(products);
+
   return (
     <>
       {
         loading ? (
-          <>
-            loading...
-          </>
+          <Loading />
         ) : error ? (
           <div>
             {error}
@@ -33,7 +34,7 @@ function CategoryProducts(props) {
                   key={index}
                   image={product.Photo}
                   producer={product.Producer}
-                  title={product.OriginalSymbol}
+                  title={product.Symbol}
                   description={product.Description}
                   productId={product.Symbol}
                 />

@@ -1,22 +1,22 @@
 import { PRODUCT_PARAMETERS_FAIL, PRODUCT_PARAMETERS_REQUEST, PRODUCT_PARAMETERS_SUCCESS } from '../../constants/product/productParametersConstants';
 
-export const productParametersListReducer = (state = { loading: true, productParameters: [] }, action) => {
+export const productParametersListReducer = (state = { parametersLoading: true, productParameters: [] }, action) => {
   switch (action.type) {
     case PRODUCT_PARAMETERS_REQUEST:
       return {
-        loading: true,
+        parametersLoading: true,
       }
 
     case PRODUCT_PARAMETERS_SUCCESS:
       return {
-        loading: false,
+        parametersLoading: false,
         productParameters: action.payload
       }
 
     case PRODUCT_PARAMETERS_FAIL:
       return {
-        loading: false,
-        error: action.payload
+        parametersLoading: false,
+        parametersError: action.payload
       }
 
     default:

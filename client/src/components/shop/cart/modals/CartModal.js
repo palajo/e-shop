@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group'
 
-import CartProductsTable from './CartProductsTable';
+import CartProductsTable from '../CartProductsTable';
 
 export default function CartModal({ showCartModal, toggleCartModal }) {
     return (

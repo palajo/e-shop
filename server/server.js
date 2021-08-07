@@ -12,14 +12,6 @@ import productInfoRouter from './routers/product/productInfoRouter.js';
 import productPricesRouter from './routers/product/productPricesRouter.js';
 import productParametersRouter from './routers/product/productParametersRouter.js';
 
-process.on('SIGINT', () => { 
-    process.kill();
-});
-
-process.on('exit', () => { 
-    process.kill();
-});
-
 const app = express();
 
 app.use(cors());
@@ -27,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
 app.use('/api/product/', productRouter);
-app.use('/api/catalog/', categoriesRouter);
+app.use('/api/shop/', categoriesRouter);
 app.use('/api/category/', categoryRouter);
 app.use('/api/categorySymbols/', categorySymbolsRouter);
 app.use('/api/categoryProducts/', categoryProductsRouter);

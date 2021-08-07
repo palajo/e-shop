@@ -7,7 +7,7 @@ export const listCatalog = () => async(dispatch) => {
     });
 
     try {
-        const { data } = await Axios.get('/api/catalog');
+        const { data } = await Axios.get('/api/shop');
         dispatch({
             type: CATALOG_LIST_SUCCESS,
             payload: data

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import CartProductsTable from '../components/cart/CartProductsTable'
-import CheckoutForm from '../components/checkout/CheckoutForm'
+import CartProductsTable from '../../../components/shop/cart/CartProductsTable'
+import CheckoutForm from '../../../components/shop/cart/checkout/CheckoutForm'
 
 export default function CheckoutPage() {
     return (

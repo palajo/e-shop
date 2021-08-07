@@ -1,6 +1,6 @@
 import React from 'react'
 import { CSSTransition } from 'react-transition-group'
-import filters from '../api/filters'
+import filters from '../../api/filters'
 
 export default function FiltersModal({ showFiltersModal, toggleFiltersModal, showFilter, toggleShowFilter }) {
     return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
-import OrderModal from '../components/user/OrderModal'
+import OrderModal from '../../../components/shop/account/modals/OrderModal'
 
 export function OrderTableRow({ toggleOrderModal }) {
     return(

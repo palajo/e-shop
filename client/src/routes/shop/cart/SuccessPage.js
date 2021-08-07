@@ -2,7 +2,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-import ProductImage from '../assets/images/product-image.png'
+import ProductImage from '../../../assets/images/product-image.png'
 
 export function OrderTableRow() {
     return(

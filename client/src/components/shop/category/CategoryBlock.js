@@ -3,7 +3,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import CategoryImage from '../../assets/images/product-image.png';
+import CategoryImage from '../../../assets/images/product-image.png';
 
 export default function CategoryBlock() {
     return (

@@ -20,7 +20,7 @@ function fetchProductPrices(productId) {
 
   const pricesParams = {
     Country: 'UA',
-    Language: 'uk',
+    Language: 'en',
     SymbolList: [productId],
     Currency: 'USD',
     Token: token

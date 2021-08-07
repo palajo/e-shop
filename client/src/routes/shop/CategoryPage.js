@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group';
 
-import filters from '../components/api/filters';
-import FiltersModal from '../components/category/FiltersModal';
+import filters from '../../components/api/filters';
+import FiltersModal from '../../components/shop/category/FiltersModal';
 
-import SubcategoryBlock from '../components/category/SubcategoryBlock';
-import ProductBlock from '../components/product/ProductBlock'
+import SubcategoryBlock from '../../components/shop/category/SubcategoryBlock';
+import ProductBlock from '../../components/shop/product/ProductBlock'
 import { useDispatch, useSelector } from 'react-redux';
-import { listCategory } from '../redux/actions/categoryActions';
-import CategoryProducts from '../components/category/CategoryProducts';
+import { listCategory } from '../../redux/actions/categoryActions';
+import CategoryProducts from '../../components/shop/category/CategoryProducts';
+import Loading from '../../components/utils/Loading';
 
 export default function CategoryPage(props) {
 
@@ -58,9 +59,7 @@ export default function CategoryPage(props) {
           <main className="full-width">
             {
               loading ? (
-                <>
-                  loading...
-                </>
+                <Loading />
               ) : error ? (
                 <div>
                   {error}

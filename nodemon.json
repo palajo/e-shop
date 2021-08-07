@@ -1,5 +1,6 @@
 {
   "events": {
+    "start": "kill-port 5000",
     "restart": "kill-port 5000",
     "crash": "kill-port 5000"
   },

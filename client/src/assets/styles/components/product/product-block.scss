@@ -19,13 +19,11 @@
     }
 
     .product-image {
-        padding: 0 10px;
         margin-bottom: 30px;
 
         img {
             width: 100%;
-            height: auto;
-            max-height: 120px;
+            height: 120px;
 
             object-fit: contain;
             object-position: center;
@@ -34,6 +32,7 @@
 
     .product-title {
         margin-bottom: 10px;
+        min-height: 42px;
 
         div {
             font-size: 12px;
@@ -60,6 +59,7 @@
         font-size: 12px;
         line-height: 20px;
 
+        min-height: 60px;
         margin-bottom: 15px;
     }
 

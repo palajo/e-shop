@@ -1,6 +1,10 @@
 section.product-container {
     .product-container-row { 
         .product-image {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
             width: 450px;
             padding: 40px 75px;
             border-right: 1px solid $lightgray;
