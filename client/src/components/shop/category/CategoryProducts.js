@@ -15,8 +15,6 @@ function CategoryProducts(props) {
     dispatch(listCategoryProducts(props.categoryId));
   }, [dispatch, props.categoryId]);
 
-  console.log(products);
-
   return (
     <>
       {

@@ -11,9 +11,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listCategory } from '../../redux/actions/categoryActions';
 import CategoryProducts from '../../components/shop/category/CategoryProducts';
 import Loading from '../../components/utils/Loading';
+import Breadcrumbs from "../../components/shop/breadcrumbs/Breadcrumbs";
 
 export default function CategoryPage(props) {
+  // fetching category data
+  const dispatch = useDispatch();
+  const categoryId = props.match.params.categoryId;
 
+  const categoryList = useSelector((state) => state.categoryList);
+  const { loading, error, categories } = categoryList;
+
+  useEffect(() => {
+    dispatch(listCategory(categoryId));
+  }, [dispatch, categoryId]);
+
+  // filters
   const [width, setWidth] = useState(window.innerWidth);
 
   function handleWindowSizeChange() {
@@ -41,16 +53,6 @@ export default function CategoryPage(props) {
     setShowFiltersModal(!showFiltersModal);
   };
 
-  // fetching category data
-  const dispatch = useDispatch();
-  const categoryId = props.match.params.categoryId;
-
-  const categoryList = useSelector((state) => state.categoryList);
-  const {loading, error, categories} = categoryList;
-
-  useEffect(() => {
-    dispatch(listCategory(categoryId));
-  }, [dispatch, categoryId]);
 
   return (
     <div id="wrapper">
@@ -66,25 +68,7 @@ export default function CategoryPage(props) {
                 </div>
               ) : (
                 <>
-                  <section className="breadcrumbs-container">
-                    <ul className="breadcrumbs">
-                      <li className="breadcrumbs-item">
-                        <NavLink to="/" className="breadcrumbs-link" exact>
-                          Mainpage
-                        </NavLink>
-                      </li>
-                      <li className="breadcrumbs-item">
-                        <NavLink to="/catalog" className="breadcrumbs-link" exact>
-                          Catalog
-                        </NavLink>
-                      </li>
-                      <li className="breadcrumbs-item">
-                        <NavLink to="/catalog/category" className="breadcrumbs-link" exact>
-                          Category
-                        </NavLink>
-                      </li>
-                    </ul>
-                  </section>
+                  <Breadcrumbs categoryId={categoryId} categoryDepth={categories.Data.CategoryTree.Depth} />
                   {
                     categories.Data.CategoryTree.SubTree.length > 0 && (
                       <section className="subcategories-container">
