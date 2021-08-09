@@ -10,6 +10,11 @@ section.section-loading {
     height: calc(100vh - 120px);
   }
 
+  &.category-loading {
+    width: calc(100% - 300px);
+    min-height: calc(100vh - 150px);
+  }
+
   .sk-chase {
     width: 30px;
     height: 30px;

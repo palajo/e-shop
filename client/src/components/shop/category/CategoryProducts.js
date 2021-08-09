@@ -9,23 +9,25 @@ function CategoryProducts(props) {
   const dispatch = useDispatch();
 
   const categoryProductsList = useSelector((state) => state.categoryProductsList);
-  const {loading, error, products} = categoryProductsList;
+  const { loading, error, products } = categoryProductsList;
 
   useEffect(() => {
     dispatch(listCategoryProducts(props.categoryId));
   }, [dispatch, props.categoryId]);
 
+  console.log()
+
   return (
     <>
       {
         loading ? (
-          <Loading />
+          <Loading category />
         ) : error ? (
           <div>
             {error}
           </div>
         ) : (
-          <>
+          <div className="category-container-products">
             {
               products.Data.ProductList.map((product, index) => (
                 <ProductBlock
@@ -35,10 +37,11 @@ function CategoryProducts(props) {
                   title={product.Symbol}
                   description={product.Description}
                   productId={product.Symbol}
+                  priceList={product.PriceList}
                 />
               ))
             }
-          </>
+          </div>
         )
       }
     </>

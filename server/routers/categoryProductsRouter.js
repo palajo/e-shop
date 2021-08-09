@@ -5,6 +5,7 @@ import axios from 'axios';
 import crypto from 'crypto';
 import httpBuildQuery from 'http-build-query';
 import sortKeys from 'sort-keys';
+import _ from 'lodash';
 
 const categoryProductsRouter = express.Router();
 
@@ -97,11 +98,58 @@ function fetchProducts(symbols) {
 }
 /* --------------------------------------------------------------------------- */
 
+/* Get Products Prices */
+function fetchProductsPrices(symbols) {
+    const slicedSymbols = symbols.Data.SymbolList.slice(0, 20);
+
+    console.log(slicedSymbols);
+
+    const pricesPath = "Products/GetPrices"
+    const pricesUrl = domain + pricesPath + format;
+
+    const pricesParams = {
+        Country: 'UA',
+        Language: 'en',
+        SymbolList: slicedSymbols,
+        Currency: 'USD',
+        Token: token
+    }
+
+    const pricesSortedParams = sortKeys(pricesParams, { deep: true })
+    const pricesQueryParams = httpBuildQuery(pricesSortedParams)
+
+    const pricesSignatureRequest = 'POST&' + encodeURIComponent(pricesUrl) + "&" + encodeURIComponent(pricesQueryParams)
+    const pricesSignature = crypto.createHmac('sha1', secret).update(pricesSignatureRequest, 'utf8').digest('base64')
+
+    pricesParams['ApiSignature'] = pricesSignature
+
+    const pricesAxiosSettings = {
+        url: pricesUrl,
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: pricesParams
+    }
+
+    return axios.request(pricesAxiosSettings)
+      .then((res) => {
+          return res.data
+      })
+      .catch((error) => {
+          console.error(error)
+      })
+}
+/* --------------------------------------------------------------------------- */
+
 categoryProductsRouter.get( '/:id', expressAsyncHandler(async (req, res) => {
     const symbols = await fetchSymbols(req.params.id);
-    const products = await fetchProducts(symbols);
+    const products = await fetchProducts(symbols, req.params.page);
+    const prices = await fetchProductsPrices(symbols, req.params.page);
 
-    res.send(products);
+    const result = _.merge(prices, products);
+
+    res.send(result);
 }));
 
 export default categoryProductsRouter;

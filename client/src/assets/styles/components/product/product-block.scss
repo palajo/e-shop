@@ -68,6 +68,10 @@
     }
 
     .product-price {
+        display: flex;
+        align-items: center;
+
+        min-height: 72px;
         width: 100%;
 
         table.price-range {

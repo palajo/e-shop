@@ -136,8 +136,12 @@ export default function MainPage() {
                 </div>
               </div>
             </section>
-            <ProductsContainer />
-            <ProductsContainer />
+            {
+              /*
+                <ProductsContainer />
+                <ProductsContainer />
+               */
+            }
             <CategoryContainer />
             <section className="about-container">
               <div className="about-container-body">

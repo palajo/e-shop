@@ -21,7 +21,7 @@ function fetchProductPrices(productId) {
   const pricesParams = {
     Country: 'UA',
     Language: 'en',
-    SymbolList: [productId],
+    SymbolList: [productId.replace(/_/g, '/')],
     Currency: 'USD',
     Token: token
   }

@@ -6,7 +6,7 @@ export default function ProductBlock(props) {
   return (
     <div className="product-block">
       <div className="product-image">
-        <NavLink to={`/product/${props.productId}`}>
+        <NavLink to={`/product/${props.productId.replace(/\//g, '_')}`}>
           {
             props.image && props.image.length > 0 ? (
               <img src={props.image} alt={props.alt} />
@@ -20,7 +20,7 @@ export default function ProductBlock(props) {
         <div>
           {props.producer}
         </div>
-        <NavLink to={`/product/${props.productId}`}>
+        <NavLink to={`/product/${props.productId.replace(/\//g, '_')}`}>
           {props.title}
         </NavLink>
       </div>
@@ -33,42 +33,24 @@ export default function ProductBlock(props) {
         <div className="product-price">
           <table className="price-range">
             <tbody>
-            <tr>
-              <th>
-                <div>
-                  5x
-                </div>
-              </th>
-              <td>
-                <div>
-                  $3.99
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <div>
-                  25x
-                </div>
-              </th>
-              <td>
-                <div>
-                  $3.29
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <div>
-                  100x
-                </div>
-              </th>
-              <td>
-                <div>
-                  $2.89
-                </div>
-              </td>
-            </tr>
+              {
+                props.priceList.slice(0, 3).map((price, index) => (
+                  <tr key={index}>
+                    <th>
+                      <div>
+                        {price.Amount}
+                        x
+                      </div>
+                    </th>
+                    <td>
+                      <div>
+                        $
+                        {price.PriceValue}
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              }
             </tbody>
           </table>
         </div>

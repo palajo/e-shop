@@ -21,7 +21,7 @@ function fetchProductParameters(productId) {
   const parametersParams = {
     Country: 'UA',
     Language: 'en',
-    SymbolList: [productId],
+    SymbolList: [productId.replace(/_/g, '/')],
     Token: token
   }
 

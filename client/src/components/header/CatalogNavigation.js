@@ -123,11 +123,21 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                                             <div className="icon external-link"></div>
                                           </NavLink>
                                         </div>
+                                      ) : (
+                                        <div className="catalog-nav-link-action">
+                                          <NavLink to={`/catalog/${category.ParentId}/${category.Id}`}>
+                                            <div className="icon external-link"></div>
+                                          </NavLink>
+                                        </div>
+                                      )
+                                    }
+                                    {
+                                      category.SubTreeCount > 0 ? (
+                                        <div className="catalog-nav-link-action">
+                                          <div className="icon menu-arrow-right"></div>
+                                        </div>
                                       ) : null
                                     }
-                                    <div className="catalog-nav-link-action">
-                                      <div className="icon menu-arrow-right"></div>
-                                    </div>
                                   </div>
                                 </div>
                               </li>
@@ -139,7 +149,7 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                   }
                 </div>
                 {
-                  catalog[0].Data.CategoryTree.SubTree[depthOne].SubTreeCount > 0 ? (
+                  catalog[0].Data.CategoryTree.SubTree[depthOne].SubTreeCount ? (
                     <>
                       <CSSTransition
                         in={level > 0}
@@ -168,11 +178,21 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                                               <div className="icon external-link"></div>
                                             </NavLink>
                                           </div>
+                                        ) : (
+                                          <div className="catalog-nav-link-action">
+                                            <NavLink to={`/catalog/${category.ParentId}/${category.Id}`}>
+                                              <div className="icon external-link"></div>
+                                            </NavLink>
+                                          </div>
+                                        )
+                                      }
+                                      {
+                                        category.SubTreeCount > 0 ? (
+                                          <div className="catalog-nav-link-action">
+                                            <div className="icon menu-arrow-right"></div>
+                                          </div>
                                         ) : null
                                       }
-                                      <div className="catalog-nav-link-action">
-                                        <div className="icon menu-arrow-right"></div>
-                                      </div>
                                     </div>
                                   </div>
                                 </li>
@@ -182,7 +202,7 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                         </div>
                       </CSSTransition>
                       {
-                        catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTreeCount > 0 ? (
+                        catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTreeCount ? (
                           <>
                             <CSSTransition
                               in={level > 1}
@@ -211,11 +231,21 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                                                     <div className="icon external-link"></div>
                                                   </NavLink>
                                                 </div>
+                                              ) : (
+                                                <div className="catalog-nav-link-action">
+                                                  <NavLink to={`/catalog/${category.ParentId}/${category.Id}`}>
+                                                    <div className="icon external-link"></div>
+                                                  </NavLink>
+                                                </div>
+                                              )
+                                            }
+                                            {
+                                              category.SubTreeCount > 0 ? (
+                                                <div className="catalog-nav-link-action">
+                                                  <div className="icon menu-arrow-right"></div>
+                                                </div>
                                               ) : null
                                             }
-                                            <div className="catalog-nav-link-action">
-                                              <div className="icon menu-arrow-right"></div>
-                                            </div>
                                           </div>
                                         </div>
                                       </li>
@@ -225,7 +255,7 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                               </div>
                             </CSSTransition>
                             {
-                              catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTree[depthThree].SubTreeCount > 0 ? (
+                              catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTree[depthThree].SubTreeCount ? (
                                 <>
                                   <CSSTransition
                                     in={level > 2}
@@ -254,11 +284,21 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                                                           <div className="icon external-link"></div>
                                                         </NavLink>
                                                       </div>
+                                                    ) : (
+                                                      <div className="catalog-nav-link-action">
+                                                        <NavLink to={`/catalog/${category.ParentId}/${category.Id}`}>
+                                                          <div className="icon external-link"></div>
+                                                        </NavLink>
+                                                      </div>
+                                                    )
+                                                  }
+                                                  {
+                                                    category.SubTreeCount > 0 ? (
+                                                      <div className="catalog-nav-link-action">
+                                                        <div className="icon menu-arrow-right"></div>
+                                                      </div>
                                                     ) : null
                                                   }
-                                                  <div className="catalog-nav-link-action">
-                                                    <div className="icon menu-arrow-right"></div>
-                                                  </div>
                                                 </div>
                                               </div>
                                             </li>
@@ -268,7 +308,7 @@ export default function CatalogNavigation({ showNavigation, toggleNavigation }) 
                                     </div>
                                   </CSSTransition>
                                   {
-                                    catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTree[depthThree].SubTree[depthFour].SubTreeCount > 0 ? (
+                                    catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTree[depthThree].SubTree[depthFour].SubTreeCount ? (
                                       <CSSTransition
                                         in={level > 3}
                                         timeout={500}

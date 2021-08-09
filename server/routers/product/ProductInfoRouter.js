@@ -22,7 +22,7 @@ function fetchProductInfo(productId) {
   const infoParams = {
     Country: 'UA',
     Language: 'en',
-    SymbolList: [productId],
+    SymbolList: [productId.replace(/_/g, '/')],
     Token: token
   }
 
