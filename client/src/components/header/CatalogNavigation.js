@@ -92,7 +92,7 @@ export default function CatalogNavigation({showNavigation, toggleNavigation}) {
         ) : (
           <CSSTransition
             in={showNavigation}
-            timeout={300}
+            timeout={500}
             classNames="catalog-navigation-animation"
             unmountOnExit
           >
@@ -154,7 +154,7 @@ export default function CatalogNavigation({showNavigation, toggleNavigation}) {
                     <>
                       <CSSTransition
                         in={level > 0}
-                        timeout={300}
+                        timeout={500}
                         classNames="catalog-navigation-subcategory-animation"
                         unmountOnExit
                       >
@@ -209,7 +209,7 @@ export default function CatalogNavigation({showNavigation, toggleNavigation}) {
                           <>
                             <CSSTransition
                               in={level > 1}
-                              timeout={300}
+                              timeout={500}
                               classNames="catalog-navigation-subcategory-animation"
                               unmountOnExit
                             >
@@ -266,7 +266,7 @@ export default function CatalogNavigation({showNavigation, toggleNavigation}) {
                                 <>
                                   <CSSTransition
                                     in={level > 2}
-                                    timeout={300}
+                                    timeout={500}
                                     classNames="catalog-navigation-subcategory-animation"
                                     unmountOnExit
                                   >
@@ -324,7 +324,7 @@ export default function CatalogNavigation({showNavigation, toggleNavigation}) {
                                     && catalog[0].Data.CategoryTree.SubTree[depthOne].SubTree[depthTwo].SubTree[depthThree].SubTree[depthFour].SubTreeCount ? (
                                       <CSSTransition
                                         in={level > 3}
-                                        timeout={300}
+                                        timeout={500}
                                         classNames="catalog-navigation-subcategory-animation"
                                         unmountOnExit
                                       >
