@@ -9,9 +9,9 @@ import Subcategories from '../../components/shop/category/components/Subcategori
 import Filters from '../../components/shop/category/components/Filters';
 
 export default function CategoryPage(props) {
-
   const categoryId = props.match.params.categoryId;
   const parentCategoryId = props.match.params.parentCategoryId;
+
 
   // fetching category data
   const dispatch = useDispatch();
@@ -55,7 +55,6 @@ export default function CategoryPage(props) {
     setShowFiltersModal(!showFiltersModal);
   };
 
-
   return (
     <div id="wrapper">
       <div className="container">
@@ -70,7 +69,11 @@ export default function CategoryPage(props) {
                 </div>
               ) : (
                 <>
-                  <Breadcrumbs categoryId={categoryId} parentCategoryId={parentCategoryId} />
+                  <Breadcrumbs
+                    categoryId={categoryId}
+                    parentCategoryId={parentCategoryId}
+                    depth={categories.Data.CategoryTree.Depth}
+                  />
                   <Subcategories categories={categories} />
                   <section className="category-container">
                     <div className="category-container-header">

@@ -1,22 +1,22 @@
 import { PRODUCT_PRICES_FAIL, PRODUCT_PRICES_REQUEST, PRODUCT_PRICES_SUCCESS } from '../../constants/product/productPricesConstants';
 
-export const productPricesListReducer = (state = { pricesLoading: true, productPrices: [] }, action) => {
+export const productPricesListReducer = (state = { loading: true, prices: [] }, action) => {
   switch (action.type) {
     case PRODUCT_PRICES_REQUEST:
       return {
-        pricesLoading: true,
+        loading: true,
       }
 
     case PRODUCT_PRICES_SUCCESS:
       return {
-        pricesLoading: false,
-        productPrices: action.payload
+        loading: false,
+        prices: action.payload
       }
 
     case PRODUCT_PRICES_FAIL:
       return {
-        pricesLoading: false,
-        pricesError: action.payload
+        loading: false,
+        error: action.payload
       }
 
     default:

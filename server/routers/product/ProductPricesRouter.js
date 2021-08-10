@@ -15,7 +15,7 @@ const domain = "https://api.tme.eu/"
 const format = ".json"
 
 function fetchProductPrices(productId) {
-  const pricesPath = "Products/GetPrices"
+  const pricesPath = "Products/GetPricesAndStocks"
   const pricesUrl = domain + pricesPath + format;
 
   const pricesParams = {

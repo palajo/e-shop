@@ -102,8 +102,6 @@ function fetchProducts(symbols) {
 function fetchProductsPrices(symbols) {
     const slicedSymbols = symbols.Data.SymbolList.slice(0, 20);
 
-    console.log(slicedSymbols);
-
     const pricesPath = "Products/GetPrices"
     const pricesUrl = domain + pricesPath + format;
 

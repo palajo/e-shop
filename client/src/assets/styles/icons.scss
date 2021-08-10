@@ -24,6 +24,12 @@
         mask-size: contain;
         mask-position: center;
         mask-repeat: no-repeat;
+
+        transition: 0.3s ease;
+
+        &.active {
+            transform: rotate(-180deg);
+        }
     }
 
     &.menu-arrow-top {

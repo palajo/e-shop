@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 
-function Breadcrumbs(props) {
-
-  console.log(props.categoryId);
-
+function Breadcrumbs({ categoryId, parentCategoryId }) {
   return (
     <section className="breadcrumbs-container">
       <ul className="breadcrumbs">
@@ -14,12 +11,12 @@ function Breadcrumbs(props) {
           </NavLink>
         </li>
         <li className="breadcrumbs-item">
-          <NavLink to={`/catalog/${props.parentCategoryId}`} className="breadcrumbs-link" exact>
+          <NavLink to={`/catalog/${parentCategoryId}`} className="breadcrumbs-link" exact>
             Catalog
           </NavLink>
         </li>
         <li className="breadcrumbs-item">
-          <NavLink to={`/catalog/${props.parentCategoryId}/${props.categoryId}`}  className="breadcrumbs-link" exact>
+          <NavLink to={`/catalog/${parentCategoryId}/${categoryId}`}  className="breadcrumbs-link" exact>
             Category
           </NavLink>
         </li>

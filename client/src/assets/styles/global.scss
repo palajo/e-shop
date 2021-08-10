@@ -220,6 +220,11 @@ button.button {
         background: $blueHover;
     }
 
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.75;
+    }
+
     &.button-small {
         min-width: 120px;
         height: 36px;
